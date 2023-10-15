@@ -1,0 +1,4 @@
+code/                       app/code/community/Conlabz/Recaptcha/
+Conlabz_Recaptcha.xml       app/etc/modules/Conlabz_Recaptcha.xml
+design/frontend/layout/recaptcha.xml    app/design/frontend/base/default/layout/conlabz/recaptcha.xml
+design/frontend/template/   app/design/frontend/base/default/template/conlabz/recaptcha/

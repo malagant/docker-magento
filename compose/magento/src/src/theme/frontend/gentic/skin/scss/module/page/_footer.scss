@@ -1,0 +1,62 @@
+.footer {
+    clear: both;
+    min-height: 375px;
+    background: url('../images/logo-black.png') right top no-repeat;
+    background-size: 115px;
+    @include mq-vals((
+        width, (
+            90%,
+            (100% / 6) * 4,
+            (100% / 6) * 4,
+            (100% / 6) * 4
+        )
+    ));
+    margin: 0 auto;
+    margin-top: 5%;
+    padding-top: 5%;
+    text-transform: uppercase;
+    @include box-sizing(border-box);
+    @media #{$mq-xs} {
+        background-position: right bottom;
+    }
+    .socialmedia {
+        margin-bottom: 35px;
+    }
+    .newsletter {
+        width: 50%;
+        float: left;
+        input {
+            height: 35px;
+            line-height: 35px;
+            font-size: 0.8em;
+            width: 100%;
+            @include input-placeholder {
+                color: #000;
+                font-weight: normal;
+            }
+        }
+        .button-subscribe {
+            display: none;
+        }
+    }    
+    .footer-links {
+        @extend .no-list-style;
+        float: left; 
+        width: 50%;
+        @media #{$mq-xs} {
+            width: 100%;
+            float: none;
+        }
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.8em;
+            height: 35px;
+            line-height: 35px;            
+        }
+    }
+}

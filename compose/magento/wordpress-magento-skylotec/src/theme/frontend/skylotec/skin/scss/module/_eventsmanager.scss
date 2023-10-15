@@ -1,0 +1,764 @@
+.page-template-page-template-trainingstermine {
+  #content {
+    background-color: #1c1c1c;
+
+    article {
+      @media #{$mq-xs} {
+        padding-right: 22px;
+        padding-left: 22px;
+      }
+    }
+
+    header {
+      padding-top: 20px;
+
+      .entry-title {
+        font-family: $font-bold;
+        font-weight: normal;
+        padding-left: 15px;
+        font-size:28px;
+        display: none;
+      }
+    }
+  }
+}
+
+#content {
+  .icon-cal-white {
+    display: inline-block;
+    width: 30px;
+    height:33px;
+    background-image: url(/wp/wp-content/themes/skylotec2015/assets/images/cal-white.png);
+  }
+  .icon-cal-orange {
+    display: inline-block;
+    width: 30px;
+    height:33px;
+    background-image: url(/wp/wp-content/themes/skylotec2015/assets/images/cal-orange.png);
+  }
+  .icon-arrow-white {
+    display: inline-block;
+    width: 12px;
+    height:23px;
+    background-image: url(/wp/wp-content/themes/skylotec2015/assets/images/arrow-white.png);
+  }
+  .icon-arrow-orange {
+    display: inline-block;
+    width: 23px;
+    height:12px;
+    background-image: url(/wp/wp-content/themes/skylotec2015/assets/images/arrow-orange.png);
+  }
+  .em-calendar-trigger-close,
+  .em-calendar-trigger {
+    position: relative;
+    display: block;
+    background-color: #292927;
+    padding: 12px 18px;
+  }
+
+  .em-calendar-trigger {
+    .em-calender-trigger-link {
+      padding-left: 20px;
+      font-size: 26px;
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 6px;
+    }
+    .icon-arrow-white {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      margin-top: -12px;
+    }
+  }
+  .em-calendar-trigger-close {
+    height: 24px;
+
+    .icon-arrow-orange {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      margin-top: -6px;
+    }
+  }
+
+  .cal-nav-container {
+    position: relative;
+    font-family: $font;
+
+    .icon-cal-orange {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
+    .cal-nav-months {
+      padding: 9px;
+    }
+    .cal-nav-years {
+      padding-top: 25px;
+      padding-bottom: 15px;
+    }
+  }
+  .cal-nav-years,
+  .cal-nav-months {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: inline-block;
+
+      a.active {
+        color: $color-orange;
+      }
+    }
+  }
+
+  .fullcalendar {
+    overflow: hidden;
+
+    .thead {
+      text-align: center;
+      background-color: #292927;
+      padding: 2px 0;
+      font-family: $font-bold;
+      font-weight: normal;
+      a {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 0 10px 0 10px;
+      }
+      .month_name {
+        font-size: 25px;
+        color: white;
+        font-weight: 600;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        @media #{$mq-xs} {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      @media #{$mq-sm} {
+        margin-bottom: 20px;
+      }
+      @media #{$mq-xs} {
+        margin-bottom: 20px;
+      }
+    }
+    .row {
+      margin-left: 0;
+      margin-right: -4px;
+
+      @media #{$mq-md} {
+        margin-left: 0;
+        margin-right: -4px;
+      }
+      @media #{$mq-sm} {
+        margin-left: 0;
+        margin-right: -4px;
+      }
+      @media #{$mq-xs} {
+        margin-left: 0;
+        margin-right: -4px;
+      }
+    }
+    .col-xs-1 {
+      width: 100 / 7 * 1%;
+      float: left;
+      display: block;
+      padding: 12px 7px 7px 9px;
+      box-sizing: border-box;
+      border-bottom: 3px solid black;
+      border-right: 3px solid black;
+      height: 114px;
+      font-size: 24px;
+
+      @media #{$mq-sm} {
+        width: 20%;
+        display: block;
+        font-size: 20px;
+        height: 130px;
+      }
+      @media #{$mq-xs} {
+        width: 50%;
+        display: block;
+        font-size: 20px;
+        height: 130px;
+      }
+
+      &.eventless-pre,
+      &.eventful-pre,
+      &.eventless-post,
+      &.eventful-post {
+        @media #{$mq-xs} {
+          display: none;
+        }
+      }
+    }
+
+
+
+    .eventless-today {
+      background-color: $color-orange;
+    }
+
+    .eventful-post, .eventful {
+      background-color: #292927;
+      overflow: hidden;
+      text-transform: uppercase;
+
+      .date-day {
+        color: black;
+        display: inline-block;
+        width: 25px;
+        float:left;
+      }
+      ul {
+        list-style-type: none;
+        position: relative;
+        margin: 0;
+        padding: 0 0 0 25px;
+        li {
+          a {
+            color: #ee7203;
+          }
+        }
+      }
+    }
+
+    .days-names {
+      font-size: 24px;
+      color: $color-orange;
+      font-weight: 600;
+      padding: 22px 0;
+      line-height: 0px;
+      border-bottom: 3px solid black;
+      font-family: $font-bold;
+      font-weight: normal;
+      .col-xs-1 {
+        border: none;
+        height: 0px;
+      }
+
+      @media #{$mq-sm} {
+        display: none;
+      }
+      @media #{$mq-xs} {
+        display: none;
+      }
+    }
+
+  }
+
+  #em-wrapper {
+
+    > p,
+    .em-search-wrapper,
+    .entry-footer {
+      display: none;
+    }
+  }
+
+  .em-booking-form-details .em-booking-submit {
+    border: 0 none;
+  }
+  .em-booking-form label {
+    width: 150px;
+    padding-right: 10px;
+    word-wrap: break-word;
+  }
+  .em-booking-form-details {
+    width: 420px;
+  }
+  .em-booking {
+
+  }
+
+  table.em-calendar td.eventless-today, table.em-calendar td.eventful-today {
+    background-color: #444;
+  }
+
+  .em-categories-list {
+    margin: 0 0 120px 0;
+    padding: 0;
+
+    .em-category-list-entry {
+      list-style-type: none;
+      padding: 50px 0 20px 0;
+
+      &:first-child {
+        border: 0 none;
+      }
+
+      .em-category-list-entry-title {
+        a {
+          font-family: $font-bold;
+          font-weight: normal;
+          color: $color-orange;
+          font-size: 26px;
+          font-weight: bold;
+        }
+      }
+
+      .em-category-list-entry-desc {
+        margin: 1.5em 0;
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+        font-size: 20px;
+
+        @media #{$mq-sm} {
+          width: auto;
+          display: block;
+        }
+        @media #{$mq-xs} {
+          width: auto;
+          display: block;
+        }
+
+        > p {
+          margin: 0;
+        }
+        .field {
+          .caption {
+            font-family: $font-bold;
+            font-weight: normal;
+            font-weight: bold;
+            width: 49%;
+            position: relative;
+            vertical-align: top;
+            box-sizing: border-box;
+            padding-right: 10%;
+            display: inline-block;
+
+            @media #{$mq-xs} {
+              width: auto;
+              display: block;
+              padding-right: 0;
+            }
+          }
+          .text {
+            width: 50%;
+            position: relative;
+            right: 0;
+            vertical-align: top;
+            box-sizing: border-box;
+            padding-right: 10%;
+            display: inline-block;
+
+            @media #{$mq-xs} {
+              width: auto;
+              display: block;
+              padding-right: 0;
+            }
+          }
+        }
+      }
+
+      .nextevents {
+        display: inline-block;
+        width: 50%;
+        position: relative;
+        vertical-align: top;
+        right: 0;
+
+        @media #{$mq-sm} {
+          width: auto;
+          display: block;
+        }
+        @media #{$mq-xs} {
+          width: auto;
+          display: block;
+        }
+
+        ul {
+          list-style-type: none;
+
+          @media #{$mq-xs} {
+            padding-left: 0;
+          }
+          @media #{$mq-sm} {
+            padding-left: 0;
+          }
+
+          li {
+            background-color: #292927;
+            padding: 5px 15px;
+            min-height: 50px;
+            margin-bottom: 15px;
+            a {
+              float: right;
+              padding: 0px 30px;
+              font-weight: bold;
+              font-family: $font-bold;
+              font-weight: normal;
+            }
+
+            .eventdate {
+              font-family: $font-bold;
+              font-weight: normal;
+              font-size: 20px;
+              padding-right: 120px;
+            }
+            .eventname {
+              font-size: 20px;
+              padding-right: 120px;
+            }
+          }
+        }
+      }
+
+      ul {
+        li {
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+
+  .em-booking-form-details {
+    width: 100%;
+  }
+}
+
+.css-cats-list {
+  margin: 0;
+  @include clearfix();
+}
+
+.single-event {
+
+  article {
+    @media #{$mq-xs} {
+      padding-right: 22px;
+      padding-left: 22px;
+    }
+  }
+
+  #content {
+    background-color: #1c1c1c;
+
+    header {
+      padding-top: 20px;
+
+      .entry-title {
+        font-family: $font-bold;
+        font-weight: normal;
+        font-size:28px;
+      }
+    }
+    .entry-content {
+      font-size: 20px;
+
+      .map-container {
+        width: 30%;
+        display: inline-block;
+        height: 300px;
+        float: right;
+        margin-bottom: 40px;
+
+        @media #{$mq-md} {
+          width: 40%;
+        }
+        @media #{$mq-xs} {
+          width: 40%;
+        }
+        @media #{$mq-sm} {
+          width: 40%;
+        }
+      }
+      .location-details {
+        width: 65%;
+        display: inline-block;
+
+        @media #{$mq-md} {
+          width: 55%;
+        }
+        @media #{$mq-xs} {
+          width: 55%;
+        }
+        @media #{$mq-sm} {
+          width: 55%;
+        }
+
+        p {
+          margin-top: 0;
+        }
+        strong {
+          font-family: $font-bold;
+          font-weight: normal;
+        }
+        i {
+          font-style: normal;
+        }
+      }
+      .em-booking-login {
+        width: 65%;
+        display: inline-block;
+        margin: 0 0 40px 0;
+        padding: 0;
+        border: 0 none;
+
+        label {
+          width: auto;
+          display: block;
+        }
+        input[type=password],
+        input[type=text] {
+          box-sizing: border-box;
+          height: 40px;
+          width:60%;
+          background-color: #ddd;
+        }
+        input[name=rememberme] {
+          vertical-align: top;
+          margin-top:8px;
+        }
+        input[type=submit] {
+          vertical-align: top;
+          width: 150px;
+          border: 0 none;
+          font-family: $font-bold;
+          font-weight: normal;
+          font-size: 16px;
+          display: inline-block;
+          margin-right: 50px;
+        }
+        .remember-me-label {
+          display: inline-block;
+          margin-top: 2px;
+        }
+      }
+      .em-booking {
+        @include clearfix();
+        margin-top: 0;
+        padding-top: 10px;
+        border-top: 3px solid black;
+        clear: both;
+        font-weight: bold;
+
+        .em-booking-form-details {
+          padding: 0;
+
+          p {
+            margin-top: 0;
+          }
+        }
+
+        .booking-title {
+          font-family: $font-bold;
+          font-weight: normal;
+          color: $color-orange;
+        }
+        .em-booking-form-details {
+
+          .ticket-price,
+          .em-tickets-spaces {
+            width: 48%;
+            display: block;
+            float:left;
+            @include clearfix();
+
+            @media #{$mq-xs} {
+              width: 100%;
+            }
+          }
+
+          label {
+            width: auto;
+            padding-right: 10px;
+            word-wrap: break-word;
+            display: block;
+            float: none;
+          }
+          .ticket-price {
+            label {
+              font-family: $font-bold;
+              font-weight: normal;
+              width: 50%;
+              display: inline-block;
+            }
+          }
+
+          textarea,
+          input.input,
+          input.em-date-start {
+            width: 100%;
+            box-sizing:border-box;
+            background-color: #ddd;
+          }
+          input.input,
+          input.em-date-start {
+            height: 35px;
+          }
+
+          .em-attendee-fieldset {
+            clear: both;
+
+            .em-attendee-fields {
+              @include clearfix();
+              border-bottom: 3px solid black;
+              padding-bottom: 10px;
+              margin-bottom: 40px;
+
+              .attendee-heading {
+                font-family: $font-bold;
+                font-weight: normal;
+                margin-bottom: 20px;
+              }
+
+              > p {
+                width: 48%;
+                display: block;
+                float:left;
+                clear: none;
+                margin-bottom: 15px;
+
+                @media #{$mq-xs} {
+                  width: 100%;
+                }
+              }
+              p.input-field-attendee_prename,
+              p.input-field-attendee_name {
+                width:22%;
+                margin-right:4%;
+                float: left;
+              }
+              p.input-field-attendee_hotel {
+                width: 10%;
+                margin-right:4%;
+                float: left;
+              }
+
+              p.input-field-attendee_hotel_nights{
+                width: 15%;
+                display: none;
+              }
+              p.input-field-antendee_hotel_start {
+                width: 15%;
+                margin-right:4%;
+                display: none;
+
+              }
+
+              @media #{$mq-sm} {
+                p.input-field-attendee_hotel {
+                  width: 20%;
+                }
+                p.input-field-antendee_hotel_start {
+                  clear: both;
+                }
+                p.input-field-attendee_hotel_nights,
+                p.input-field-antendee_hotel_start {
+                  width: 22%;
+                }
+              }
+
+              @media #{$mq-xs} {
+                p.input-field-antendee_hotel_start,
+                p.input-field-attendee_hotel,
+                p.input-field-attendee_prename,
+                p.input-field-attendee_dssdfname,
+                p.input-field-attendee_hotel_nights {
+                  clear:both;
+                  float:left;
+                  width: 100%;
+                }
+              }
+            }
+          }
+          > p.input-user-field,
+          > p.input-group {
+            width: 48%;
+            display: block;
+            float: left;
+            clear: both;
+            margin-bottom: 15px;
+
+            @media #{$mq-xs} {
+              width: 100%;
+            }
+          }
+
+          > p.input-field-gesamtpreis_hidden {
+            display: none;
+          }
+
+          .gesamtpreis,
+          .em-booking-buttons {
+            clear: both;
+          }
+          .gesamtpreis {
+            padding-top: 30px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-top: 3px solid black;
+            font-family: $font-bold;
+            font-weight: normal;
+          }
+          .em-booking-buttons {
+            margin-bottom: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#page {
+  div#em-loading {
+    background-color: #333333;
+  }
+
+  .em-booking-message {
+    border-radius: 0;
+    border: 0 none;
+    color: #fff;
+    background-color: #60a542;
+    line-height: 1.3;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+
+    p {
+      color: #fff;
+    }
+
+    &:before {
+      display: inline-block;
+      font-family: FontAwesome;
+      font-style: normal;
+      text-transform: none;
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1;
+      text-indent: 0;
+    }
+  }
+
+  .em-booking-message-error {
+    background-color: #ecbe29;
+    color: #fff;
+
+    &:before {
+      content: "";
+      margin-right: 10px;
+    }
+  }
+
+  .em-booking-message-success {
+    background-color: #60a542;
+
+    &:before {
+      content: "";
+      margin-right: 10px;
+    }
+  }
+}

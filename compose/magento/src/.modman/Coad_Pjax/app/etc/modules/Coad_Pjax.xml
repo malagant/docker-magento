@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Coad_Pjax>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Coad_Pjax>
+    </modules>
+</config>

@@ -1,0 +1,30 @@
+<?php 
+
+/* @var $this Conlabz_Skylotec_Block_Page_Html_Footer_Contact */ 
+
+$contact = $this->getStoreContact();
+
+?>
+<div class="footer-block">
+    <address>
+    <?php if (! empty($contact)): ?>
+        <?php echo nl2br($contact) ?>
+    <?php else: ?>
+        <?php echo $this->getAddress('company_first') ?><br>
+        <?php echo $this->getAddress('street') ?><br>
+        <?php echo $this->getAddress('zip') . ' ' . $this->getAddress('city') ?><br>
+        <?php echo $this->getCountry() ?><br>
+        <?php echo $this->__('Fon %s', $this->getAddress('telephone')) ?><br>
+        <?php echo $this->__('Fax %s', $this->getAddress('fax')) ?>
+    <?php endif; ?>
+    </address>
+</div>
+<div class="footer-block contact-us">
+    <?php echo $this->__('Contact us:') ?>
+    <a href="<?php echo $this->getUrl('contacts') ?>" class="button">
+        <?php echo $this->__('Contact form') ?>
+    </a>
+</div>
+<div class="footer-block contact-phone">
+    <?php echo $this->getChildHtml('phone_form') ?>
+</div>

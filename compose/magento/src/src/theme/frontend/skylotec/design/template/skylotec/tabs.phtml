@@ -1,0 +1,12 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Tabs */ ?>
+<div class="tabs-container">
+    <ul class="list-tabs">
+        <?php foreach ($this->getTabs() as $tab): ?>
+        <li class="tab">
+            <a href="<?php echo $tab->getHref() ?>">
+                <?php echo $this->__($tab->getLabel()) ?>
+            </a>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

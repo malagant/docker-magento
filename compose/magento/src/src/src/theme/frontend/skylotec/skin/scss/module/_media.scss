@@ -1,0 +1,26 @@
+.video-thumbnail {
+    img {
+        width: 100%;
+    }
+    .video-link {
+        position: relative;
+        display: block;
+        @include icon($icon-play, 0);
+        &:before {            
+            $btn-play-size: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: $btn-play-size;
+            margin-top: -$btn-play-size / 2;
+            margin-left: -$btn-play-size / 2;
+            @include opacity(0.8);
+            @include transition(opacity .3s);
+        }
+        &:hover {
+            &:before {
+                @include opacity(1);
+            }
+        }
+    }
+}

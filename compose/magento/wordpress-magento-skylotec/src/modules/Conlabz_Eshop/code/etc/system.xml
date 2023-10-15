@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+    	<eshop>
+    		<label>Arendicom settings</label>
+    		<tab>general</tab>
+			<frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<keys translate="label" module="eshop">
+					<frontend_type>text</frontend_type>
+					<label>Arendicom settings</label>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<shop_id translate="label" module="eshop">
+							<label>Shop ID</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</shop_id>
+						<shop_secret translate="label" module="eshop">
+							<label>Shop Secret</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</shop_secret>
+						<language translate="label" module="eshop">
+							<label>Arendicom Checkout Language</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<source_model>eshop/config_languages</source_model>
+						</language>
+						<redirect_url translate="label" module="eshop">
+							<label>Redirect URL</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</redirect_url>
+					</fields>
+				</keys>
+			</groups>	
+		</eshop>
+    </sections>
+</config>

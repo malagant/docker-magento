@@ -1,0 +1,11 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Catalog_Product_View_Images */ ?>
+<?php $this->setLabels(array('d', 'a')) ?>
+<div class="detail-images">
+    <?php foreach ($this->getAllImages() as $_image): ?>
+    <div class="detail-image product-preview-image">
+        <a href="<?php echo $this->getZoomImageUrl($_image) ?>" data-rel="detail-image">
+            <img class="img-gallery-small"  src="<?php echo $this->getResizeUrl($_image)  ?>" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>">
+        </a>
+    </div>
+    <?php endforeach; ?>
+</div>

@@ -1,0 +1,174 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Contact */ ?>
+<form action="<?php echo $this->getUrl('support/index/phone') ?>" method="post" id="call-back-form" name="call-back-form">
+    <label class="phone">
+        <?php echo $this->__("You wish contact by telephone? We'll call you!") ?>
+    </label>
+    <div class="input-button">
+        <select name="country">
+            <?php foreach($this->getE164() as $country): ?>
+            <option value="<?php echo $country['value'] ?>"<?php echo ($country['value'] == $this->getCurrentCountry()) ? ' selected="selected"' : '' ?>>
+                +<?php echo $country['label'] ?>
+            </option>
+            <?php endforeach; ?>
+        </select>
+        <input placeholder="<?php echo $this->__('Phone') ?>" type="text" class="form-control required-entry" name="telephone" id="telephonenumber">
+        <input type="text" name="telephonevalidate" id="telephonevalidate" style="display:none">
+        <button type="submit" class="button" title="<?php echo $this->__('Request callback') ?>">
+            <i class="icon-angle-right"></i>
+        </button>
+    </div>
+</form>
+<div id="phone-details-form" style="display: none;">
+    <div style="margin: 0 11px">
+        <h2><?php echo $this->__('Call back') ?></h2>
+        <p><?php echo $this->__('Some additional information is required to identify our best matching contact for your request.') ?></p>
+        <form class="phone-details" action="<?php echo $this->getUrl('support/index/phone') ?>" method="post">
+            <div class="error-msgs"></div>
+            <div class="row">
+                <label class="col-xs-12">
+                    <?php echo $this->__('Your Name / Contact person') ?> *
+                    <input type="text" name="name" class="form-control required-entry">
+                </label>
+            </div>
+            <div class="row">
+                <label class="col-xs-12">
+                    <?php echo $this->__('Street') ?> *
+                    <input type="text" name="street" class="form-control required-entry">
+                </label>
+            </div>
+            <div class="row">
+                <label class="col-xs-3">
+                    <?php echo $this->__('Zip') ?> *
+                    <input type="text" name="zip" class="form-control required-entry">
+                </label>
+                <label class="col-xs-9">
+                    <?php echo $this->__('Country') ?> *
+                    <input type="text" name="country" class="form-control required-entry">
+                </label>
+            </div>
+            <div class="row">
+                <label class="col-xs-12">
+                    <?php echo $this->__('Topic') ?> *
+                    <input type="text" name="subject" class="form-control required-entry">
+                </label>
+            </div>
+            <div class="row">
+                <label class="col-xs-12">
+                    <?php echo $this->__("We'll call back on") ?> *
+                    <input type="text" name="phoneNumber" class="form-control required-entry">
+                </label>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type="hidden" name="countryCode">
+                    <button type="submit" class="button"><?php echo $this->__('Request call back') ?></button>
+                    <img class="loading" src="<?php echo $this->getSkinUrl('images/fancybox_loading.gif') ?>" alt="loading..." style="display:none">
+                    <span class="pull-right">
+                        <?php echo $this->__('* Required') ?>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+jQuery(function($) {
+    var phoneFormId = 'call-back-form';
+
+    function alertBox(msg)
+    {
+        $.fancybox({
+            content: '<h3><?php echo $this->__('Error') ?></h3><span>' + msg + '</span>'
+        });
+    }
+
+    function getCountryNameFromSelect(countryCode)
+    {
+        var country = '';
+        $('#country option').each(function() {
+            if ($(this).attr('value') == countryCode) {
+                country = $(this).text();
+                return;
+            }
+        });
+        return country;
+    }
+
+    function submitPhone($form)
+    {
+        var phoneNumber = $form.find('[name="telephone"]').val(),
+            countryCode = $form.find('[name="country"]').val(),
+            errorPhone  = '<?php echo $this->__('Please enter a valid phone number.') ?>',
+            formattedNumber = formatE164(countryCode, phoneNumber),
+            countryName = $.trim(getCountryNameFromSelect(countryCode));
+
+        if(!isValidNumber(phoneNumber, countryCode)) {
+            alertBox(errorPhone);
+            return;
+        }
+
+        var $detailForm = $('#phone-details-form');
+
+        $.fancybox({ content: $detailForm.html() });
+
+        $('.phone-details').find('[name="phoneNumber"]').val(formattedNumber);
+        $('.phone-details').find('[name="countryCode"]').val(countryCode);
+        $('.phone-details').find('[name="country"]').val(countryName);
+
+        $('.phone-details').on('submit', function(e) {
+            e.preventDefault();
+            var $form = $(this),
+                $errorContainer = $form.find('.error-msgs'),
+                phoneNumber = $form.find('[name="phoneNumber"]').val(),
+                countryCode = $form.find('[name="countryCode"]').val();
+
+            if(!isValidNumber(phoneNumber, countryCode)) {
+                $errorContainer.html('<div class="alert alert-danger fade in">' + errorPhone + '</div>');
+                return;
+            }
+
+            $.ajax({
+                url:        $form.attr('action'),
+                method:     'post',
+                dataType:   'json',
+                data:       $form.serialize(),
+                beforeSend: function() {
+                    $form.find(':input, .button').attr('disabled', true);
+                    $form.find('.loading').show();
+                },
+                success: function(xhr) {
+                    if (xhr.success) {
+                        $form[0].reset();
+                        $.fancybox({
+                            content: '<h3><?php echo $this->__('Your callback request') ?></h3><span>' + xhr.msg + '</span>' + '<noscript><div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1071419068/?value=1.00&amp;currency_code=EUR&amp;label=dZnYCIy8wAcQvJ3y_gM&amp;guid=ON&amp;script=0"/></div></noscript>'
+                        });
+
+	                    var google_conversion_id = 1071419068;
+	                    var google_conversion_language = "de";
+	                    var google_conversion_format = "2";
+	                    var google_conversion_color = "ffffff";
+	                    var google_conversion_label = "dZnYCIy8wAcQvJ3y_gM";
+	                    var google_conversion_value = 1.00;
+	                    var google_conversion_currency = "EUR";
+	                    var google_remarketing_only = false;
+
+                        image = new Image(1,1);
+                        image.src = "http://www.googleadservices.com/pagead/conversion/"+google_conversion_id+"/?label="+google_conversion_label+"&value="+google_conversion_value+"&amp;currency_code="+google_conversion_currency+"&guid=ON&script=0";
+                    } else {
+                        if (xhr.hasOwnProperty('errorMsg')) {
+                            $errorContainer.html('<div class="alert alert-danger fade in">' + xhr.errorMsg + '</div>');
+                        }
+                    }
+                    $form.find('.loading').hide();
+                    $form.find(':input, .button').attr('disabled', false);
+                }
+            });
+        });
+    }
+
+    $('#' + phoneFormId).on('submit', function(e) {
+        e.preventDefault();
+        submitPhone($(this));
+    });
+});
+</script>

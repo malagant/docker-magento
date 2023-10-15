@@ -1,0 +1,13 @@
+@function col-width($value) {
+    @if ($value != null and unitless($value)) {
+        @return 100% / $value;
+    }
+    @return $value;
+}
+
+@function offset-width($value) {
+    @if (unitless($value)) {
+        @return 100% - (100% / $value);
+    }
+    @return $value;
+}

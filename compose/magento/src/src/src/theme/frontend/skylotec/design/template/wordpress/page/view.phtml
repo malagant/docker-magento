@@ -1,0 +1,17 @@
+<?php $page = $this->getPage() ?>
+<?php if ($page): ?>
+<div class="page-view">
+    <?php $helper = $this->helper('wordpress') ?>
+    <?php $author = $page->getAuthor() ?>
+    <div class="post-view">
+        <div class="entry std">
+            <?php if ($page->isViewableForVisitor()): ?>
+                <?php echo $page->getPostContent() ?>
+            <?php else: ?>
+                <?php echo $this->getPasswordProtectHtml() ?>
+            <?php endif; ?>
+        </div>
+        <?php echo $this->getCommentsHtml() ?>
+    </div>
+</div>
+<?php endif; ?>

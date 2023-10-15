@@ -1,0 +1,15 @@
+<?php
+/* @var $this Conlabz_Skylotec_Block_Catalog_Product_View_Buy */
+$_product = $this->getProduct();
+$buttonTitle = $this->getButtonTitle() ?: 'Add to Cart';
+?>
+<?php if ($_product->isSalable()): ?>
+    <button type="button" title="<?php echo $this->__($buttonTitle) ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
+        <?php echo $this->__($buttonTitle) ?>
+    </button>
+<?php endif ?>
+<div class="cart-info">
+    <p>
+        <?php echo $this->__('Please note that you purchase every article in our online store directly from Arendicom GmbH, Skylotec\'s Checkout-Partner. If you require further information about the Arendicon System, please refer to %se-shop-direct.com.%s', '<a href="http://e-shop-direct.com/" target="_blank">', '</a>') ?>
+    </p>
+</div>

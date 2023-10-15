@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Conlabz_PdfPrints>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Conlabz_Download/>
+            </depends>
+        </Conlabz_PdfPrints>
+    </modules>
+</config>

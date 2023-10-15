@@ -1,0 +1,66 @@
+<!--
+Copyright © 2018 Wyomind. All rights reserved.
+See LICENSE.txt for license details.
+-->
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Setting'); ?> </h4>
+    </div>
+    <div class="fieldset" id="cron-setting">
+        <?php
+        $day = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+        $lines = '';
+
+        for ($hour = 0; $hour < 12; $hour++) {
+            $am = str_pad($hour, 2, '0', STR_PAD_LEFT);
+            $pm = $hour + 12;
+
+            $lines .= '<tr>';
+
+            if ($hour < 7) {
+                $lines .= '<td class="cron-d-box">'
+                            . '<input class="cron-box" value="' . $day[$hour] . '" id="d-' . $day[$hour] . '" type="checkbox"/>'
+                            . '<label for="d-' . $day[$hour] . '">' . '&nbsp;' . $this->__($day[$hour]) . '</label>'
+                        . '</td>';
+            }
+
+            if ($hour === 7) {
+                $lines .= '<td rowspan="5"></td>';
+            }
+
+            $lines .= '<td class="cron-h-box">'
+                        . '<input class="cron-box" value="' . $am . ':00" id="h-' . $am . '00" type="checkbox" />'
+                        . '<label for="h-' . $am . '00">' . '&nbsp;' . $am . ':00 AM' . '</label>'
+                    . '</td>'
+                    . '<td class="cron-h-box">'
+                        . '<input class="cron-box" value="' . $am . ':30" id="h-' . $am . '30" type="checkbox" />'
+                        . '<label for="h-' . $am . '30">' . '&nbsp;' . $am . ':30 AM' . '</label>'
+                    . '</td>'
+                    . '<td class="cron-h-box">'
+                        . '<input class="cron-box" value="' . $pm . ':00" id="h-' . $pm . '00" type="checkbox" />'
+                        . '<label for="h-' . $pm . '00">' . '&nbsp;' . $pm . ':00 PM' . '</label>'
+                    . '</td>'
+                    . '<td class="cron-h-box">'
+                        . '<input class="cron-box" value="' . $pm . ':30" id="h-' . $pm . '30" type="checkbox" />'
+                        . '<label for="h-' . $pm . '30">' . '&nbsp;' . $pm . ':30 PM' . '</label>'
+                    . '</td>'
+                . '</tr>';
+        }
+
+
+        $html .= '<table class="schedule">'
+                    . '<thead>'
+                        . '<tr>'
+                            . '<th>' . $this->__('Days of the week') . '</th>'
+                            . '<th colspan="4">' . $this->__('Hours of the day') . '</th>'
+                        . '</tr>'
+                    . '</thead>'
+                    . '<tbody>' . $lines . '</tbody>'
+                . '</table>';
+
+        echo $html;
+        ?>
+    </div>
+</div>
+
+

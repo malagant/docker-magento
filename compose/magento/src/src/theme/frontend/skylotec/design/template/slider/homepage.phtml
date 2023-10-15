@@ -1,0 +1,39 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Slider */ ?>
+<?php $slides = $this->getSlides() ?>
+<?php if (count($slides)): ?>
+<div class="slider">
+    <?php foreach ($slides as $slide): ?>
+        <?php 
+            $image = $slide->getMetaValue('image');
+            $url = $slide->getMetaValue('url');
+            if (is_array($url)) {
+                $url = $url['url'];
+            }
+        ?>
+        <div class="slide" style="background-image: url('<?php echo isset($image['sizes']['large']) ? $image['sizes']['large'] : '' ?>');">
+            <div class="slide-inner">
+                <div class="box-title">
+                    <?php if ($url): ?>
+                        <a href="<?php echo $url ?>" target="_blank">
+                    <?php endif ?>
+                        <h2 class="headline">
+                            <?php echo $slide->getPostTitle() ?>
+                        </h2>
+                    <?php if ($url): ?>
+                        </a>
+                    <?php endif ?>
+                    <div class="subtitle">
+                        <?php echo $slide->getPostContent() ?>
+                    </div>
+                </div>
+                <?php if ($url): ?>
+                <a href="<?php echo $url ?>" target="_blank" title="<?= $this->escapeHtml($this->__('More Information')) ?>">
+                <?php endif ?>
+                <?php if ($url): ?>
+                </a>
+                <?php endif ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>

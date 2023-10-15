@@ -1,0 +1,13 @@
+<h1 class="page-title"><?php echo Mage::helper("dstorage")->__("Downloads")?></h1>
+<!--<?php echo $this->getChildHtml('selector') ?>
+<?php echo $this->getChildHtml('list') ?>
+<a class="button" href="#files-download-form" id="download-request">
+    <?php echo Mage::helper("dstorage")->__("Request Download Package")?>
+</a>
+<?php echo $this->getChildHtml('form'); ?>-->
+<link href="<?= Mage::helper('dstorage')->getSkyDownloadCss() ?>" rel="stylesheet">
+
+<app-skydownload class="bootstrap" mode="portal" language="<?php echo htmlspecialchars(substr(Mage::app()->getLocale()->getLocaleCode(), 0, 2)); ?>">
+</app-skydownload>
+
+<script type="text/javascript" src="<?= Mage::helper('dstorage')->getSkyDownloadUrl() ?>"></script>

@@ -1,0 +1,3 @@
+code/                           app/code/local/Conlabz/SocialMedia/
+Conlabz_SocialMedia.xml         app/etc/modules/Conlabz_SocialMedia.xml
+design/frontend/layout/conlabz/socialmedia.xml app/design/frontend/base/default/layout/conlabz/socialmedia.xml

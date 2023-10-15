@@ -1,0 +1,92 @@
+.header {
+    @extend .clearfix;
+    overflow: visible;
+    padding: 0 60px 15px 35px;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+    height: 116px;
+    @include box-sizing(border-box);
+    @media #{$mq-sm} {
+        padding: 0 20px 15px 20px;          
+    }
+    @media #{$mq-xs} {
+       height: 100px;
+       padding: 20px;
+       position: absolute;
+    }    
+    .logo {
+        width: 200px;
+        margin: 75px 0 0;
+        padding: 0;
+        float: left;
+        @media #{$mq-xs} {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        img {
+            display: block;
+        }
+        strong { display: none; }
+    }
+    .navbar-toggle {
+        display: none;
+        float: right;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        font-size: 56px;
+        @include icon($icon-bars, 0, before, true);
+        @media #{$mq-xs} {
+            display: block;
+        }
+    }
+}
+
+.quick-access {
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    @media #{$mq-sm} {
+        right: 20px;
+    }
+    .top-links {
+        @extend .no-list-style;
+    }
+    li {
+        padding-left: 45px;
+        display: inline-block;
+        @media #{$mq-sm} {
+            padding-left: 15px;
+        }
+        @media #{$mq-xs} {
+            display: block;
+        }
+    }
+    .language:first-child:after {
+        content: " | "
+    }
+    a,
+    .language {
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 100;
+        text-decoration: none;
+        font-size: 0.8em;
+    }
+    @media #{$mq-xs} {
+        position: static;
+        background: #fff;
+        margin: 0 -20px;
+        padding: 10px 0;
+        display: none;
+        li {
+            display: block;
+            padding: 10px 25px;
+            font-size: 1.3em;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<div class="universal-search-grid">
+    <div id="universal-search-filter">&nbsp;</div>
+    <div id="universal-search-input">&nbsp;</div>
+    <div id="universal-search-output">Im Moment gibts noch nichts zu sehen...</div>
+</div>
+
+<script>
+    // OXOMI JavaScript Bibliothek einbinden und laden
+    setTimeout(function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = (window.location.protocol == 'https:' ? 'https:' : 'http:')
+            + "//" + (typeof oxomi_server == 'undefined' ? 'oxomi.com' : oxomi_server)
+            + "/assets/frontend/oxomi.js";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }, 0);
+
+    // Wir warten bis die OXOMI JavaScript Bibliothek geladen ist...
+    function oxomi_ready() {
+        // Initialisierung
+        oxomi.init({
+            "portal": "3001742",
+            "accessToken": "200b0f5df0fdfc189671d16c8a9c1c6a",
+            "roles": "",
+            "infoplayItemLookup": function (infoplayObj, nextFunc) {
+            },
+            "user": "_showcase"
+        });
+        // Funktionsaufruf, um Portaloberflche anzuzeigen
+        oxomi.portalSearch({
+            "target": "#universal-search-output",
+            "input": "#universal-search-input",
+            "showDetails": true,
+            "withDownload": true,
+            "filterBox": "#universal-search-filter",
+            "topBrands": true,
+            "showAnchorLinks": true,
+            "updatePortalUrl": true,
+            "singlePage": true
+        });
+    };
+</script>

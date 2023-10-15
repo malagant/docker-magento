@@ -1,0 +1,39 @@
+@import 'vars';
+@include icon-font();
+
+.icon {
+    @include icon-main();
+    text-indent: 0;
+}
+.icon-before {
+    &:before {
+        @extend .icon
+    }
+}
+.icon-after {
+    &:after {
+        @extend .icon
+    }
+}
+@mixin icon($icon: "\f192", $margin: $icon-margin, $position: before, $replace: false) {
+    @if ($position == 'before') {
+        @extend .icon-before;
+    } @else {
+        @extend .icon-after;
+    }
+    @if ($replace) {
+        & > span {
+            display: none;
+        }
+    }
+    &:#{$position} {
+        content: $icon;
+        @if ($margin > 0) {
+            @if $position == 'before' {
+                margin-right: $margin;
+            } @else  {
+                margin-left: $margin;
+            }
+        }
+    }
+}

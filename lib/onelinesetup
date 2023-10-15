@@ -1,8 +1,8 @@
 #!/bin/bash
-DOMAIN=${1:-magento2.test}
+DOMAIN=${1:-magento1.test}
 VERSION=${2:-2.3.0}
 
-curl -s https://raw.githubusercontent.com/markoshust/docker-magento/master/lib/template|bash -s - magento-2
+curl -s https://raw.githubusercontent.com/malagant/docker-magento/master/lib/template|bash -s - magento-2
 bin/download $VERSION
 echo "127.0.0.1 $DOMAIN" | sudo tee -a /etc/hosts
 bin/start

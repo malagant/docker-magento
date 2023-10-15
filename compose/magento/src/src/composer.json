@@ -1,0 +1,85 @@
+{
+    "name": "conlabz/mage-skylotec",
+    "authors": [
+        {
+            "name": "conlabz Gmbh",
+            "email": "info@conlabz.de"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {
+        "local": {
+            "type": "path",
+            "url": "./packages/*"
+        },
+        "0": {
+            "type": "artifact",
+            "url": "./packages/"
+        },
+        "1": {
+            "type": "vcs",
+            "url": "https://github.com/sreichel/magento-Aromicon-GUA.git"
+        },
+        "2": {
+            "type": "composer",
+            "url": "https://packages.firegento.com"
+        }
+    },
+    "require": {
+        "aoepeople/aoe_scheduler": "^1.5",
+        "aromicon/google-universal-analytics": "^1.2",
+        "avstudnitz/fast-simple-import": "^0.8.2",
+        "aydin-hassan/magento-core-composer-installer": "^1.5",
+        "colinmollenhour/magento-redis-session": "^2.0",
+        "colinmollenhour/modman": "^1.12",
+        "conlabz/mage-one": "^1.9.92",
+        "conlabz/magex_autovat": "^1.0",
+        "conlabz/magex_autoversioning": "^1.0",
+        "conlabz/magex_crconnect": "^3.4",
+        "conlabz/magex_multiselect": "^1.0",
+        "conlabz/magex_schema": "^1.0",
+        "conlabz/magex_skuroute": "^1.0",
+        "conlabz/magex_varnishreloader": "^2.0",
+        "conlabz/symmetrics-mrg_invoice_payment": "^1.0",
+        "conlabz/symmetrics-mrg_securepassword": "^1.0",
+        "conlabz/symmetrics-mrg_setmeta_perproduct": "^1.0",
+        "conlabz/symmetrics-mrg_stock_indicator": "^1.0",
+        "conlabz/symmetrics-mrg_tweaks_german": "^1.0",
+        "dompdf/dompdf": "^2.0",
+        "erusev/parsedown": "^1.7",
+        "ezyang/htmlpurifier": "^4.16",
+        "fishpig/magento1-wordpress-integration": "4.6.1.38",
+        "magento-hackathon/magento-composer-installer": "^3.2",
+        "phoenix/varnish": "dev-master",
+        "riconeitzel/german-localepack-de-de": "^1.9",
+        "symmetrics/mrg_agreement": "^1.0",
+        "symmetrics/mrg_config_german": "^1.0",
+        "symmetrics/mrg_config_texts_german": "^1.0.0",
+        "symmetrics/mrg_delivery_time": "^1.0",
+        "symmetrics/mrg_imprint": "^1.0",
+        "symmetrics/mrg_lib_dompdf": "^1.0",
+        "symmetrics/mrg_pdfprinter": "^1.0",
+        "symmetrics/trustedshops_trustedrating": "^1.0"
+    },
+    "require-dev": {
+        "aoepeople/aoe_profiler": "^0.3.0",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "symfony/finder": "^3.4"
+    },
+    "extra": {
+        "magento-root-dir": "htdocs",
+        "magento-force": "override",
+        "magento-deploystrategy": "copy",
+        "magento-deploystrategy-dev": "symlink"
+    },
+    "autoload": {
+        "files": [
+            "htdocs/lib/Dompdf/Helpers.php"
+        ]
+    }
+}

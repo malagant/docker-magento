@@ -1,0 +1,38 @@
+<?php
+$categoryTitle = $this->getRequest()->getParam('division') === 'sport'
+    ? 'sports'
+    : 'branches';
+?>
+<form class="download-bar" action="" method="GET">
+    <div class="filter">
+        <select name="file_category">
+            <option value=""><?php echo $this->__('All materials') ?></option>
+            <?php foreach ($this->getCategories() as $category): ?>
+            <option value="<?php echo $category->getFileCategory() ?>"<?php if ($this->isCategoryActive($category->getFileCategory())): echo ' selected="selected"'; endif ?>>
+                <?php echo $this->__($category->getCategoryTitle()) ?>
+            </option>
+            <?php endforeach; ?>
+        </select>        
+    </div>
+    <div class="filter">
+        <select name="product_category">
+            <option value=""><?php echo $this->__('All ' . $categoryTitle) ?></option>
+            <?php foreach ($this->getProductCategories() as $productCategory): ?>
+            <option value="<?php echo $this->escapeHtml($productCategory) ?>"<?php  if ($this->isProductCategoryActive($productCategory)): echo ' selected="selected"'; endif ?>>
+                <?php echo $this->__($productCategory) ?>
+            </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="search">
+        <input type="text" name="qd" value="<?php echo $this->getSearchTerm() ?>" placeholder="<?php echo $this->__('Search') ?>">
+        <button class="button" type="submit"><?php echo $this->__('Go') ?></button>
+    </div>
+</form>
+<script>
+    (function($) {
+        $('.download-bar select').on('change', function() {
+            $(this).closest('form').submit();
+        });
+    })(jQuery);
+</script>

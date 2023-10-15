@@ -1,0 +1,3 @@
+code/                           app/code/local/Conlabz/Wordpress/
+Conlabz_Wordpress.xml           app/etc/modules/Conlabz_Wordpress.xml
+locale/de_DE.csv                app/locale/de_DE/Conlabz_Wordpress.csv

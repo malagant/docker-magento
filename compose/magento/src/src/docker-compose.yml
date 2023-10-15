@@ -1,0 +1,56 @@
+# Mark Shust's Docker Configuration for Magento (https://github.com/markoshust/docker-magento)
+# Version 20.1.0
+
+version: "3"
+
+services:
+  app:
+    build: images/nginx
+    ports:
+      - "80:8000"
+      - "443:8443"
+    links:
+      - db
+      - phpfpm
+    volumes: &appvolumes
+      - ./src:/var/www/html:delegated
+      - ~/.composer:/var/www/.composer:delegated
+      - appdata:/sock
+
+  phpfpm:
+    image: markoshust/magento-php:5.6-fpm-6
+    links:
+      - db
+    volumes: *appvolumes
+    # Linux only: host.docker.internal doesn't exist https://github.com/docker/for-linux/issues/264
+    # Uncomment two lines below & replace IP with result of: docker run --rm alpine ip route | awk 'NR==1 {print $3}'
+    #extra_hosts:
+    #  - "host.docker.internal:IP"
+
+  # Disabling cron by default as it uses higher CPU, enable if needed
+  #cron:
+  #  image: markoshust/magento-php:5.6-fpm-6
+  #  user: root
+  #  command: /usr/local/bin/cronstart
+  #  tty: true
+  #  links:
+  #    - db
+  #  volumes: *appvolumes
+
+  db:
+    image: percona:5.7
+    ports:
+      - "3306:3306"
+    env_file: env/db.env
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  elasticsearch:
+    image: elasticsearch:5.6
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+volumes:
+  appdata:
+  dbdata:

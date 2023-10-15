@@ -1,0 +1,30 @@
+@-moz-keyframes test {
+  0%, 100% {
+    background-color: red;
+  }
+  50% {
+    background-color: blue;
+  }
+}
+@-webkit-keyframes test {
+  0%, 100% {
+    background-color: red;
+  }
+  50% {
+    background-color: blue;
+  }
+}
+@keyframes test {
+  0%, 100% {
+    background-color: red;
+  }
+  50% {
+    background-color: blue;
+  }
+}
+/* line 11, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/animation.scss */
+.animation {
+  -moz-animation: test;
+  -webkit-animation: test;
+  animation: test;
+}

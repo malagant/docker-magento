@@ -1,0 +1,265 @@
+<?php $_product = $this->getProduct(); ?>
+<?php $passed = false;?>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style="font-family:Helvetica">
+<div id="watermark" ><img src="<?php echo $this->getSkinUrl("images/pdfprint/print-bg2.png") ?>" height="100%"></div>
+<script type="text/php">
+            if ( isset($pdf) ) {
+            $font = $fontMetrics->getFont("helvetica", "normal");
+            $pdf->page_text(290, 793, "www.skylotec.com | <?php echo $this->__("Data sheet") ?>, <?php echo $this->__("Date") ?>: ".date("d.m.Y"), $font, 11, array(0.569,0.569,0.569));
+
+            //                $pdf->image("<?php echo Mage::getBaseDir("media") . "/pdfprint/logo.png"; ?>", "png", 300, 30, 260, 74);
+
+            //                $pdf->image("<?php echo Mage::getBaseDir("media") . "/pdfprint/footer.png"; ?>", "png", 0, 590, 200, 252);
+
+            }
+        </script>
+<style>
+    .footer { position: fixed; bottom: 0px; }
+
+    @page {
+        margin-bottom: 100px;
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+    #watermark { position: fixed; top: -120px; left: -10px; height: 1128px; margin-left: 0px; z-index: -1000; }
+    #watermark2 { position: absolute; top: -125px; left: -15px; height: 1128px; margin-left: 0px; z-index: -1000;}
+    html { margin: 120px 0 0 0px; font-size:14px; color: #3c3c3b;}
+    #content { margin-top: 0px; margin-left: 0px; margin-right: 70px; }
+    #content h2 { color: #f4791f; font-size: 30px; margin-left: 70px; margin-top: 10px; /*font-family: 'square-721-bt';*/ font-weight: bold; margin-bottom: 0px;}
+    #top-content { margin-top: 0px; margin-left: 70px; margin-right: 70px; }
+    #top-content h2 { color: #f4791f; font-size: 30px; margin-top: 10px; /*font-family: 'square-721-bt';*/ font-weight: bold; margin-bottom: 0px;}
+    /*#images { position:absolute; left: 380px; top: 0px; }*/
+    #attribute_groups { list-style: none; }
+    #header { margin-left: 70px; margin-right: 70px; color: #f57921; font-weight: normal; }
+    #header h2 { font-weight: normal; color: #909090; font-size: 30px; margin-bottom: 0px;/* font-family: 'square-721-bt';*/}
+    #details-table {
+        width: 740px;
+        border-spacing: 0px;
+    }
+    #g-header{
+        /*font-family: 'square-721ex-bt';*/
+    }
+    .description{
+        padding-top: 40px;
+    }
+    .description h2{
+        /*font-family: 'square-721ex-bt';*/
+    }
+    .description h3{
+        /*font-family: 'square-721ex-bt';*/
+    }
+    .description h4{
+        /*font-family: 'square-721ex-bt';*/
+    }
+    .with-border{
+        border-bottom: 1px solid #878787;
+    }
+    #details-table .with-border{
+        border-bottom: 1px solid #878787;
+        width: 155px;
+        padding-top: 3px;
+        padding-bottom: 5px;
+    }
+    .info{
+        display:none;
+    }
+    #info-table{
+        width: 700px;
+    }
+    #info-table h3{
+        /*font-family: 'square-721-bt';*/
+        margin-bottom: 10px;
+    }
+    #info-table td{
+        width: 50%;
+        padding-right: 35px;
+    }
+    .first-empty{ width: 20px; }
+    .all-details-info h3{
+        margin-top: 20px;
+        /*font-family: 'square-721-bt';*/
+    }
+</style>
+
+<div id="header">
+    <h2><?php echo $this->__("Data sheet") ?></h2>
+</div>
+<div id="top-content">
+    <h2><?php echo $_product->getName(); ?></h2>
+    <div id="images">
+        <table>
+            <tr>
+                <td class="main-image">
+                    <?php
+                    $mainImageProduct = $_product;
+                    ?>
+                    <img width="350" src="<?php echo Mage::helper('catalog/image')->init($_product, 'image')->keepFrame(true)->constrainOnly(true)->keepAspectRatio(true)->resize(400, 600); ?>" />
+                </td>
+                <td style="padding-top: 10px;">
+                    <?php $i = 0;
+                    foreach ($mainImageProduct->getMediaGalleryImages() as $_image): ?>
+                        <?php if ($_image->getLabel() === "s" && $_image->getFile() != $mainImageProduct->getImage()): $i++; ?>
+                            <img src="<?php echo Mage::helper('catalog/image')->init($mainImageProduct, 'thumbnail', $_image->getFile())->keepFrame(true)->constrainOnly(true)->keepAspectRatio(true)->resize(300, 300); ?>" /><br /><br />
+                        <?php endif; ?>
+                        <?php
+                        if ($i > 1) {
+                            break;
+                        }
+                    endforeach;
+                    ?>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <style>
+        .main-image{
+        <?php if ($i > 0) { ?>
+            padding-left: 80px;
+        <?php } else { ?>
+            padding-left: 170px;
+        <?php } ?>
+            padding-right: 20px;
+            padding-top: 0px;
+            padding-bottom: 50px;
+        }
+    </style>
+    <div id="general">
+        <div id="g-header" style="font-size: 20px;margin-bottom: 20px;"><?php echo $this->__("GENERAL") ?></div>
+        <?php
+        $baseAttributes = array();
+        $counter = 0;
+        if ($_product->getSku()) {
+            $productAttribute = $this->getProduct()->getResource()->getAttribute('sku');
+            $productAttribute->unsetData("store_label");
+            $baseAttributes[$counter]['label'] = $productAttribute->getStoreLabel(Mage::app()->getStore()->getId());
+            $baseAttributes[$counter]['value'] = $_product->getSku();
+            $counter++;
+        }
+        if ($_product->getEClassNummer()) {
+            $productAttribute = $this->getProduct()->getResource()->getAttribute('e_class_nummer');
+            $productAttribute->unsetData("store_label");
+            $baseAttributes[$counter]['label'] = $productAttribute->getStoreLabel(Mage::app()->getStore()->getId());
+            $baseAttributes[$counter]['value'] = $_product->getEClassNummer();
+            $counter++;
+        }
+        if ($_product->getEan()) {
+            $productAttribute = $this->getProduct()->getResource()->getAttribute('ean');
+            $productAttribute->unsetData("store_label");
+            $baseAttributes[$counter]['label'] = $productAttribute->getStoreLabel(Mage::app()->getStore()->getId());
+            $baseAttributes[$counter]['value'] = $_product->getEan();
+            $counter++;
+        }
+        if ($_product->getZollNr()) {
+            $productAttribute = $this->getProduct()->getResource()->getAttribute('zoll_nr');
+            $productAttribute->unsetData("store_label");
+            $baseAttributes[$counter]['label'] = $productAttribute->getStoreLabel(Mage::app()->getStore()->getId());
+            $baseAttributes[$counter]['value'] = $_product->getZollNr();
+            $counter++;
+        }
+        if ($_product->getNorm()) {
+            $productAttribute = $this->getProduct()->getResource()->getAttribute('norm');
+            $productAttribute->unsetData("store_label");
+            $baseAttributes[$counter]['label'] = $productAttribute->getStoreLabel(Mage::app()->getStore()->getId());
+            $values = explode(",", $_product->getResource()->getAttribute('norm')->getFrontend()->getValue($_product));
+            $baseAttributes[$counter]['value'] = implode("<br />", $values);
+            $counter++;
+        }
+        ?>
+        <table cellspacing="0" id="details-table">
+            <?php foreach ($baseAttributes as $key => $baseAttribute) { ?>
+                <?php if ($key % 2 == 0) { ?>
+                    <tr>
+                <?php } ?>
+                <td class="with-border"><?php echo $baseAttribute['label'] ?>:</td>
+                <td class="with-border"><?php echo $baseAttribute['value']; ?></td>
+                <td class="<?php if ($key % 2 == 0) { ?>first-empty<?php } ?>"> </td>
+                <?php if (($key + 1) % 2 == 0) { ?>
+                    </tr>
+                <?php } ?>
+            <?php } ?>
+        </table>
+    </div>
+</div>
+<div style="page-break-before: always;"></div>
+<div id="watermark" ><img src="<?php echo $this->getSkinUrl("images/pdfprint/print-bg2.png") ?>" height="100%"></div>
+<div id="header" >
+    <h2><?php echo $this->__("Data sheet") ?></h2>
+</div>
+
+<div id="content">
+
+    <h2><?php echo $_product->getName(); ?></h2>
+
+    <ul style="padding-left: 0px; page-break-inside: auto; text-align: justify; text-justify:inter-word;">
+        <li style="list-style: none; display:inline-block; width: 300px; padding-right: 25px; padding-left: 70px; text-align: justify; text-justify:inter-word;">
+            <?php echo nl2br($_product->getDescription()) ?>
+        </li>
+    </ul>
+    <ul style="position: absolute; left: 375px; top: 10px; ">
+        <li style="list-style: none; display:inline-block; width: 340px;">
+
+            <div class="all-details-info" style="width:100%; margin-top: 30px; margin-bottom: 130px;">
+                <?php $groupCounter = 0;
+                $attributesAll = $this->getProductAttributes();
+                $attributesAllAmount = 0;
+                $attributesAmountCounter = 0;
+                ?>
+                <?php
+                foreach ($attributesAll as $attributeGroup => $productAttributes): ?>
+                <?php $attributesAllAmount++; ?>
+                <div style="page-break-inside:avoid">
+                    <h3 style="margin-left: 1px; font-weight: normal;"><?php echo strtoupper($this->__($this->getGroupTitle($attributeGroup))) ?></h3>
+                    <?php foreach ($productAttributes as $attributeCode => $attribute): ?>
+                        <?php
+                        $attributeIcons = false; //Mage::helper("skylotecdesign")->getAttributeIcons($this->getProduct(), $attributeCode);
+                        ?>
+                        <table cellspacing="0"  style="margin-left: 0px; padding-left: 0px; border-spacing: 0px; width: 320px;">
+                            <?php
+                            $line = true;
+                            if ($attribute['value'] || $attribute['label']) {
+                                if (strlen($attribute['value']) > 22 || strlen($attribute['label']) > 23) {
+                                    $line = false;
+                                }
+                            }
+                            ?>
+                            <?php if ($line) { ?>
+                                <tr>
+                                    <td class="<?php if (!$attributeIcons) { ?>with-border<?php } ?>" style="width: 160px;"><?php echo $attribute['label']; ?><?php if ($attribute['value']): ?>:<?php endif; ?></td><td class="<?php if (!$attributeIcons) { ?>with-border<?php } ?>" style="width: 160px;"><?php if ($attribute['value']): ?><?php echo Mage::helper("pdfprints")->getCertificateInstance($attribute['value']); ?><?php else: ?>&nbsp;<?php endif; ?></td>
+                                </tr>
+                            <?php }else { ?>
+                                <tr>
+                                    <td style="width: 320px;"><?php echo $attribute['label']; ?><?php if ($attribute['value']): ?>:<?php endif; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="<?php if (!$attributeIcons) { ?>with-border<?php } ?>" style="width: 320px;"><?php if ($attribute['value']): ?><?php echo Mage::helper("pdfprints")->getCertificateInstance($attribute['value']); ?><?php else: ?>&nbsp;<?php endif; ?></td>
+                                </tr>
+                            <?php } ?>
+                        </table>
+                        <?php $attributesAmountCounter++;?>
+                    <?php endforeach; ?>
+                </div>
+                <?php $groupCounter++; ?>
+                <?php if ($passed == false && $attributesAllAmount != sizeof($attributesAll) && sizeof($attributesAll) > 1 && $attributesAmountCounter > 9): ?>
+                <?php $passed = true;?>
+            </div>
+        </li>
+    </ul>
+    <div id="watermark2" style="page-break-before: always;" ><img src="<?php echo $this->getSkinUrl("images/pdfprint/print-bg2.png") ?>" height="100%"></div>
+    <ul style="position: absolute; left: 375px; top: 10px; ">
+        <li style="list-style: none; display:inline-block; width: 340px;">
+            <div class="all-details-info" style="width:100%; margin-top: 30px; margin-bottom: 130px;">
+                <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>    

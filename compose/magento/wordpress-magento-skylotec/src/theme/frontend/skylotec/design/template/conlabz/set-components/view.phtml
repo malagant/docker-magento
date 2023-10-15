@@ -1,0 +1,13 @@
+<?php
+/* @var $this Mage_Catalog_Block_Product_View */
+$product = $this->getProduct();
+?>
+<div class="set-component-view">
+    <h2 class="col-xs-12"><?php echo $this->escapeHtml($product->getName()) ?></h2>
+        <div class="product-attributes col-xs-6">
+        <?php echo $this->getChildHtml('attributes') ?>
+    </div>  
+    <div class="product-image col-xs-6">
+        <img src="<?php echo $this->helper('catalog/image')->init($product, 'image')->resize(250)->backgroundColor(array(24, 27, 31)) ?>" alt="">
+    </div>   
+</div>

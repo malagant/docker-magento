@@ -1,0 +1,15 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/background-clip.scss */
+.background-clip {
+  -moz-background-clip: border;
+  -o-background-clip: border-box;
+  -webkit-background-clip: border;
+  background-clip: border-box;
+}
+
+/* line 5, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/background-clip.scss */
+.background-clip-multiple {
+  -moz-background-clip: border, padding, content;
+  -o-background-clip: border-box, padding-box, content-box;
+  -webkit-background-clip: border, padding, content;
+  background-clip: border-box, padding-box, content-box;
+}

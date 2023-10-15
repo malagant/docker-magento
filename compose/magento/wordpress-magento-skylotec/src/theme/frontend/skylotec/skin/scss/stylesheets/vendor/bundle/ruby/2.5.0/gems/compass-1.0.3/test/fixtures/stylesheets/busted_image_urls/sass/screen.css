@@ -1,0 +1,24 @@
+/* line 1, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/busted_image_urls/sass/screen.sass */
+.showgrid {
+  background-image: url('../../../../../../../../../../../../images/grid.png?1585751653');
+}
+
+/* line 4, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/busted_image_urls/sass/screen.sass */
+.inlinegrid {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUEAYAAACv1qP4AAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAZ0lEQVRYw+3QwQ2AIBAFUTEUwI3+uzN7gDscsIgxEuO8An52J11X73OudfxMraXkzHfO3Y98nQEhA0IGhAwIGRAyIGRAyICQASEDQgaEDAgZEDIgZEDIgJABoZzSGK3tPuN9ERFP7Nw4fg+c5g8V1wAAAABJRU5ErkJggg==');
+}
+
+/* line 7, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/busted_image_urls/sass/screen.sass */
+.no-buster {
+  background-image: url('../../../../../../../../../../../../images/grid.png');
+}
+
+/* line 10, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/busted_image_urls/sass/screen.sass */
+.feed {
+  background-image: url('../../../../../../../../../../../../images/feed.png?1585751653');
+}
+
+/* line 13, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/busted_image_urls/sass/screen.sass */
+.dk {
+  background-image: url('../../../../../../../../../../../../images/flags/dk.png?1585751653');
+}

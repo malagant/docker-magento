@@ -1,0 +1,25 @@
+@media #{$mq-xs} {
+    .header {
+        .menu {
+            position: absolute;
+            width: $menu-translate;
+            right: -$menu-translate;
+            top: 0;
+            display: none;
+        }
+    }
+    .page-wrapper {
+        @include transition(transform .4s);
+    }
+    .menu-open {
+        .page-wrapper {
+            @include transform(translate3d(-$menu-translate, 0, 0));
+        }
+        .nav {
+            display: block;
+        }
+        .header .menu {
+            display: block;
+        }
+    }
+}

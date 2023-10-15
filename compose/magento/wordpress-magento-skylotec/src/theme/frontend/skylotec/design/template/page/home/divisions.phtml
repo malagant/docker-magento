@@ -1,0 +1,47 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Page_Home_Divisions */ ?>
+<?php
+$helper = $this->helper('catalog/output');
+?>
+<div class="divisions-home">
+<ul>
+<?php foreach ($this->getDivisions() as $categoryId => $division): ?>
+    <?php $this->registerCategory($division) ?>
+    <li class="division-<?php echo $categoryId ?>">
+        <div class="item">
+            <h4>
+                <a href="<?php echo $division->getUrl() ?>">
+                    <?php echo $this->escapeHtml($division->getName()) ?>
+                </a>
+            </h4>
+            <div class="sub-categories">
+            <?php foreach ($this->getChildCategories($division) as $childCategory): ?>
+                <a class="sub-category" href="<?php echo $childCategory->getUrl() ?>">
+                    <span class="icon-skylotec" style="background-image: url(<?php echo Mage::getBaseUrl('media').'catalog/category/icons/'. $childCategory->getIcon() ?>)"></span>
+                    <span class="sub-category-name"><?php echo $this->escapeHtml($childCategory->getName()) ?></span>
+                </a>
+            <?php endforeach; ?>
+            </div>
+            <div class="new-products">
+                <h4><?php echo $this->__('Neuheiten %s', $this->escapeHtml($division->getName())) ?></h4>
+                <ul>
+                <?php foreach ($this->getNewProducts($division) as $product): ?>                    
+                    <li>
+                        <a href="<?php echo $product->getProductUrl() ?>">
+                            <div class="product-image">
+                                <?php $productName = $helper->productAttribute($product, $product->getName(), 'name'); ?>
+                                <img
+                                    src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(150, 185); ?>"
+                                    alt="<?php echo $productName ?>"
+                                >
+                            </div>
+                            <span class="product-name"><?php echo $productName ?></span>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </li>
+<?php endforeach; ?>
+</ul>
+</div>

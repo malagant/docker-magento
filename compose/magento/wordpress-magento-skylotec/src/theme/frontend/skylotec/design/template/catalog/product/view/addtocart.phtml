@@ -1,0 +1,16 @@
+<?php
+/* @var $this Conlabz_Skylotec_Block_Catalog_Product_View_Buy */
+?>
+<div class="product-buy">
+    <div id="product-main-info">
+        <?php echo $this->getChildHtml('maininfo') ?>
+    </div>
+    <table class="data-table">
+        <?php if ($this->hasOptions()):?>
+            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+        <?php endif;?>
+    </table>
+    <div id="product-add-to-cart-button">
+        <?php echo $this->getChildHtml('button') ?>
+    </div>
+</div>

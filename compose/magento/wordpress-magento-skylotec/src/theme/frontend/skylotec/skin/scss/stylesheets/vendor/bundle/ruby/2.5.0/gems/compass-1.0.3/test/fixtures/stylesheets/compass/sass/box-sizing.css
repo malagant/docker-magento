@@ -1,0 +1,20 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/box-sizing.scss */
+.div {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 6, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/box-sizing.scss */
+.div {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 9, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/box-sizing.scss */
+.div {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

@@ -1,0 +1,41 @@
+<?php $post = $this->getPost() ?>
+<?php
+    $helper = $this->helper('conwp');
+    $featuredImage = false;
+    $skylotecHelper = $this->helper('skylotec');
+    if ($image = $post->getFeaturedImage()) {
+        $featuredImage = $image->getFullSizeImage();
+    } elseif ($videoId = $post->getMetaValue('youtube_id')) {
+        $featuredImage = $skylotecHelper->getVideoThumbnail($videoId);
+    }
+    $url = $helper->getPostUrl($post);   
+    
+?>
+<article class="post-item">
+    <div data-mh="post-item-<?php echo $post->getId() ?>" class="post-item-content<?php if($featuredImage) echo ' with-image' ?>">
+        <header class="post-item-title">
+            <a href="<?php echo $url ?>">
+                <h3><span><?php echo $post->getPostTitle() ?></span></h3>
+                <h4><span><?php echo $skylotecHelper->getPostTypeTitle($post->getPostType()) ?></span></h4>
+            </a>
+        </header>
+        <div class="post-item-text">
+            <?php if ($post->getPostType() === 'post'): ?>
+            <span class="date">
+                <?php echo $this->helper('core')->formatDate($post->getPostDate('Y-m-d')) ?>
+            </span>
+            <?php endif ?>
+            <?php if($post->hasMoreTag()): ?>
+            <?php echo $post->getPostExcerpt(false) ?>
+            <?php else: ?>
+            <?php echo $this->helper('skylotec')->clipText($this->stripTags($post->getPostContent())) ?>
+            <?php endif ?>
+        </div>
+    </div>
+    <?php if ($featuredImage): ?>
+    <a title="<?php echo $this->__('Read more') ?>" href="<?php echo $url ?>" data-mh="news-<?php echo $post->getId() ?>"  class="featured-image">
+        <div class="featured-image-img" style="background-image: url('<?php echo $featuredImage ?>')"></div>
+        <span><?php echo $this->__('Read more') ?></span>
+    </a>
+    <?php endif ?>
+</article>

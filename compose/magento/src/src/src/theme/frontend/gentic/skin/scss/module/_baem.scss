@@ -1,0 +1,21 @@
+.baem-view {
+    h1 {
+        @extend .h1;
+        float: none;
+    }
+    .baem-item {
+        padding-top: 5%;
+    }
+    .post-list {        
+        .item {            
+            width: 100%;
+            float: none;
+            margin: 0;
+            height: 100%;
+        }
+        .color-wrapper {
+            //padding-top: 5%;
+            @include box-sizing(border-box);
+        }
+    }   
+}

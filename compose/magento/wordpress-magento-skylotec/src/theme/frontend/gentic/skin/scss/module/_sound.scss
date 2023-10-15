@@ -1,0 +1,33 @@
+.post-type-sound {    
+    .main-container {
+        padding: 50px 0;
+        background: $color-orange;
+        color: #fff;
+        @extend .clearfix;
+    }
+}
+.sound-mix {
+    float: right;
+    @include mq-vals((
+        width, (
+            100%,
+            75%,
+            75%,
+            75%
+        )        
+    ));
+}
+.sound {
+    .post-content {
+        float: left;
+        clear: both;
+        @include mq-vals((
+            width, (
+                100%,
+                50%,
+                50%,
+                50%
+            )
+        ));
+    }
+}

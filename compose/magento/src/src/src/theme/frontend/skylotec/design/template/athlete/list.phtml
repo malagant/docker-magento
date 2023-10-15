@@ -1,0 +1,17 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Athlete_List */ ?>
+<ul class="child-categories">
+<?php foreach ($this->getPostCollection() as $athlete): ?>
+    <?php
+    $styleImg = '';
+    if ($image = $athlete->getFeaturedImage()) {
+        $styleImg = " style=\"background-image:url('" . $image->getMediumImage() . "');\"";
+    }
+    ?>
+    <li class="child-category child-athlete">
+        <a href="<?php echo $athlete->getUrl() ?>">
+            <span class="icon-category icon-athlete"<?php echo $styleImg ?>></span>
+            <h2><span><?php echo $this->escapeHtml($athlete->getPostTitle()) ?></span></h2>
+        </a>
+    </li>
+<?php endforeach; ?>
+</ul>

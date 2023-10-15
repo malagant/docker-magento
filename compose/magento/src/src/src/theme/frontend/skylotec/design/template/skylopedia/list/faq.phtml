@@ -1,0 +1,17 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Skylopedia_List */ ?>
+<?php if ($this->canDisplay()): ?>
+<?php /* @var $article Fishpig_Wordpress_Model_Post */ ?>
+<?php $_helper = $this->helper('skylotec'); ?>
+<div class="faq-list" id="faq-list">
+<?php foreach ($this->getPostCollection() as $article): ?>
+    <article class="faq-article">
+        <h2 class="faq-question">
+            <?php echo $this->escapeHtml($article->getPostTitle()) ?>
+        </h2>
+        <div class="faq-answer std">
+            <?php echo $article->getPostContent() ?>
+        </div>
+    </article>
+<?php endforeach; ?>
+</div>
+<?php endif; ?>

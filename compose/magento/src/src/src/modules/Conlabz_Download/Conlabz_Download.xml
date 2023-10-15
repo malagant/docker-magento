@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Conlabz_Download>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Conlabz_Download>
+    </modules>
+</config>

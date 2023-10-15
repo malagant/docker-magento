@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Conlabz_Wordpress>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Fishpig_Wordpress/>
+            </depends>
+        </Conlabz_Wordpress>
+    </modules>
+</config>

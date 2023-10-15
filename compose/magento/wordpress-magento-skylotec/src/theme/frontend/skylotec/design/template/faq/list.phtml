@@ -1,0 +1,6 @@
+<?php /* @var $faq Fishpig_Wordpress_Model_Post */ ?>
+<?php $faq = $this->getPost() ?>
+<article class="faq">
+    <h2><?php echo $faq->getPostTitle() ?></h2>
+    <p><?php echo $faq->getPostContent() ?></p>
+</article>

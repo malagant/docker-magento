@@ -1,0 +1,41 @@
+<div class="footer-container">
+    <footer class="footer">
+        <div class="footer-headlines">
+            <h5><?php echo $this->__('Contact') ?></h5>
+            <h5><?php echo $this->__('Media') ?></h5>
+            <h5><?php echo $this->__('News') ?></h5>
+            <h5 class="skylotec-pt-headline"><?php echo $this->__('Part of the SKYLOTEC family') ?></h5>
+        </div>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <?php echo $this->getChildHtml('contact') ?>
+            </div>
+            <div class="footer-media">
+                <?php echo $this->getChildHtml('media') ?>
+            </div>
+            <div class="footer-news">
+                <?php echo $this->getChildHtml('news') ?>
+            </div>
+            <div class="footer-skylotec">
+                <?php echo $this->getChildHtml('skylotec') ?>
+            </div>
+        </div>
+        <div class="absolute-footer">
+            <?php echo $this->__('skylotec %s', date('Y')) ?>
+            <div class="links">
+                <a class="retoure" href="<?php echo $this->getUrl() . $this->__('skylotec/about-us/retoure') ?>">
+                    <?php echo $this->__('Retoure') ?>
+                </a>
+                <a class="retoure" href="<?php echo $this->getUrl() . $this->__('skylotec/about-us/compliance') ?>">
+                    <?php echo $this->__('Compliance') ?>
+                </a>
+                <a class="privacy" href="<?php echo $this->getUrl() . $this->__('skylotec/about-us/privacy-statement') ?>">
+                    <?php echo $this->__('Privacy Statement') ?>
+                </a>
+                <a class="imprint" href="<?php echo $this->getUrl() . $this->__('skylotec/about-us/imprint') ?>">
+                    <?php echo $this->__('Imprint') ?>
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>

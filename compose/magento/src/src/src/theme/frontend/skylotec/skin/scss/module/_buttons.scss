@@ -1,0 +1,78 @@
+.next,
+.previous {
+    $size: 48px;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    text-align: center;
+    background-color: $color-gray;
+    font-size: 1.8rem;
+    padding: 8px 16px;
+    @include opacity(0.7);
+    @include box-sizing(border-box);
+    @include border-radius(50%);
+    &:hover {
+        color: $color-orange;
+    }
+}
+.next {
+    text-align: right;
+    @include icon($icon-angle-right, 0, before, true);
+}
+.previous {
+    text-align: left;
+    @include icon($icon-angle-left, 0, before, true);
+}
+.pager {
+    .next,
+    .previous {
+        $size: 38px;
+        width: $size;
+        height: $size;
+        font-size: 1rem;
+    }
+}
+.btn,
+.button {
+    background: $color-orange;
+    text-transform: uppercase;
+    display: block;
+    padding: 2px 15px;
+    text-align: center;
+    color: #fff;
+    @include transition(background-color .3s);
+    &:hover {
+        background-color: $color-black;
+        color: #fff;
+    }
+}
+.btn-view {
+    border: 2px solid #fff;
+    @include icon($icon-clone, 0, before, true);
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    &.image {
+        @include icon($icon-expand, 0, before, true);
+    }
+}
+.btn-readmore {
+    display: inline-block;
+    @include icon($icon-angle-right, 5px, after);
+}
+.read-more {
+    display: block;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: lowercase;
+    @include icon($icon-angle-right$icon-angle-right, 5px, after);
+    &:hover {
+        color: $color-orange;
+    }
+    .meta-nav {
+        display: none;
+    }
+}

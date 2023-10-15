@@ -1,0 +1,54 @@
+{
+  "name": "skylotec-mage-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "watch": "./node_modules/gulp/bin/gulp.js watch",
+    "gulp": "./node_modules/gulp/bin/gulp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "conlabz GmbH",
+  "license": "ISC",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.0.48",
+    "compass-mixins": "^0.12.10",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "jquery-match-height": "^0.7.2",
+    "jquery-mousewheel": "^3.1.13",
+    "jquery-ui": "^1.12.1",
+    "mediaCheck": "^0.4.6",
+    "owl.carousel": "^2.3.4",
+    "select2": "^3.5.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.0.1",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp.spritesmith": "^6.5.1",
+    "normalize.css": "^8.0.1",
+    "postcss": "^6.0.11",
+    "postcss-assets": "^5.0.0",
+    "postcss-discard-duplicates": "^2.1.0",
+    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-inline-svg": "^3.0.0",
+    "postcss-svgo": "^2.1.6",
+    "run-sequence": "^2.2.1",
+    "webpack": "^3.5.6",
+    "webpack-stream": "^4.0.0",
+    "yargs": "^6.4"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
+  }
+}

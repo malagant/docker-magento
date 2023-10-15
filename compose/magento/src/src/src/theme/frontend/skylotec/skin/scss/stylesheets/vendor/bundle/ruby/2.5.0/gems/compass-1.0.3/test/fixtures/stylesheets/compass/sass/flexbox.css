@@ -1,0 +1,126 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.display {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* line 7, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flex-direction {
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+/* line 11, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flex-wrap {
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+/* line 15, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flex-flow {
+  -webkit-flex-flow: row-reverse wrap-reverse;
+  flex-flow: row-reverse wrap-reverse;
+}
+
+/* line 19, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.order {
+  -webkit-order: 1;
+  order: 1;
+}
+
+/* line 23, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flex {
+  -webkit-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+/* line 27, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flex-grow {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+/* line 31, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flex-shrink {
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+}
+
+/* line 35, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flex-basis {
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+}
+
+/* line 39, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.justify-content {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+/* line 43, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.align-items {
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+/* line 47, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.align-self {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+
+/* line 51, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.align-content {
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+}
+
+/* line 55, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flexbox {
+  display: -webkit-flex;
+  -webkit-flex-direction: row-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  -webkit-flex-flow: row-reverse wrap-reverse;
+  -webkit-order: 1;
+  -webkit-flex: 1 0 auto;
+  -webkit-flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  -webkit-flex-basis: auto;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-align-self: flex-start;
+  -webkit-align-content: flex-start;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+  flex-flow: row-reverse wrap-reverse;
+  order: 1;
+  flex: 1 0 auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
+  align-content: flex-start;
+}
+
+/* line 73, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flexbox-2 {
+  display: -ms-flexbox;
+  -ms-flex-flow: row-reverse;
+  -ms-flex-order: 1;
+}
+
+/* line 81, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/flexbox.scss */
+.flexbox-1 {
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-ordinal-group: 1;
+  -moz-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-ordinal-group: 1;
+  -webkit-box-flex: 1;
+}

@@ -1,0 +1,5 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/appearance.scss */
+.searchfield {
+  -moz-appearance: searchfield;
+  -webkit-appearance: searchfield;
+}

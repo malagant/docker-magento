@@ -1,0 +1,113 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Shopping cart template
+ *
+ * @see Mage_Checkout_Block_Cart
+ */
+?>
+<div class="cart">
+    <div class="page-title title-buttons">
+        <h1><?php echo $this->__('Shopping Cart') ?></h1>        
+    </div>
+    <?php echo $this->getMessagesBlock()->toHtml() ?>
+    <?php echo $this->getChildHtml('form_before') ?>
+    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
+        <?php echo $this->getBlockHtml('formkey'); ?>
+        <table id="shopping-cart-table" class="data-table cart-table">
+        <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
+            <thead>
+                <tr>
+                    <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
+                    <th class="product" rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
+                    <th rowspan="<?php echo $mergedCells; ?>"></th>
+                    <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                    <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
+                    <?php endif ?>
+                    <th class="a-right" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
+                    <th rowspan="<?php echo $mergedCells; ?>" class="a-center qty"><?php echo $this->__('Qty') ?></th>
+                    <th class="a-right" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
+                    <th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th>
+                </tr>
+                <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                <tr>
+                    <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                    <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                    <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                    <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                </tr>
+                <?php endif; ?>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="4"></td>
+                    <td><button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update'); ?>" class="button btn-update"><span><span><?php echo $this->__('Update'); ?></span></span></button></td>
+                    <td colspan="2"><button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('Clear Shopping Cart'); ?>" class="button btn-empty" id="empty_cart_button"><span><span><?php echo $this->__('Clear Shopping Cart'); ?></span></span></button></td>
+                </td>
+                </tr>
+            </tfoot>
+            <tbody>
+            <?php foreach($this->getItems() as $_item): ?>
+                <?php echo $this->getItemHtml($_item) ?>
+            <?php endforeach ?>
+            </tbody>
+        </table>
+    </form>
+    <div class="cart-collaterals">
+        <?php echo $this->getChildHtml('checkout.cart.extra') ?>
+        <div class="totals">
+            <?php if($this->getContinueShoppingUrl()): ?>
+            <div class="continue-shopping">
+                <a title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue" href="<?php echo $this->getContinueShoppingUrl() ?>">
+                    <span><span><?php echo $this->__('Continue Shopping') ?></span></span>
+                </a>
+            </div>
+            <?php endif; ?>
+            <?php echo $this->getChildHtml('totals'); ?>
+            <?php if (($notice = $this->getChildHtml('checkout.cart.notice'))): ?>
+                <div class="checkout-cms-note">
+                    <?php echo $notice; ?>
+                </div>
+            <?php endif; ?>
+            <?php if(!$this->hasError()): ?>
+            <ul class="checkout-types">
+            <?php foreach ($this->getMethods('methods') as $method): ?>
+                <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                <li><?php echo $methodHtml; ?></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml('crosssell') ?>
+    <p class="checkout-note">
+        <?php echo $this->__("Please note that you purchase every article in our online store directly from Arendicom GmbH, Skylotec's Checkout-Partner. If you require further information about the Arendicon System, please refer to %se-shop-direct.com.%s", '<a href="http://www.e-shop-direct.com" target="_blank">', '</a>') ?>
+    </p>
+</div>
+

@@ -1,0 +1,13 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Page_Html_Footer_Skylotec */ ?>
+<div class="footer-block footer-navigation">
+    <p class="skylotec-pt">
+<?php if ($link = Mage::getStoreConfig('design/footer/skylotec_footer_link')):?>
+        <a href="<?=$this->escapeUrl($link) ?>" target="_blank">
+<?php endif; ?>
+            <img src="<?php echo $this->getSkinUrl('images/Banner_CT-climbing-technology_237x525.png') ?>" alt="CT climbing technology">
+<?php if ($link): ?>
+        </a>
+<?php endif; ?>
+    </p>
+</div>
+

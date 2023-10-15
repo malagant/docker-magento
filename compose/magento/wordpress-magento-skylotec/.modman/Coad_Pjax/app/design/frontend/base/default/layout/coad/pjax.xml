@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addJs"><script>coad/jquery.pjax.js</script></action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="pjax/javascript" name="pjax.js" template="coad/pjax/javascript.phtml" />
+        </reference>
+    </default>
+</layout>

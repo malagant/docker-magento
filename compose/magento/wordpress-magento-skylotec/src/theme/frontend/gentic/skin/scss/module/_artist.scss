@@ -1,0 +1,92 @@
+.post-type-artist {
+    .main-container {
+        background: $color-blue;
+        color: #fff;
+        padding-bottom: 50px;
+        @extend .clearfix;
+    }    
+}
+.artist {
+    @extend .page-content;
+    .bild1,
+    .bild2 {
+        margin-top: 10%;
+    }
+    .bild1 {
+        width: 25%;
+    }
+    .bild2 {
+        width: 75%;
+        right: -25%;
+        position: absolute;
+        z-index: 0;
+    }
+    .bild3 {
+        width: 25%;
+        float: left;
+        margin-left: 25%;
+    }
+    .bild4 {
+        float: left;
+        position: relative;
+        width: 55%;
+        left: -55%;
+    }
+    .bild5 {
+        margin-top: 10%;
+    }
+    .entry {
+        @include row();
+    }
+    .post-content {
+        @include col(100%, 50%)
+    }
+    @media #{$mq-xs} {
+        img[class^="bild"] {
+            display: none;
+        }        
+    }
+}
+.homepage-artist {
+    background-color: $color-blue;
+    position: relative;
+    padding: 10% 0 5%;
+    margin-top: -10%;
+    clear: both;
+    @extend .clearfix;
+    @media #{$mq-xs} {
+        padding: 5% 0;
+    }
+    .page-content {
+        position: static;
+    }
+    h3 {
+        @extend .h1;
+        color: #fff;
+        margin-top: 10px;
+        margin-bottom: 0.4em;
+    }
+    .artist-excerpt {
+        width: 50%;
+    }
+    .bild6 {
+        width: 25%;
+        margin-left: 50%;
+        @media #{$mq-xs} {
+            float: right;
+            width: 50%;
+            position: static;
+            margin-left: 0;
+        }
+    }
+    .bild2 {
+        width: (100% / 6) * 2;
+        position: absolute;
+        right: 0;
+        bottom: -3%;
+        @media #{$mq-xs} {
+            display: none;
+            
+        }
+    }
+}

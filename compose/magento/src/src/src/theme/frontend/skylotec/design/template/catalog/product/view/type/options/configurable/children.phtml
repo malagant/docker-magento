@@ -1,0 +1,18 @@
+<?php /** @var $this Mage_Catalog_Block_Product_View_Type_Configurable */ ?>
+<?php
+$_product = $this->getProduct();
+$_attributes = $this->getAllowAttributes();
+$_options = array();
+?>
+
+<div class="disabled-attributes">
+<?php foreach ($_attributes as $_attribute): ?>
+    <?php foreach ($_attribute->getPrices() as $option): ?>
+    <?php $_options[] = $option['label'] ?>
+    <?php endforeach ?>
+    <div class="disabled-attribute">
+        <span class="label"><?php echo $_attribute->getLabel() ?>:</span>
+        <span class="options"><?php echo implode(', ', $_options) ?></span>
+    </div>
+<?php endforeach ?>
+</div>

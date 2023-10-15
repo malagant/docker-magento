@@ -1,0 +1,10 @@
+<?php /** @var Mage_Core_Block_Template $this */ ?>
+<div class="block-layered-nav">
+<ul id="narrow-by-list">
+    <?php foreach ($this->getChildGroup('filter') as $child): ?>
+    <li class="filter-item">
+        <?php echo $child->toHtml() ?>
+    </li>
+    <?php endforeach; ?>
+</ul>
+</div>

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+## Description: Yarn
+## Usage: yarn
+## Example: "ddev yarn"
+
+THEME_PATH=src/theme/frontend/skylotec/skin
+
+yarn --cwd=$THEME_PATH install
+yarn --cwd=$THEME_PATH gulp styles

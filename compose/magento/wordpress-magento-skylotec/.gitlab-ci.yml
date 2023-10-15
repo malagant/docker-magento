@@ -1,0 +1,28 @@
+image: webdevops/php:7.3
+
+variables:
+  URL_DEV: https://dev.skylotec.com
+  URL_STAGING: http://staging.skylotec.com
+  URL_PRODUCTION: https://www.skylotec.com
+  DISABLE_DEV: "true"
+  DEPLOY_DIR: .
+  PHPCS_STANDARD: "phpcs.xml"
+  THEME_PATH: htdocs/skin/frontend/skylotec/default
+  COMPOSER_VERSION: 1
+
+Theme:
+  image: node:10-alpine
+  script:
+    - yarn --cwd=$THEME_PATH install
+    - yarn --cwd=$THEME_PATH gulp styles --production
+    - yarn --cwd=$THEME_PATH install --production
+  tags:
+    - docker
+  artifacts:
+    paths:
+      - $THEME_PATH/css/
+      - $THEME_PATH/node_modules/
+
+include:
+  - project: 'gitlab/templates'
+    file: 'magento1/build_test_release_deploy.yml'

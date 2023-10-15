@@ -1,0 +1,48 @@
+// responsive? true or false
+$responsive: true !default;
+
+// container width
+$container-xs:          auto !default;
+$container-sm:          720px !default;
+$container-md:          940px !default;
+$container-lg:          1140px !default;
+
+// Breakpoints per device
+$proximity-xs:              60px  !default;
+$proximity-sm:              80px  !default;
+$proximity-md:              100px !default;
+
+$screen-xs:             480px !default;
+$screen-sm:             ($container-sm + $proximity-xs);
+$screen-md:             ($container-md + $proximity-sm);
+$screen-lg:             ($container-lg + $proximity-md);
+
+$screen-xs-max:         ($screen-sm - 1);
+$screen-sm-max:         ($screen-md - 1);
+$screen-md-max:         ($screen-lg - 1);
+
+// media queries shortcuts
+$mq-xs:                 "screen and (max-width: #{$screen-xs-max})";
+$mq-sm:                 "screen and (min-width: #{$screen-sm}) and (max-width: #{$screen-sm-max})";
+$mq-md:                 "screen and (min-width: #{$screen-md}) and (max-width: #{$screen-md-max})";
+$mq-lg:                 "screen and (min-width: #{$screen-lg})";
+
+$media-queries:         $mq-xs, $mq-sm, $mq-md, $mq-lg !default;
+$mq-default-index:      3 !default;
+
+// Gutter width
+$gap-width-xs:           20px !default;
+$gap-width-sm:           20px !default;
+$gap-width-md:           20px !default;
+$gap-width-lg:           30px !default;
+
+$gap-padding-xs:     $gap-width-xs / 2;
+$gap-padding-sm:     $gap-width-sm / 2;
+$gap-padding-md:     $gap-width-md / 2;
+$gap-padding-lg:     $gap-width-lg / 2;
+
+// default column count for minxin col()
+$cols-xs:               1 !default;
+$cols-sm:               2 !default;
+$cols-md:               3 !default;
+$cols-lg:               4 !default;

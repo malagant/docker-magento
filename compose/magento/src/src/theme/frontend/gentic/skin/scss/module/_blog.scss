@@ -1,0 +1,202 @@
+.post-list {
+    ul {
+        @extend .no-list-style;
+    }
+    .item {
+        @include col(1, 2);
+        margin: 30px 0;
+    }
+    .featured-image {
+        img {
+            width: 100%;
+        }        
+    }
+    .post-item-2 {
+        margin-top: 10%;
+    }
+    .post-item-3 {
+        clear: left;
+        margin-left: 25%;
+        margin-bottom: 0;
+    }
+    .post-item-5 {
+        margin-top: -60px;
+    }
+    .post-list-item {
+        padding: 20px 15px;
+    }
+    .item {
+        @media #{$mq-xs} {
+            width: 100%;
+            margin: 15px 0;
+            float: none;
+        }
+    }
+    img {
+        height: auto;
+    }
+    .post-entry {
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+    p {
+        margin-top: 0;
+    }
+}
+.wordpress-index-index {
+    .post-item-1 {
+        background-color: rgb(164, 143, 152);
+    }
+    .post-item-2 {
+        background-color: rgb(103, 190, 217);
+    }
+    .post-item-3 {
+        background-color: $color-yellow;
+    }
+    .post-item-4 {
+        background-color: rgb(116, 128, 104);
+    }
+    .post-item-5 {        
+        background-color: rgb(237, 224, 206);
+    }
+}
+.read-more {
+    @include icon($icon-angle-right, 0);
+    font-weight: bold;
+    text-decoration: underline !important;
+    &:before {
+        text-decoration: underline;
+    }
+    color: #000;
+}
+.post-title {
+    font-weight: bold;
+    h2 {
+        margin: 0;
+        display: inline;
+        line-height: 1;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.post-view {
+    @include col(1, 2);    
+    img {
+        height: auto;
+    }
+}
+.page-content.post {
+    position: relative;
+    padding-bottom: 20%;
+    @extend .clearfix;
+    .featured-image {
+        width: 50%;
+        right: -25%;
+        bottom: 5%;
+        position: absolute;
+        @media #{$mq-xs} {
+            position: static;
+            width: 100%;
+        }
+    }  
+    &.has-gallery .post-view {
+        @include mq-vals((
+            right, (
+                0,
+                -50%,
+                -50%,
+                -50%
+            )
+        ));
+    }
+}
+.homepage-latest-news {
+    background: $color-yellow;
+    padding: 5% 0;
+    @extend .clearfix;
+    h4 {
+        @extend .h1;
+        display: inline;
+        color: #fff;        
+    }    
+    .latest-news-title {
+        a {
+            color: #fff;
+            margin-left: 5%;
+        }
+        .read-more {
+            white-space: nowrap;
+        }
+    }
+    
+}
+.post-gallery {
+    @include col(1, 2);
+    @include mq-vals((
+        left, (
+            0,
+            -50%,
+            -50%,
+            -50%
+        ),
+        padding-right, (
+            0,
+            10px,
+            15px,
+            20px
+        )
+    ));
+}
+.post-gallery {
+    .main-image {
+        img {
+            width: 100%;
+        }
+    }
+    .gallery-thumbnails {
+        position: relative;
+    }
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        text-align: center;
+        width: 24px;        
+        > span {
+            width: 100%;
+            display: block;
+            font-size: 42px;
+            position: absolute;
+            top: 50%;
+            margin-top: -21px;
+            span {
+                display: none;
+            }
+        }
+    }
+    .owl-prev {
+        left: 0;
+        @include background(
+            linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+        );
+        > span {
+            @include icon($icon-angle-left, 0, before, true);
+        }
+        
+    }
+    .owl-next {
+        right: 0;
+        @include background(
+            linear-gradient( to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+        );
+        > span {
+            @include icon($icon-angle-right, 0, before, true);
+        }       
+    }
+}

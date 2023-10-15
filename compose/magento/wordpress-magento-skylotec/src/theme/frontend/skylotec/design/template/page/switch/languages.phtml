@@ -1,0 +1,23 @@
+<?php
+/* @var $this Mage_Page_Block_Switch */
+$_languages = array(
+    'de' => 'DEU',
+    'fr' => 'FRA',
+    'en' => 'ENG',
+    'es' => 'SPA',
+    'it' => 'ITA'
+);
+$_language = substr(Mage::getStoreConfig('general/locale/code'), 0, 2);
+$_langToDisplay = str_replace('_', '/', Mage::app()->getStore()->getCode());
+?>
+<span class="quick-item">
+    <a href="#regions" class="link-regions"><?php echo $_langToDisplay ?></a>
+</span>
+<script>
+    (function($) {
+        $('.link-regions').fancybox();
+        $('body').on('click', '.regions [data-store]', function () {
+            Mage.Cookies.set('assigned_store', $(this).data('store'));
+        });
+    })(jQuery);
+</script>

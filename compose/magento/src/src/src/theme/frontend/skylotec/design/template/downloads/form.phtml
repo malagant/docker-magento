@@ -1,0 +1,103 @@
+<div style="display:none" id="files-download-form">
+<form method="post" class="download-form" id="download-form" action="<?php echo $this->getUrl("download/index/save")?>">
+	<div class="input-button clearfix popup-download download-package">
+        <h3><?php echo $this->__("Request Download Package"); ?></h3>
+        <div id="email-form-content">
+            <?php echo $this->__("We'll send the link to your download package right to your inbox.");?>
+            <p class="popup-confirmation-terms">
+                <?php echo $this->__("With requesting the SKYLOTEC download package, only the right for the use of the image material is transferred")?>:
+                <textarea readonly="readonly"><?php echo $this->__("Any and all use, utilization or re-utilization, duplication, dissemination, and/or publication is subject to fees and requires the previous agreement of SKYLOTEC GmbH. This is the case in particular for: A second utilization or second publication, in particular in anthologies, in product-accompanying literature, for advertising measures, or by other reprints; The digitalization, storage, or duplication of the image material on data storage media of any kind (e.g., magnetic, optical, magneto-optical, or electronic storage media such as CD-ROM, CDi, diskettes, hard drives, memory, microfilm, etc.), insofar as these do not only serve the technical processing of the image material; Any duplication or use of the image data on CD-ROM, CDi, diskettes, or similar data storage media; Any inclusion or rendering of the image data in the Internet or in online databases, or in other electronic archives (including to the extent that it concerns internal electronic archives of the customer); The transmission of the digitalized image material via telecommunications or on data storage media which are suitable for public rendering on screens or for the production of hardcopies. Alteration of the image material through photo composing or montage, or through electronic tools to create a new copyright-protected work, is only permitted after previous written agreement from SKYLOTEC. Also, the image material may not be copied by drawing, replicated by means of photography, or otherwise be used as a motif. The publishing house is not permitted to transfer wholly or in part the rights allocated to it to third parties, also not to other corporate groups or subsidiaries of the publishing house. Any use, rendering, or transfer of the image material is only permitted under the condition that the copyright mark of SKYLOTEC is attached to the image material. For every publication, the final draft has to be sent to SKYLOTEC GmbH for approval.");?></textarea>
+            </p>
+            <div class="download-email">
+                <input placeholder="<?php echo $this->__('Your email address') ?>" type="text" name="email" id="email" class="input-text validate-email required-entry">
+            </div>
+            <p>
+                <button type="submit" name="submit" class="button-package button button-link">
+                    <?php echo Mage::helper("dstorage")->__("Request Download Package")?>
+                </button>
+            </p>
+        </div>
+    </div>
+    <div class="input-button clearfix popup-download download-link">
+        <h3><?php echo $this->__("File Download"); ?></h3>
+        <div id="email-form-content">
+            <p class="popup-confirmation-terms">
+                <?php echo $this->__("With requesting the SKYLOTEC download, only the right for the use of the image material is transferred")?>:
+                <textarea readonly="readonly"><?php echo $this->__("Any and all use, utilization or re-utilization, duplication, dissemination, and/or publication is subject to fees and requires the previous agreement of SKYLOTEC GmbH. This is the case in particular for: A second utilization or second publication, in particular in anthologies, in product-accompanying literature, for advertising measures, or by other reprints; The digitalization, storage, or duplication of the image material on data storage media of any kind (e.g., magnetic, optical, magneto-optical, or electronic storage media such as CD-ROM, CDi, diskettes, hard drives, memory, microfilm, etc.), insofar as these do not only serve the technical processing of the image material; Any duplication or use of the image data on CD-ROM, CDi, diskettes, or similar data storage media; Any inclusion or rendering of the image data in the Internet or in online databases, or in other electronic archives (including to the extent that it concerns internal electronic archives of the customer); The transmission of the digitalized image material via telecommunications or on data storage media which are suitable for public rendering on screens or for the production of hardcopies. Alteration of the image material through photo composing or montage, or through electronic tools to create a new copyright-protected work, is only permitted after previous written agreement from SKYLOTEC. Also, the image material may not be copied by drawing, replicated by means of photography, or otherwise be used as a motif. The publishing house is not permitted to transfer wholly or in part the rights allocated to it to third parties, also not to other corporate groups or subsidiaries of the publishing house. Any use, rendering, or transfer of the image material is only permitted under the condition that the copyright mark of SKYLOTEC is attached to the image material. For every publication, the final draft has to be sent to SKYLOTEC GmbH for approval.");?></textarea>
+            </p>
+            <p>
+                <a href="#" target="_blank" class="button button-link">
+                    <?php echo Mage::helper("dstorage")->__("Start Download")?>
+                </a>
+            </p>
+        </div>
+    </div>
+</form>
+</div>
+<script>
+    (function($) {
+
+        var openDlModal = function (href) {
+            if (href) {
+                $('.download-link').show();
+                $('.download-package').hide();
+                $('.button-link').attr('href', href);
+            } else {
+                $('.download-link').hide();
+                $('.download-package').show();
+            }
+            $.fancybox({
+                type: 'inline',
+                href: '#files-download-form'
+            });
+        };
+
+        var downloadForm = new VarienForm('download-form', true);
+        var storageKey = '<?php echo $this->getStorageKey() ?: 'download_files' ?>';
+
+        $('#download-request').on('click', function(e) {
+            e.preventDefault();
+            if (!localStorage.getItem(storageKey)) {
+                alert('<?php echo $this->__('Please select at least one file to download.') ?>');
+                return false;
+            }
+            openDlModal(false);
+        });
+
+        $('.download-list a, .direct-download').on('click', function (e) {
+            e.preventDefault();
+            openDlModal($(this).attr('href'));
+        });
+
+        $('#download-form').on('submit', function(e) {
+            e.preventDefault();
+            var $form = $(this);
+            if (!localStorage.getItem(storageKey)) {
+                return;
+            }
+            if (!downloadForm.validator.validate()) {
+                return;
+            }
+            $.ajax({
+                type: 'POST',
+                url: $form.attr('action'),
+                data: {
+                    files: localStorage.getItem(storageKey),
+                    email: $form.find('[name="email"]').val()
+                },
+                dataType: 'json',
+                success: function(resp) {
+                    if (resp.success) {
+                        $('.cb-download').prop('checked', false);
+                        localStorage.removeItem(storageKey);
+                        $.fancybox({
+                            content:  '<ul class="messages"><li class="success-msg"><ul><li>' + resp.message + '</li></ul></li></ul>'
+                        });
+                    } else {
+                        alert(resp.message);
+                    }
+                }
+            });
+        });
+    })(jQuery);
+</script>

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+## Description: Build
+## Usage: build
+## Example: "ddev build"
+
+THEME_PATH=src/theme/frontend/skylotec/skin
+
+composer install --prefer-dist
+composer run-script post-install-cmd -vvv -- --redeploy
+bin/modman link ./src
+bin/modman repair --force
+
+yarn --cwd=$THEME_PATH install
+yarn --cwd=$THEME_PATH gulp styles
+
+cd htdocs &&
+magerun config:set dev/template/allow_symlink 1 &&
+magerun cache:disable
+
+cd ../nama && composer install --prefer-dist

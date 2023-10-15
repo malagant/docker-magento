@@ -1,0 +1,17 @@
+<?php
+/* @var $this Conlabz_Skylotec_Block_Catalog_Product_View_Buy */
+$_product = $this->getProduct();
+/* @var $_helper Mage_Catalog_Helper_Output */
+$_helper = $this->helper('catalog/output');
+$buttonTitle = $this->getButtonTitle() ?: 'Add to Cart';
+?>
+<div class="product-buy">
+    <div id="product-main-info">
+        <?php echo $this->getChildHtml('maininfo') ?>
+    </div>
+    <table class="data-table">
+        <?php if ($this->hasOptions()):?>
+            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+        <?php endif;?>
+    </table>
+</div>

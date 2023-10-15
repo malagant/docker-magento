@@ -1,0 +1,26 @@
+<?php
+/* @var $this Conlabz_Skylotec_Block_Catalog_Category_View_Childcategories */
+/* @var $helper Mage_Catalog_Helper_Output */
+$helper = $this->helper('catalog/output');
+$currentCategory = $this->getCurrentCategory();
+?>
+<?php if ($this->hasChildren()): ?>
+<ul class="child-categories">
+    <?php foreach ($this->getChildren() as $category): ?>
+    <?php if ($category->getHideInOverview()) continue; ?>
+    <li class="child-category">
+        <a href="<?php echo $category->getCustomUrl() ?? $category->getUrl() ?>">
+            <span class="icon-category icon-skylotec" style="background-image: url(<?php echo Mage::getBaseUrl('media').'catalog/category/icons/'. $category->getIcon() ?>)"></span>
+            <h2>
+                <span><?php echo $helper->categoryAttribute($category, $category->getName(), 'name') ?></span>
+            </h2>
+        </a>
+    </li>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+<?php if ($description = $this->getDescription()): ?>
+<div class="category-description">
+    <div class="std"><?= $description ?></div>
+</div>
+<?php endif; ?>

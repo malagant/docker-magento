@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Conlabz_Support>
+            <version>1.0.0</version>
+        </Conlabz_Support>
+    </modules>
+    <frontend>
+        <routers>
+            <support>
+                <use>standard</use>
+                <args>
+                    <module>Conlabz_Support</module>
+                    <frontName>support</frontName>
+                </args>
+            </support>
+        </routers>
+    </frontend>
+</config>

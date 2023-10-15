@@ -1,0 +1,10 @@
+<?php /* @var $this Coad_Pjax_Block_Javascript */ ?>
+<script>
+    (function($) {
+        $(document).pjax(
+            'a[data-pjax]', 
+            '<?php echo $this->getContainerSelector('content') ?>', 
+            <?php echo $this->getOptionsJson() ?>
+        );
+    })(jQuery);
+</script>

@@ -1,0 +1,63 @@
+// crid vars
+
+// responsive? true or false
+$responsive: true;
+
+// container width
+$container-xs:          auto;
+$container-sm:          768px;
+$container-md:          960px;
+$container-lg:          1140px !default;
+
+// Breakpoints per device
+$proximity-xs:              60px  !default;
+$proximity-sm:              80px  !default;
+$proximity-md:              100px !default;
+
+$screen-xs:             480px !default;
+$screen-sm:             ($container-sm + $proximity-xs);
+$screen-md:             ($container-md + $proximity-sm);
+$screen-lg:             ($container-lg + $proximity-md);
+
+$screen-xs-max:         ($screen-sm - 1);
+$screen-sm-max:         ($screen-md - 1);
+$screen-md-max:         ($screen-lg - 1);
+
+// media queries shortcuts
+$mq-xs:                 "screen and (max-width: #{$screen-xs-max})";
+$mq-sm:                 "screen and (min-width: #{$screen-sm}) and (max-width: #{$screen-sm-max})";
+$mq-md:                 "screen and (min-width: #{$screen-md}) and (max-width: #{$screen-md-max})";
+$mq-lg:                 "screen and (min-width: #{$screen-lg})";
+
+$media-queries:         $mq-xs, $mq-sm, $mq-md;
+$mq-default-index:      3 !default;
+
+// Gutter width
+$gap-width-xs:           0;
+$gap-width-sm:           0;
+$gap-width-md:           0;
+$gap-width-lg:           0;
+
+$gap-padding-xs:     $gap-width-xs / 2;
+$gap-padding-sm:     $gap-width-sm / 2;
+$gap-padding-md:     $gap-width-md / 2;
+$gap-padding-lg:     $gap-width-lg / 2;
+
+// default column count for minxin col()
+$cols-xs:               1 !default;
+$cols-sm:               2 !default;
+$cols-md:               3 !default;
+$cols-lg:               4 !default;
+
+// colors
+
+$color-gray:        #BDBCBC;
+$color-yellow:      #FACA2F;
+$color-blue:        #1E3758;
+$color-blue-light:  #1E3758;
+$color-orange:      rgb(217, 125,  32);
+$color-green:       #49B161;
+$color-red:         rgb(255,  81,  68);
+$color-pink:        rgb(227, 178, 174);
+
+$icon-version:  4.3.0;

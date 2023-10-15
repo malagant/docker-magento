@@ -1,0 +1,46 @@
+<script>
+    (function($) {
+
+        $('.select-all input[type="checkbox"]').on('change', function(e) {
+            if ($(this).is(':checked')) {
+                $('.cb-download').prop('checked', true);
+            } else {
+                $('.cb-download').prop('checked', false);
+            }
+            $('.cb-download').trigger('change');
+        });
+
+        var storageKey = '<?php echo $this->getStorageKey() ?: 'download_files' ?>';
+        $('.cb-download').on('change', function(e) {
+            if (!localStorage.getItem(storageKey)) {
+                localStorage.setItem(storageKey, '');
+            }
+            var currentFiles = localStorage.getItem(storageKey).split(',');
+            var value = $(this).val();
+            if ($(this).is(':checked')) {
+                currentFiles.push(value);
+            } else {
+                var index = currentFiles.indexOf(value);
+                if (index > -1) {
+                    currentFiles.splice(index, 1);
+                }
+            }
+            currentFiles = $.unique(currentFiles);
+            currentFiles = $.grep(currentFiles, function(a) {
+                return a != '';
+            });
+            $('#files-count').text(currentFiles.length);
+            localStorage.setItem(storageKey, currentFiles.join(','));
+        });
+
+        if (localStorage.getItem(storageKey)) {
+            var downloadFiles = localStorage.getItem(storageKey);
+            downloadFiles = downloadFiles.split(',');
+            $('#files-count').text(downloadFiles.length);
+            $.each(downloadFiles, function(i, value) {
+                var selector = '.cb-download[value=' + value + ']';
+                $(selector).attr('checked', true);
+            });
+        }
+    })(jQuery);
+</script>

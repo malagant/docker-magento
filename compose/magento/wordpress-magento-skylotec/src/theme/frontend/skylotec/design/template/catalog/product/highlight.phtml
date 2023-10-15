@@ -1,0 +1,8 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Catalog_Product_Highlight */ ?>
+<?php if (false !== $product = $this->getHighlightProduct()): ?>
+<div class="highlight-product">
+    <a href="<?php echo $product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>">
+        <img src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(300) ?>" alt="<?php echo $product->getName() ?>">
+    </a>
+</div>
+<?php endif; ?>

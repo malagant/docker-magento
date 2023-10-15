@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    
+    <add_recaptcha_js>
+        <reference name="head">
+            <block type="recaptcha/jsapi" name="recaptcha.js.api" />
+        </reference>
+    </add_recaptcha_js>
+    
+    <review_product_list>
+        <update handle="add_recaptcha_js" />
+        <reference name="product.review.form">
+            <action method="setEnableRecaptcha">
+                <enabled>1</enabled>
+            </action>
+        </reference>
+    </review_product_list>
+    
+</layout>

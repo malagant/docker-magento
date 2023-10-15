@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">            
+            <block type="socialmedia/meta" name="socialmedia">
+                <action method="addType">
+                    <type>socialmedia/twitter</type>
+                </action>
+                <action method="addType">
+                    <type>socialmedia/opengraph</type>
+                </action>
+            </block>
+        </reference>
+    </default>
+</layout>

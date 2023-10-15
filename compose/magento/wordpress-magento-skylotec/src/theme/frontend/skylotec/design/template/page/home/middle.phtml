@@ -1,0 +1,17 @@
+<?php
+/* @var $this Conlabz_Skylotec_Block_Page_Home_Divisions */
+/* @var $helper Conlabz_Skylotec_Helper_Data */
+$helper = $this->helper('skylotec');
+?>
+<div class="categories-home">
+    <ul>
+        <?php foreach ($this->getHomeCategories() as $category): ?>
+        <li>
+            <a href="<?php echo $category->getUrl() ?>">
+                <h3 class="btn"><div><?php echo $this->escapeHtml($category->getName()) ?></div></h3>
+                <img src="<?php echo $this->getCategoryImage($category) ?>" alt="<?php echo $this->escapeHtml($category->getName()) ?>">
+            </a>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

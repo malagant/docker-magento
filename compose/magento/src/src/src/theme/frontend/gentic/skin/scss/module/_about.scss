@@ -1,0 +1,82 @@
+.page-view.about {
+    font-weight: bold;
+    > .page-content {
+        .page-entry {
+            width: 50%;
+            padding-left: 50%;
+            @media #{$mq-xs} {
+                width: 100%;
+                padding-left: 0;
+            }
+        }
+    }
+    .child-page-1 {
+        @include mq-vals((
+            width, (
+                100%,
+                50%,
+                50%,
+                50%
+            )
+        ));
+    }
+    .child-page-2 {
+        @include mq-vals((
+            width, (
+                100%,
+                50%,
+                50%,
+                50%
+            ),
+            margin-left, (
+                0,
+                50%,
+                50%,
+                50%
+            )
+        ));
+    }
+    .child-page-3 {
+        .page {
+            padding-right: 20px;
+        }
+        @include mq-vals((
+            width, (
+                100%,
+                 75%,
+                 75%,
+                 75%
+            )
+        ));
+    }
+    .wir-wollen-fair {
+        padding-bottom: 50px;
+    }
+    .history,
+    .unsere-geschichte {
+        position: relative;
+        .image_right {
+            position: absolute;
+            width: (100% / 6) * 2;
+            height: auto;
+            top: -5%;
+            right: 0;            
+        }
+        .image_left {
+            float: left;
+            clear: left;
+            width: (100% / 6) * 2;
+            margin-top: 5%;
+        }
+        @media #{$mq-xs} {
+            .image_right,
+            .image_left {
+                position: static;
+                display: block;
+                width: auto;                
+                float: none;
+                margin: 0 auto;
+            }
+        }
+    }
+}

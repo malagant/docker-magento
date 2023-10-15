@@ -1,0 +1,60 @@
+.tabs, .list-tabs {
+    @include container();
+    @extend .no-list-style;
+    @extend .clearfix;
+    position: relative;
+    z-index: 2;
+    clear: both;
+    font-family: $font;
+    .tab {
+        text-transform: uppercase;
+        font-family: $font-bold;
+        font-weight: normal;
+        float: left;
+        background: $color-black-light;
+        position: relative;
+        padding: 0 !important;
+        background-image: linear-gradient(
+            left, #000 0px, $color-black-light 8px
+        );
+        @media #{$mq-xs} {
+            float: none;
+            background-image: none;
+        }
+        &.active,
+        &.ui-state-active,
+        &:first-child {
+            background-image: none;
+        }
+        &.active,
+        &.ui-state-active {
+            @media (min-width: $screen-sm) {
+                border-left: 1px solid $color-black;
+            }
+        }
+        a {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            @include transition(all .2s);
+            display: block;
+            color: $color-gray-light;
+            font-size: 1.2rem;
+            padding: 8px 18px;
+            border-bottom: 3px solid $color-black;
+            &:focus {
+                outline: none;
+            }
+        }
+        &:hover a {
+            color: #fff;
+        }
+        &.ui-state-active a,
+        &.active a {
+            color: $color-orange;
+            @media (min-width: $screen-sm) {
+                border-bottom-color: transparent;
+            }
+        }        
+    }
+}

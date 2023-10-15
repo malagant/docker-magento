@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Conlabz_Recaptcha>
+            <active>1</active>
+            <codePool>community</codePool>
+        </Conlabz_Recaptcha>
+    </modules>
+</config>

@@ -1,0 +1,11 @@
+#search-tabs {
+    .post-list ul {
+        @extend .no-list-style;
+    }
+    .post-entry {
+        text-transform: none;
+        .highlight {
+            background: $color-orange;
+        }
+    }
+}

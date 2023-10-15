@@ -1,0 +1,25 @@
+.regions {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    padding: 20px;
+    @extend .no-list-style;
+    @extend .clearfix;
+    h2 {
+        margin: 0;
+        color: $color-orange;
+    }
+    ul {
+        @extend .no-list-style;
+    }
+    .region {
+        @include col(1, 2, 3);
+        a {
+            text-decoration: underline;
+        }
+    }
+    .region-languages {
+        padding-bottom: 20px;
+        min-height: 155px;
+    }
+}
+

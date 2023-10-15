@@ -1,0 +1,41 @@
+<?php $postListHtml = $this->getPostListHtml() ?>
+<?php $productListHtml = $this->getChildHtml('search_result_list') ?>
+<div class="page-title">
+	<h2><?php echo $this->__("Search results for: '%s'", $this->getSearchTerm(true)) ?></h2>
+</div>
+<?php if ($tabData = $this->getTabData()): ?>
+	<div class="tabs-container tabs search-tabs" id="search-tabs">
+		<ul class="list-tabs">
+			<?php foreach($tabData as $tab): ?>
+				<li id="tab-<?php echo $tab->getAlias() ?>" class="tab">
+					<a href="#<?php echo $tab->getAlias() ?>"><?php echo $this->escapeHtml($tab->getTitle()) ?></a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+		<div class="tab-content-wrapper">
+			<?php foreach($tabData as $tab): ?>
+				<div class="tab-content tab-content-<?php echo $tab->getAlias() ?>" id="<?php echo $tab->getAlias() ?>"<?php if (!$tab->getIsFirst()): ?> style="display: none;"<?php endif; ?>>
+					<div class="tab-content-inner">
+						<?php echo $tab->getHtml() ?>
+					</div>
+				</div>
+			<?php endforeach; ?>
+		</div>
+    </div>
+    <script>
+        (function($) {
+            $('#search-tabs').highlight('<?php echo $this->getSearchTerm(true) ?>');
+            $('#search-tabs .product-name, #search-tabs .post-item-title').unhighlight();
+           
+			/**
+			 * select tab based on search result
+			 */
+			var productResults = jQuery('.tab-content').find("[class*='product']");
+			if ( productResults.length === 0 ) {
+				$('.tabs').tabs({active: 1});
+			}
+        })(jQuery);
+    </script>
+<?php else: ?>
+	<p class="note-msg"><?php echo $this->__('Your search returns no results.') ?></p>
+<?php endif; ?>

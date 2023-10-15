@@ -1,0 +1,315 @@
+.footer-container {
+    background-color: $color-bg-main;
+}
+.footer {
+    font-family: $font;
+    font-size: 1.1rem;
+    overflow: hidden;
+    @include container();
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    .button {
+        background-color: $color-black;
+        text-transform: none;
+    }
+    .footer-headlines,
+    .footer-content {
+        @extend .row;
+        > [class^="footer-"] {
+            @include col(1, 2, 4);
+            @media #{$mq-xs} {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+    .footer-headlines {
+        @media #{$mq-xs} {
+            display: none;
+        }
+    }
+    h5 {
+        @include col(2, 4);
+        font-family: $font-bold;
+        font-weight: normal;
+        text-align: left;
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 1.2rem;
+        padding: 15px;
+        color: $color-orange;
+        &.skylotec-pt-headline {
+            text-transform: none;
+        }
+    }
+    h6 {
+        margin: 0;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        line-height: 1.5;
+    }
+    .button {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 8px;
+        line-height: 1.2;
+        &:hover {
+            background-color: $color-orange;
+        }
+    }    
+    .contact-us {
+        background: url('../images/mail.png') 15px 15px no-repeat $color-gray-dark;
+        .button {
+            margin-top: 8px;
+        }
+    }
+    .contact-phone {
+        @extend .clearfix;
+        background: url('../images/phone.png') 15px 15px no-repeat $color-gray-dark;
+        select,
+        input, 
+        button {
+            float: left;  
+            height: 35px;            
+            @include box-sizing(border-box);
+        }
+        select {
+            padding: 5px;
+            width: 25%;
+            border-right: 1px solid $color-gray-light;
+            background-color: #fff;
+            background-image: url('../images/angle-down-gray.png');
+            background-size: 22px;
+            color: $color-gray;
+        }
+        .select2 {
+            border-right: 1px solid $color-gray;
+            float: left;
+        }
+        input {
+            width: 60%;
+            border: 0;
+        }
+        button {
+            width: 15%;
+            @include icon($icon-angle-double-right, 0, before, true);
+        }
+        .input-group {
+            margin: 10px 0;
+            @extend .clearfix;
+        }
+    }
+    .contact-us,
+    .contact-phone {
+        background-size: 25px;
+        padding-top: 30px;
+        @include box-sizing(border-box);
+        &:before {
+            font-size: 43px;
+            display: block;
+            color: darken($color-gray-light, 30%);
+        }
+    }
+    .social-buttons {
+        margin: 0 -13px;
+        li {
+            background-color: white;
+            margin: 0 13px 11px;
+            padding: 8px 10px;
+            width: 58px;
+            height: 58px;
+            font-size: 42px;
+            @include border-radius(10px);
+            @media #{$mq-md} {
+                margin: 0 5px 11px;
+            }
+            &.btn-facebook {
+                padding: 8px 10px 0 20px;
+            }
+            a {
+                color: #383836;
+            }
+            &:hover a {
+                color: white;
+            }
+        }
+    }
+}
+.footer-subtitle {
+    display: block;
+    margin: 0;
+}
+.footer-media {
+    .footer-video {
+        height: 285px;
+        @media #{$mq-sm} {
+            h6,
+            .footer-subtitle {
+                display: none;
+            }
+        }
+    }
+    .footer-media {
+        height: 205px;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+.footer-block {
+    @extend .clearfix;
+    padding: 15px;
+    color: $color-gray-light;
+    background-color: $color-gray-dark;
+    @include mq-vals((
+        margin-top, (
+            $gap-width-sm,
+            $gap-width-sm,
+            $gap-width-md,
+            $gap-width-lg
+        )        
+    ));
+    @media #{$mq-xs} {
+        height: auto !important;
+    }
+    &:first-child {
+        margin-top: 0;
+    }
+    &.social-media {
+        padding-bottom: 0;
+        height: 190px;
+    }    
+}
+.footer-news {
+    .latest-news {
+        font-size: 1rem;
+        line-height: 1.2; 
+        height: 365px;
+        header {            
+            a {
+                display: block;
+                max-height: 22px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-family: $font-bold;
+                font-weight: normal;
+                color: $color-orange;
+            }
+        }
+        @media #{$mq-lg} {
+            font-size: 1.1rem;
+        }
+    }
+    p {
+        margin: 0;
+    }
+    a {
+        color: $color-orange;
+    }
+    .read-more {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .footer-newsletter {
+        height: 95px;
+        .input-box {
+            float: left;
+            width: 85%;
+        }
+        input[type="text"] {
+            height: 35px;
+            border: 0;
+        }
+        .button {
+            display: block;
+            width: auto;
+            height: 35px;
+            @include box-sizing(border-box);
+        }
+    }
+    .news-item {
+        color: #fff;
+    }
+}
+.footer-skylotec {
+    text-align: center;
+    .footer-navigation {
+        height: 515px;
+        @media #{$mq-sm} {
+            height: 507px;
+        }
+    }
+    .brand-title {
+        color: $color-orange;
+    }
+    ul {
+        @extend .no-list-style;
+    }
+    .navigation a {
+        @extend .button;
+        text-transform: uppercase !important;
+    }
+    .footer-logo {
+        margin-top: 15px;
+        img {
+            margin-top: 30px;
+            max-height: 100px;
+        }
+    }
+    .navigation {        
+        li {
+            margin-top: 45px;
+            &:first-child {
+                margin-top: 0;
+            }
+            display: block;
+            float: none;
+            font-family: $font-bold;
+            font-weight: normal;
+            a, span {
+                text-transform: uppercase;
+                line-height: 2.2em !important;
+                letter-spacing: 0;
+                white-space: normal;
+            }
+            &:last-child a {
+                background-color: $color-gray-light;
+            }
+        }
+    }
+    .skylotec-pt {
+        margin: 0;
+        text-align: center;
+        img {
+            max-height: 515px
+        }
+    }
+}
+.footer-contact {
+    .footer-block {
+        height: 155px;
+        &.contact-phone {
+            @media #{$mq-md} {
+                br {
+                    display: none;
+                }
+            }
+        }
+    }    
+}
+.absolute-footer {
+    padding: 10px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    .links {
+        float: right;
+        a {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+}
+#newsletter-validate-detail {
+    @extend .clearfix;
+}

@@ -1,0 +1,65 @@
+table {
+    width: 100%;
+    @media #{$mq-xs} {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+}
+tbody,
+thead,
+tfoot {
+    width: 100%;
+}
+th {
+    text-align: left;
+    text-transform: uppercase;
+}
+th, td {
+    padding: 2px 10px;
+    vertical-align: top
+}
+.data-table {
+    th {
+        padding-left: 20px;
+        font-family: $font-bold;
+        font-weight: normal;
+    }
+    tr:nth-child(odd) {
+        th, td {
+            background-color: #282926;
+        }
+    }
+    tr:nth-child(even) {
+        th, td {
+            background-color: darken(#282926, 5%);
+        }
+    }
+};
+.a-center {
+    text-align: center;
+}
+.a-right {
+    text-align: right;
+}
+
+@media #{$mq-xs} {
+    table.advgb-table-frontend {
+        &, & a {
+            font-size: .8rem !important;
+        }
+        th, td {
+            display: block;
+        }
+        td + td {
+            padding-top: 0;
+        }
+    }
+    table.advgb-table-frontend,
+    .wp-block-image {
+        img {
+            height: auto;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}

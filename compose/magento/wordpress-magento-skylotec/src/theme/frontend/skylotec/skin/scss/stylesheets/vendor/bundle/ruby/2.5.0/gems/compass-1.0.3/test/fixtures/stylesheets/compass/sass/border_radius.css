@@ -1,0 +1,20 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/border_radius.scss */
+.simple {
+  -moz-border-radius: 4px / 4px;
+  -webkit-border-radius: 4px 4px;
+  border-radius: 4px / 4px;
+}
+
+/* line 4, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/border_radius.scss */
+.compound {
+  -moz-border-radius: 2px 5px / 3px 6px;
+  -webkit-border-radius: 2px 3px;
+  border-radius: 2px 5px / 3px 6px;
+}
+
+/* line 5, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/border_radius.scss */
+.crazy {
+  -moz-border-radius: 1px 3px 5px 7px / 2px 4px 6px 8px;
+  -webkit-border-radius: 1px 2px;
+  border-radius: 1px 3px 5px 7px / 2px 4px 6px 8px;
+}

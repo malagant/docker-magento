@@ -1,0 +1,24 @@
+<?php
+/* @var $this Conlabz_Skylotec_Block_Page_Home_Teaser */
+?>
+<ul class="home-teasers">
+    <?php foreach ($this->getTeaser() as $teaser): ?>
+    <?php $background = 'style="background-image: url(\'' . $this->getTeaserImageUrl($teaser) . '\')"'; ?>
+    <li class="home-teaser">
+        <?php if (($url = $teaser->getMetaValue('teaser_url')) && is_array($url) && $url['url'] != ""): ?>
+        <a href="<?php echo $url['url']; ?>" <?php echo $background ?>>
+        <?php else: ?>
+        <a href="#" <?php echo $background ?>>
+        <?php endif ?>
+            <div class="home-teaser-title-box" data-mh="teaser-home">
+                <div class="title">
+                    <?php echo $this->escapeHtml($teaser->getPostTitle()) ?>
+                </div>
+                <div class="subtitle">
+                    <?php echo $teaser->getPostExcerpt() ?>
+                </div>
+            </div>
+        </a>
+    </li>
+    <?php endforeach ?>
+</ul>

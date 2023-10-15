@@ -1,0 +1,8 @@
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.13.12
+Date: Sat, 14 Oct 2023 16:15:17 GMT
+Content-Type: text/html
+Content-Length: 186
+Connection: keep-alive
+Location: https://go.heartcoded.io/
+

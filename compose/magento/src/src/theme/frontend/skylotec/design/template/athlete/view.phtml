@@ -1,0 +1,20 @@
+<?php /* @var $this Fishpig_Wordpress_Block_Post_View */ ?>
+<?php
+$athlete = $this->getPost();
+ /* @var $galleryHelper Conlabz_Wordpress_Helper_Gallery */
+$galleryHelper = $this->helper('conwp/gallery');
+?>
+<h1><?php echo $athlete->getPostTitle() ?></h1>
+<div class="athlete-view">
+    <div class="athlete-image">
+        <?php if ($image = $athlete->getFeaturedImage()): ?>
+        <img src="<?php echo $image->getFullSizeImage() ?>" alt="<?php echo $this->escapeHtml($athlete->getPostTitle()) ?>">
+        <?php endif ?>
+        <?php if ($galleryHelper->hasGallery($athlete)): ?>
+            <?php echo $galleryHelper->renderGallery($athlete); ?>
+        <?php endif ?>
+    </diV>
+    <div class="athlete-content">
+        <?php echo $athlete->getPostContent() ?>
+    </div>
+</div>

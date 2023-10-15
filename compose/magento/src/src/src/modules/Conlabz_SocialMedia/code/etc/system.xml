@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+    	<socialmedia>
+    		<label>Social Media</label>
+    		<tab>general</tab>
+			<frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<twitter translate="label" module="socialmedia">
+					<frontend_type>text</frontend_type>
+					<label>Twitter</label>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>                     
+						<card translate="label" module="socialmedia">
+							<label>twitter:card</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</card>
+						<site translate="label" module="socialmedia">
+							<label>twitter:site</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</site>                        
+                        <creator translate="label" module="socialmedia">
+							<label>twitter:creator</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </creator>
+                        <image translate="label" module="socialmedia">
+							<label>twitter:image</label>
+							<frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">socialmedia</upload_dir>
+                            <base_url type="media" scope_info="1">socialmedia</base_url>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                            <comment>default value. Twitter Summary card images must be at least 200x200px</comment>
+                        </image>
+					</fields>
+				</twitter>
+                <opengraph translate="label" module="socialmedia">
+					<frontend_type>text</frontend_type>
+					<label>Open Graph (Facebook)</label>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+                    <fields>
+                        <site_name translate="label" module="socialmedia">
+							<label>og:site_name</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</site_name>
+                        <og_type translate="label" module="socialmedia">
+							<label>og:type</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </og_type>
+                        <image translate="label" module="socialmedia">
+							<label>og:image</label>
+							<frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">socialmedia</upload_dir>
+                            <base_url type="media" scope_info="1">socialmedia</base_url>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                            <comment>default value. Use images that are at least 1200x630 pixels</comment>
+                        </image>
+                    </fields>
+                </opengraph>
+			</groups>	
+        </socialmedia>
+    </sections>
+</config>

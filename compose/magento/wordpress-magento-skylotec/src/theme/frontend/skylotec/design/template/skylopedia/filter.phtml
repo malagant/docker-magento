@@ -1,0 +1,14 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Skylopedia_Filter */ ?>
+<?php if (!$this->getIsInvisible()): ?>
+<ul class="skylopedia-filter">
+<?php foreach ($this->getFilters() as $filter): ?>
+    <li<?php if($filter->getIsActive()): echo ' class="active"'; endif; ?>>
+        <a href="<?php echo $filter->getUrl() ?>">
+            <?php echo $this->escapeHtml($filter->getLabel()) ?>
+        </a>
+    </li>
+<?php endforeach; ?>
+</ul>
+<?php else: ?>
+<?php $this->_filterCollection(); ?>
+<?php endif ?>

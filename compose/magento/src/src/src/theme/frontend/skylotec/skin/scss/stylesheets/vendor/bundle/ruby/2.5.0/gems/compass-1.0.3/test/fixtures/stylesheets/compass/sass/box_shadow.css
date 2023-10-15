@@ -1,0 +1,34 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/box_shadow.scss */
+.no-box-shadow {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 4, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/box_shadow.scss */
+.box-shadow {
+  -moz-box-shadow: 0px 0px 5px #333333, 2px 2px 5px #222222;
+  -webkit-box-shadow: 0px 0px 5px #333333, 2px 2px 5px #222222;
+  box-shadow: 0px 0px 5px #333333, 2px 2px 5px #222222;
+}
+
+/* line 5, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/box_shadow.scss */
+.single-box-shadow {
+  -moz-box-shadow: 0px 5px #333333;
+  -webkit-box-shadow: 0px 5px #333333;
+  box-shadow: 0px 5px #333333;
+}
+
+/* line 6, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/box_shadow.scss */
+.multiple-box-shadows {
+  -moz-box-shadow: 0px 0px 5px #333333, 2px 2px 5px #222222;
+  -webkit-box-shadow: 0px 0px 5px #333333, 2px 2px 5px #222222;
+  box-shadow: 0px 0px 5px #333333, 2px 2px 5px #222222;
+}
+
+/* line 7, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/box_shadow.scss */
+.legacy-single-box-shadow {
+  -moz-box-shadow: 0px 5px blue;
+  -webkit-box-shadow: 0px 5px blue;
+  box-shadow: 0px 5px blue;
+}

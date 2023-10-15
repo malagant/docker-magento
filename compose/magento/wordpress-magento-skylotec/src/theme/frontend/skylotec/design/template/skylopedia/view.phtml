@@ -1,0 +1,11 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Skylopedia */ ?>
+<div class="skylopedia">
+    <?php echo $this->getChildHtml('filter') ?>
+    <?php if ($posts = $this->getPostListHtml()): ?>
+    <?php echo $posts; ?>
+    <?php else: ?>
+        <p class="note-msg">
+            <?php echo $this->__('There are no posts matching your selection.') ?>
+        </p>
+    <?php endif ?>
+</div>

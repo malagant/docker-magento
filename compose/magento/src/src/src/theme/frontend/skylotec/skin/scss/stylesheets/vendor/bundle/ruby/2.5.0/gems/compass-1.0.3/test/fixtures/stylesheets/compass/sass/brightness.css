@@ -1,0 +1,24 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/brightness.scss */
+.black-is-0-percent {
+  brightness: 0%;
+}
+
+/* line 5, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/brightness.scss */
+.white-is-100-percent {
+  brightness: 100%;
+}
+
+/* line 7, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/brightness.scss */
+.green-is-58-point-7-percent {
+  brightness: 58.7%;
+}
+
+/* line 9, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/brightness.scss */
+.blue-is-11-point-4-percent {
+  brightness: 11.4%;
+}
+
+/* line 11, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/brightness.scss */
+.red-is-29-point-9-percent {
+  brightness: 29.9%;
+}

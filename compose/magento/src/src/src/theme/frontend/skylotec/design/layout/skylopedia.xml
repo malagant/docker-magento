@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+       
+    <category_skylopedia>
+        <reference name="content">
+            <block type="skylotec/skylopedia" name="skylopedia" template="skylopedia/view.phtml">
+				<block type="skylotec/skylopedia_filter" name="skylopedia.filter" as="filter">
+                    <action method="setIsInvisible">
+                        <flag>1</flag>
+                    </action>
+                </block>
+                <block type="skylotec/skylopedia_list" name="wordpress_post_list" as="post_list">
+                    <block type="page/html_pager" name="wordpress_post_list.pager" as="pager">
+                        <action method="setPageVarName">
+                            <param>page</param>
+                        </action>
+                        <action method="setShowPerPage">
+                            <param>0</param>
+                        </action>
+                        <action method="setLimit">
+                            <value>10</value>
+                        </action>
+                    </block>
+                </block>
+            </block>
+        </reference>
+    </category_skylopedia>
+
+</layout>

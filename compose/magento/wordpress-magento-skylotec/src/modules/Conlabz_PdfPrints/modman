@@ -1,0 +1,3 @@
+code/                                app/code/local/Conlabz/PdfPrints/
+Conlabz_PdfPrints.xml                app/etc/modules/Conlabz_PdfPrints.xml
+design/frontend/template/pdfprints   app/design/frontend/base/default/template/pdfprints

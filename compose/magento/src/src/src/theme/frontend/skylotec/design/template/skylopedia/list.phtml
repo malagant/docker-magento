@@ -1,0 +1,34 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Skylopedia_List */ ?>
+<?php if ($this->canDisplay()): ?>
+<?php /* @var $article Fishpig_Wordpress_Model_Post */ ?>
+<?php $_helper = $this->helper('skylotec'); ?>
+<div class="skylopedia-list">
+<?php foreach ($this->getPostCollection() as $article): ?>
+    <?php $ajaxUrl = $this->getUrl('sky/ajax/fullpost', array('post_id' => $article->getId(), 'post_type' => $article->getPostType())); ?>
+    <article data-mh="skylopedia" class="skylopedia-article">
+        <div class="skylopedia-category">
+            <?php echo $this->getCategories($article) ?>
+        </div>
+        <h2><?php echo $this->escapeHtml($article->getPostTitle()) ?></h2>
+        <?php if ($featuredImage = $article->getFeaturedImage()): ?>
+        <div class="featured-image">
+            <a href="<?php echo $article->getPermalink() ?>" data-ajax-href="<?php echo $ajaxUrl ?>" title="<?php echo $this->escapeHtml($article->getPostTitle()) ?>">
+                <img src="<?php echo $featuredImage->getMediumImage() ?>" alt="<?php echo $this->escapeHtml($article->getPostTitle()) ?>">
+            </a>
+        </div>
+        <?php endif; ?>
+        <?php if ($videoId = $article->getMetaValue('youtube_id')): ?>
+        <div class="video-thumbnail">
+            <a href="<?php echo $_helper->getVideoUrl($videoId) ?>" class="video-link" data-fancybox-type="iframe">
+                <img src="<?php echo $_helper->getVideoThumbnail($videoId) ?>" alt="">
+            </a>
+        </div>
+        <?php endif; ?>
+        <div class="skylopedia-excerpt">
+            <?php echo $article->getPostExcerpt() ?>
+        </div>
+    </article>
+<?php endforeach; ?>
+<?php echo $this->getPagerHtml(); ?>
+</div>
+<?php endif; ?>

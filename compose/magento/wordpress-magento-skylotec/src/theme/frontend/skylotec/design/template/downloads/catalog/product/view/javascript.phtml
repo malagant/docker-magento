@@ -1,0 +1,11 @@
+<script>
+
+   jQuery(function($) {
+        $('body').on('submit', '.product-downloads form', function(e) {
+            e.preventDefault();
+            alert('Todo: Download products')
+        });
+   });
+
+</script>
+<script type="text/javascript" src="<?= Mage::helper('dstorage')->getSkyDownloadUrl() ?>"></script>

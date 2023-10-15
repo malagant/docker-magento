@@ -1,0 +1,59 @@
+/**
+ * @category Fishpig
+ * @package  Fishpig_Wordpress_Addon_PluginShortcodeWidget
+ * @url      https://fishpig.co.uk/magento/wordpress-integration/shortcodes-widgets/
+ * @author   Ben Tideswell <ben@fishpig.co.uk>
+ */
+- 2.2.1.3
+- Added further support for Beaver Builder, especially when using it on the homepage with Root.
+
+- 2.2.1.2
+- Fixed issues related to Beaver Builder.
+
+- 2.2.0.32
+- Added fix for WP Bakery frontend editor
+
+- 2.2.0.30
+- Added improved setting $post global. $id is now also set globally.
+
+- 2.2.0.29
+- Added fix for Rev Slider
+
+- 2.2.0.25
+- Fixed issue with opti-skip-move tags in script tags embedded directly into the post_content field
+
+- 2.2.0.24
+- Improved Asset injection. This fixes a Divi issue but probably several other bugs
+
+- 1.0.0.36
+- Added support for Elementor Pro templates
+
+- 1.0.0.34
+- Added support for Elementor templates
+
+- 1.0.0.33 
+- Added support for the Page-List plugin.
+
+- 1.0.0.30
+- Add HTML in wp_footer into Magento
+
+- 1.0.0.29
+- Added fix for product shortcode
+
+- 1.0.0.22
+- Added support for the WPBakery Page Builder Frontend Editor.
+
+- 1.0.0.21
+- Widget integration improvements
+
+- 1.0.0.16
+- Fixed bug that stopped product shortcode from working.
+
+- 1.0.0.14
+- Fixed bug with widget title
+
+- 1.0.0.12
+- Fixed Revolution Slider issue.
+
+- 1.0.0.11
+- Fixed error that occurred when no queued styles could be found in WordPress.

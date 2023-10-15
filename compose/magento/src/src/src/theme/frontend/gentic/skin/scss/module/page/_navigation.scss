@@ -1,0 +1,136 @@
+.nav-container {
+    position: absolute;
+    right: 45px;
+    bottom: 0;
+    @media #{$mq-sm} {
+        right: 10px;
+    }
+    @media #{$mq-xs} {
+        clear: both;
+        float: none;
+        margin: 0 -20px;
+        position: static;        
+        display: none;
+    }
+}
+
+@media #{$mq-xs} {
+    .navbar-visible {
+        display: block;
+    }
+}
+
+@mixin nav-color($index, $color) {
+    &.nav-#{$index},
+    &.nav-#{$index} ul {
+        background: $color;
+    }
+    @at-root {
+        @media #{$mq-xs} {
+            #nav li.level0 {
+                &.nav-#{$index},
+                &.nav-#{$index} ul {
+                    background: $color;
+                }
+            }
+        }
+    }
+}
+
+#nav {
+    @extend .no-list-style;
+    margin-top: 35px;
+    li {
+        display: inline-block;
+        position: relative;
+        font-weight: bold;        
+        @media #{$mq-xs} {
+            display: block;
+            font-size: 1.3em;
+            padding: 10px;
+        }
+        > a,
+        > span {
+            padding: 8px 15px;
+            display: block;            
+            text-decoration: none;
+            text-transform: uppercase;
+            @media #{$mq-sm} {
+                padding: 8px 10px;
+            }
+        }
+        span {
+            color: #000;
+            @include transition(color .2s);
+            @media #{$mq-xs} {
+                color: #fff;
+            }
+        }
+        &.level0 {
+            letter-spacing: 1px;
+            @include transition(all .2s);
+            &:hover,
+            &.active {
+                span {
+                    color: #fff;
+                }
+                @include nav-color(1, $color-gray);
+                @include nav-color(2, $color-blue);
+                @include nav-color(3, $color-orange);
+                @include nav-color(4, $color-green);
+                @include nav-color(5, $color-red);
+                @include nav-color(6, $color-pink); 
+            }
+        }
+    }
+    .toggle-subnav {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        border: 0;
+        font-size: 28px;
+        background: transparent;  
+        color: #fff;
+        @include icon($icon-plus, 0, after, true);
+        @media #{$mq-xs} {
+            display: block;                      
+        }
+    }
+    .parent {
+        > ul {
+            @extend .no-list-style;            
+            min-width: 100%;
+            position: absolute;
+            left: -9999px;
+            top: 100%;
+            letter-spacing: 0;
+            font-size: 0.8em;
+            z-index: 100;
+            @include transition(opacity .2s);
+            @include opacity(0);
+            @media #{$mq-xs} {
+                position: static;
+                display: none;
+                &.visible {
+                    display: block;
+                }
+            }
+        }        
+        li {
+            display: block;
+            > a,
+            > span {
+                padding: 10px;
+                font-weight: normal;
+                @media #{$mq-xs} {
+                    padding: 0 10px;
+                }
+            }
+        }
+        &:hover > ul {
+            left: 0;
+            @include opacity(1);
+        }
+    }
+}

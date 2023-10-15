@@ -1,5 +1,6 @@
 FROM php:7.2-fpm
-MAINTAINER Mark Shust <mark@shust.com>
+
+LABEL author=Michael Johann <m.johann@digitalxperts.de>
 
 RUN apt-get update && apt-get install -y \
   cron \

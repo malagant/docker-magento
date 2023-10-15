@@ -1,0 +1,13 @@
+.login-form { background: url(images/clogo.png) no-repeat; border: 1px solid #a3aeaa; padding: 27px 55px 35px; }
+.login-container { width: 580px; }
+.login-container .legal { background: none; border-left: 1px solid #a3aeaa; border-right: 1px solid #a3aeaa;}
+.login-logo { position:absolute; top:10px; right:15px; }
+.login-box { position:relative;}
+.login-form h2 { color:#fff; font-style: italic; padding-top: 13px;}
+.login-form label { color:white; padding-bottom:3px;}
+.login-form .input-box input.input-text { margin-top:3px; height:18px; }
+a:hover, a { text-decoration:none; color: #f39300; font-weight:bold;}
+.login-container .legal { font-size: 11px; }
+#reset-password-form .input-box{ margin-top: 10px; }
+#reset-password-form em.required{ color:white !important; }
+

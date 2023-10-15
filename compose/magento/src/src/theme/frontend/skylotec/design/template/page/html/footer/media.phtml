@@ -1,0 +1,49 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Page_Html_Footer_Media */ ?>
+<?php $latestVideo = $this->getLatestVideo()->getMetaValue('youtube_id') ?>
+<div class="footer-block footer-video">
+    <h6><?php echo $this->__('Skylotec TV') ?></h6>
+    <?php if ($this->hasLatestVideo()): ?>
+    <div class="footer-subtitle"><?php echo $this->__('Latest video:') ?></div> 
+    <div class="video-thumbnail">
+        <a class="video-link" href="<?php echo $this->getVideoUrl($latestVideo) ?>" data-fancybox-type="iframe">
+            <img src="<?php echo $this->getVideoThumbnail($latestVideo) ?>" alt="<?php echo $latestVideo ?>">
+        </a>
+    </div>
+    <?php endif; ?>
+    <a href="<?php echo $this->getUrl($this->__('industry/skylopedia/media')) ?>" class="button">
+        <?php echo $this->__('All videos') ?>
+    </a>
+</div>
+<div class="footer-block social-media">
+    <h6><?php echo $this->__('Social Media') ?></h6>
+    <span class="footer-subtitle"><?php echo $this->__('Follow us:') ?></span>
+    <ul class="social-buttons">
+        <li class="btn-facebook">
+            <a title="Facebook" href="https://www.facebook.com/pages/SKYLOTEC/143343372342755" class="facebook" target="_blank">
+                <span>Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a title="Instagram" href="http://instagram.com/skylotec/" class="instagram" target="_blank">
+                <span>Instagram</span>
+            </a>
+        </li>
+        <li>
+            <a title="Youtube" href="http://www.youtube.com/user/skylotecTV" class="youtube" target="_blank">
+                <span>YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a title="Linkedin" href="http://www.linkedin.com/company/skylotec-gmbh" class="linkedin" target="_blank">
+                <span>Linkedin</span>
+            </a>
+        </li>
+        <?php if ($link = Mage::getStoreConfig('design/footer/skylotec_footer_whatsapp')):?>
+        <li>
+            <a title="WhatsApp" href="<?=$this->escapeUrl($link) ?>" class="whatsapp">
+                <span>WhatsApp</span>
+            </a>
+        </li>
+        <?php endif; ?>
+    </ul>    
+</div>

@@ -1,0 +1,8 @@
+<?php
+$_helper = $this->helper('catalog/output');
+$_skylotecHelper = $this->helper('skylotec');
+$_imgSize = 270;
+?>
+<?php if(count($this->getItems())): ?>
+<div class="block-products"><ul class="products-grid"><?php foreach($this->getItems() as $_product): ?><li data-mh="product-item" class="item"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>" alt="<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>"><h2 class="product-name"><span><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span></h2></a></li><?php endforeach ?></ul></div>
+<?php endif ?>

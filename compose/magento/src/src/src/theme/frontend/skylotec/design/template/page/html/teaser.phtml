@@ -1,0 +1,27 @@
+<?php if ($this->canDisplay()): ?>
+<?php
+/* @var $this Conlabz_Skylotec_Block_Teaser_Interface */
+$imageUrl = $this->getImageUrl();
+?>
+<div class="teaser-top <?php echo $this->getClassname() ?>">
+    <img src="<?= $imageUrl ?>" alt="<?= $this->escapeHtml($this->getTitle()) ?>">
+    <div class="teaser-inner">
+        <?php if ($this->getTitle()): ?>
+        <header class="box-title">
+            <div class="headline">
+                <h1>
+                    <?php if ($icon = $this->getIcon()): ?>
+                    <span class="icon-skylotec" style="background-image: url(<?php echo Mage::getBaseUrl('media').'catalog/category/icons/'. $icon ?>)"></span>
+                    <?php endif ?>
+                    <?php echo $this->escapeHtml($this->getTitle()) ?>
+                </h1>
+            </div>
+            <div class="subtitle">
+                <?php echo $this->getDescription() ?>
+            </div>
+        </header>
+        <?php endif ?>
+    </div>
+    <?php echo $this->getChildHtml('additional') ?>
+</div>
+<?php endif; ?>

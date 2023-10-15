@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Conlabz_SocialMedia>
+            <version>0.0.1</version>
+        </Conlabz_SocialMedia>
+    </modules>
+    <global>
+        <blocks>
+            <socialmedia>
+                <class>Conlabz_SocialMedia_Block</class>
+            </socialmedia>
+        </blocks>
+        <helpers>
+            <socialmedia>
+                <class>Conlabz_SocialMedia_Helper</class>
+            </socialmedia>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+			<updates>
+				<socialmedia>
+					<file>conlabz/socialmedia.xml</file>
+                </socialmedia>
+			</updates>
+		</layout>
+    </frontend>
+</config>

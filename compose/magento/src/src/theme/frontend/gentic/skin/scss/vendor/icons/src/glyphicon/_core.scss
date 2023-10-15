@@ -1,0 +1,26 @@
+//GlyphIcons bootstrap v.3.2.0
+
+@mixin icon-font() {
+    $icon-font-name:        'glyphicons-halflings-regular';
+    $icon-font-svg-id:      'glyphicons_halflingsregular';
+    @font-face {
+        font-family: 'Glyphicons Halflings';
+        src: url('#{$icon-font-path}/#{$icon-font-name}.eot');
+        src: url('#{$icon-font-path}/#{$icon-font-name}.eot?#iefix') format('embedded-opentype'),
+             url('#{$icon-font-path}/#{$icon-font-name}.woff') format('woff'),
+             url('#{$icon-font-path}/#{$icon-font-name}.ttf') format('truetype'),
+             url('#{$icon-font-path}/#{$icon-font-name}.svg##{$icon-font-svg-id}') format('svg');
+    }
+}
+
+@mixin icon-main() {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

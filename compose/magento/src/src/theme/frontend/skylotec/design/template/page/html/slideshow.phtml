@@ -1,0 +1,32 @@
+<?php
+
+	$bannerCollection = $this->getBannerCollection();
+	$i = 0;
+?>
+<?php $timeDelay = $this->getDelayTime() ?>
+<?php $showdesc = $this->isShowDescription() ?>
+<?php $listStyle = $this->getListStyle() ?>
+<?php $imagewidth = $this->getImageWidth() ?>
+<?php $imageheight = $this->getImageHeight() ?>
+<?php if (count($bannerCollection)): ?>
+<div class="slideshow">
+    <ul class="slider-images">
+    <?php foreach ($bannerCollection as $banner): ?>
+        <li>
+            <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $banner->getFilename() ?>" title="<?php echo $this->escapeHtml($banner->getTitle()) ?>" alt="<?php echo $banner->getTitle() ?>">				
+            <div class="slider-text-wrap">
+                <?php if ($showdesc == '1'):?>
+                <h2><?php echo $banner->getTitle(); ?></h2>
+                <h3><?php echo $banner->getSubTitle(); ?></h3>
+                <?php endif;?>
+                <?php if($banner->getWeblink()): ?>
+                <?php echo $this->helper('bannerslider')->getLinkHtml($banner, 'button') ?>
+                    <?php echo $this->__('Learn more') ?>
+                </a>
+                <?php endif; ?>
+            </div>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

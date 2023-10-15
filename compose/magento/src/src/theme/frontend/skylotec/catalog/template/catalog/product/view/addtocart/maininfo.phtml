@@ -1,0 +1,14 @@
+<?php /** @var $this Conlabz_Skylotec_Block_Catalog_Product_View_Buy */  ?>
+<?php
+$_product = $this->getProduct();
+/* @var $_helper Mage_Catalog_Helper_Output */
+$_helper = $this->helper('catalog/output');
+?>
+<table class="data-table">
+    <?php foreach ($this->getAttributes() as $attribute): ?>
+    <tr>
+        <th><?php echo $attribute['label'] ?></th>
+        <td><?php echo $_helper->productAttribute($_product, $attribute['value'], $attribute['code']) ?>
+    </tr>
+    <?php endforeach; ?>
+</table>

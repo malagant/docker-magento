@@ -1,0 +1,40 @@
+input.input-text,
+input[type="text"],
+input[type="password"],
+textarea {
+    border: 0;
+    padding: 10px;
+    background: #F0E5D7;
+    @include box-sizing(border-box);
+    @media #{$mq-xs} {
+        width: 100%;
+    }
+}
+textarea {
+    width: 50%;
+    @media #{$mq-xs} {
+        width: 100%;
+    }
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    em {
+        float: right;
+        color: $color-red;
+        margin-right: 5px;
+    }
+}
+.button {
+    color: #fff;
+    background: #000;
+    padding: 10px;
+    border: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.validation-advice {
+    color: $color-red;
+    font-size: 0.9em;
+    @include icon($icon-arrow-up);
+}

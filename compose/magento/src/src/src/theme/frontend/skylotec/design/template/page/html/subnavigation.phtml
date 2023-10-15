@@ -1,0 +1,15 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Page_Html_Subnavigation */ ?>
+<?php $items = $this->getItems() ?>
+<?php if (count($items)): ?>
+<ul class="subnavigation">
+    <?php foreach ($items as $item): ?>
+    <li class="<?php echo $item->getIsActive() ? ' active' : '' ?>">
+        <?php if ($item->getHref()): ?>
+        <a href="<?php echo $item->getHref() ?>">
+            <?php echo $this->escapeHtml($item->getName()) ?>
+        </a>
+        <?php endif; ?>
+    </li>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>

@@ -1,0 +1,35 @@
+<?php
+/* @var $this Conlabz_Skylotec_Block_SetComponents */
+?>
+<?php if ($this->hasSetComponents()): ?>
+<table class="data-table set-components">
+    <tbody>
+    <?php foreach ($this->getSetComponents() as $component): ?>
+    <tr>
+        <td class="qty">
+            <?php echo $component->getQty() ?> x
+        </td>
+        <td>
+            <?php echo $this->escapeHtml($component->getProductName()) ?>
+        </td>
+        <td>
+            <?php echo $component->getSku() ?>
+        </td>
+        <td>
+            <a class="info" href="<?php echo $component->getUrl() ?>" data-fancybox-type="ajax" data-ajax-url="<?php echo $component->getAjaxUrl() ?>" title="<?php echo $this->escapeHtml($component->getProductName()) ?>">
+                <span><?php echo $this->__('Info') ?></span>
+            </a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<?php endif; ?>
+<script>
+    jQuery(function($) {
+        $('.set-components .info').each(function() {
+            var ajaxUrl = $(this).data('ajaxUrl');
+            $(this).attr('href', ajaxUrl);
+        });
+    });
+</script>

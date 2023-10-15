@@ -1,0 +1,65 @@
+.social-buttons {
+    @extend .no-list-style;
+    @extend .row;
+    li {            
+        @extend .button;
+        width: 52px;
+        height: 52px;
+        display: inline-block !important;
+        font-size: 32px;
+        text-align: center;
+        @include mq-vals((
+            margin, (
+                4px 2px,
+                10px,
+                6px 4px,
+                6px 10px
+            )
+        ));        
+    }
+    .facebook {
+        @include icon($icon-facebook, 0, before, true);
+    }
+    .twitter {
+        @include icon($icon-twitter, 0, before, true);
+    }
+    .google-plus {
+        @include icon($icon-google-plus, 0, before, true);
+    }
+    .instagram {
+        @include icon($icon-instagram, 0, before, true);
+    }
+    .youtube {
+        @include icon($icon-youtube, 0, before, true);
+    }
+    .linkedin {
+        @include icon($icon-linkedin, 0, before, true);
+    }
+    .whatsapp {
+        @include icon($icon-whatsapp, 0, before, true);
+    }
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-facebook {
+    @include icon($icon-facebook, 0);
+}
+.fa-twitter {
+    @include icon($icon-twitter, 0);
+}
+.fa-google-plus {
+    @include icon($icon-google-plus, 0);
+}
+.fa-whatsapp {
+    @include icon($icon-whatsapp, 0);
+}
+.shariff {
+    margin-top: 1rem;
+}

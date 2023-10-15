@@ -1,0 +1,8 @@
+code/                           app/code/local/Conlabz/Skylotec/
+Conlabz_Skylotec.xml            app/etc/modules/Conlabz_Skylotec.xml
+
+design/frontend/layout/skylopedia.xml  app/design/frontend/base/default/layout/skylopedia.xml
+design/frontend/layout/news.xml  app/design/frontend/base/default/layout/news.xml
+design/frontend/layout/cms_wp.xml  app/design/frontend/base/default/layout/cms_wp.xml
+
+locale/de_DE.csv                app/locale/de_DE/Conlabz_Skylotec.csv

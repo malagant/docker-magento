@@ -1,0 +1,62 @@
+<?php /* @var $this Conlabz_Download_Block_List */ ?>
+<?php 
+$files = $this->getFiles();
+?>
+<?php if ($files->getSize()): ?>
+<table class="download-list data-table">
+    <thead>
+        <tr>
+            <th class="download-check">&nbsp;</th>
+            <th class="download-name"><?php echo $this->__('Name') ?></th>
+            <th class="download-preview"><?php echo $this->__('Preview') ?></th>
+            <th class="download-sku"><?php echo $this->__('SKU') ?></th>
+            <th class="a-center download-action"><?php echo $this->__('Download') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->getFiles() as $file): ?>
+    <?php if (!$file->canDisplay()) continue ?>
+        <tr>
+            <td>
+                <input class="cb-download" type="checkbox" name="files[]" value="<?php echo $file->getId() ?>" title="<?php echo $this->__('Add to download list') ?>">
+            </td>
+            <td>
+                <a target="_blank" href="<?php echo $file->getUrl() ?>">
+                    <?php echo $this->__($file->getFileTitle(), $file->getProductTitle(), '') ?>
+                </a>
+                <div class="dl-sku">
+                    <?php echo $file->getProductSku() ?>
+                </div>
+                <?php if ($file->hasPreview()): ?>
+                <a class="dl-preview" target="_blank" href="<?php echo $file->getUrl() ?>">
+                    <img src="<?php echo $file->getPreviewUrl() ?>" alt="<?php echo $file->getProductTitle() ?>">
+                </a>
+                <?php endif ?>
+            </td>
+            <td class="download-preview">
+                <?php if ($file->hasPreview()): ?>
+                <a target="_blank" href="<?php echo $file->getUrl() ?>">
+                    <img src="<?php echo $file->getPreviewUrl() ?>" alt="<?php echo $file->getProductTitle() ?>">
+                </a>
+                <?php endif ?>
+            </td>
+            <td class="download-sku">
+                <a target="_blank" href="<?php echo $file->getUrl() ?>">
+                    <?php echo $this->escapeHtml($file->getProductSku()) ?>
+                </a>
+            </td>
+            <td class="a-center download-action">
+                <a target="_blank" href="<?php echo $file->getUrl() ?>" class="btn-download" title="<?php echo $this->__('Direct download') ?>">
+                    <span><?php echo $this->__('Download') ?></span>
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<?php endif ?>
+<div class="selected-files"><?php echo $this->__('%s file(s) selected', '<span id="files-count">0</span>') ?></div>
+<div class="download-pager">
+    <?php echo $this->getPagerHtml() ?>
+</div>
+<?php echo $this->getChildHtml('javascript') ?>

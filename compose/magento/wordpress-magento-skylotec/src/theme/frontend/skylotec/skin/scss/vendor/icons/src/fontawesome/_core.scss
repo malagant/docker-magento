@@ -1,0 +1,26 @@
+// FontAwesome v.4.1.0
+
+$icon-version: 4.1.0;
+@mixin icon-font() {
+    @font-face {
+        font-family: 'FontAwesome';
+        src: url('#{$icon-font-path}/fontawesome-webfont.eot?v=#{$icon-version}');
+        src: url('#{$icon-font-path}/fontawesome-webfont.eot?#iefix&v=#{$icon-version}') format('embedded-opentype'),
+          url('#{$icon-font-path}/fontawesome-webfont.woff?v=#{$icon-version}') format('woff'),
+          url('#{$icon-font-path}/fontawesome-webfont.ttf?v=#{$icon-version}') format('truetype'),
+          url('#{$icon-font-path}/fontawesome-webfont.svg?v=#{$icon-version}#fontawesomeregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+@mixin icon-main() {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    text-transform: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1; 
+}

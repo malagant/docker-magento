@@ -1,0 +1,90 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php
+$_product    = $this->getProduct();
+?>
+<?php
+    $this->helper('catalog/product')->setSkipSaleableCheck(true);
+    $_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
+?>
+<?php foreach($_attributes as $_attribute): ?>
+    <tr class="configurable-select">
+        <th><?php echo $_attribute->getLabel() ?></th>
+        <td>
+            <div class="input-box">
+                <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" class="required-entry super-attribute-select">
+                    <option><?php echo $this->__('Choose an Option...') ?></option>
+                </select>
+            </div>
+        </td>
+    </tr>
+<?php endforeach; ?>
+<script type="text/javascript">
+    var spConfig = new Product.Config(<?php echo $this->getJsonConfig() ?>);
+    jQuery(function($) {
+        var form = $('#product_addtocart_form'),
+            url = '<?php echo $this->getUrl('sky/ajax/configurable') ?>'
+        form.configurable({
+            url: url
+        });
+
+        /*var load = true, elements = [], data = form.serializeArray();
+
+        $.each(spConfig.config.attributes, function () {
+            var attr = this;
+
+            if (this.options.length === 1) {
+                $.each(data, function() {
+                    if (this.name === 'super_attribute['+attr.id+']') {
+                        this.value = attr.options[0].id;
+                    }
+                });
+                elements.push(attr.id);
+            } else {
+                load = false;
+            }
+
+        });
+        if (load) {
+            $.each(elements, function () {
+                $('#attribute'+this).closest('.configurable-select').hide();
+            });
+            $.ajax({
+                dataType: 'json',
+                url: url,
+                data: $.param(data),
+                beforeSend: function(e) {
+                    $('#product_addtocart_form').trigger('configurable.load.simple.before', [e]);
+                },
+                success: function (json) {
+                    $('#product_addtocart_form').trigger('configurable.load.simple', [json]);
+                }
+            });
+        }*/
+    });
+</script>

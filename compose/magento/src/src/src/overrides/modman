@@ -1,0 +1,6 @@
+Mage/Catalog/Block/Product/View/Attributes.php         app/code/local/Mage/Catalog/Block/Product/View/Attributes.php
+Mage/CatalogSearch/Model/Resource/Fulltext.php         app/code/local/Mage/CatalogSearch/Model/Resource/Fulltext.php
+Mage/Core/functions.php                                app/code/local/Mage/Core/functions.php
+Mage/Cms/Helper/Wysiwyg/Images.php                     app/code/local/Mage/Cms/Helper/Wysiwyg/Images.php
+Mage/Sitemap/Model/Resource/Catalog/Product.php        app/code/local/Mage/Sitemap/Model/Resource/Catalog/Product.php
+Fishpig/Wordpress/Model/Menu/Item.php                  app/code/local/Fishpig/Wordpress/Model/Menu/Item.php

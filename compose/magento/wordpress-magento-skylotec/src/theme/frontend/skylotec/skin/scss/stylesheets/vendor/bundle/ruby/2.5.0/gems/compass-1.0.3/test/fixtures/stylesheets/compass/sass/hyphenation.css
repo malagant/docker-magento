@@ -1,0 +1,22 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/hyphenation.scss */
+.word-break {
+  word-break: keep-all;
+}
+
+/* line 6, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/hyphenation.scss */
+.hyphens {
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+/* line 9, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/hyphenation.scss */
+.hyphenate {
+  word-break: break-all;
+  word-break: break-word;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}

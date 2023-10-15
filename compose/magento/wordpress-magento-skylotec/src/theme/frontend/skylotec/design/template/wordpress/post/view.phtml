@@ -1,0 +1,29 @@
+<?php /* @var $post Fishpig_Wordpress_Model_Post */ ?>
+<?php $post = $this->getPost() ?>
+<?php if ($post): ?>
+<?php
+$helper = $this->helper('wordpress');
+/* @var $galleryHelper Conlabz_Wordpress_Helper_Gallery */ 
+$galleryHelper = $this->helper('conwp/gallery');
+/* @var $skylotecHelper Conlabz_Skylotec_Helper_Data */
+$skylotecHelper = $this->helper('skylotec');
+$author = $post->getAuthor() ;
+?>
+	<div class="post-title">
+        <div class="date">
+            <?php echo $this->helper('core')->formatDate($post->getPostDate('Y-m-d')) ?>
+        </div>
+        <h1><span><?php echo $this->escapeHtml($post->getPostTitle()) ?></span></h1>
+	</div>
+	<div class="post-view">
+		<div class="post-entry entry std<?php if ($post->getFeaturedImage()): ?> post-entry-with-image<?php endif; ?>">
+			<?php if ($post->isViewableForVisitor()): ?>
+				<?php echo $post->getPostContent() ?>
+			<?php else: ?>
+				<?php echo $this->getPasswordProtectHtml() ?>
+			<?php endif; ?>
+		</div>
+        <a class="back-link" href="javascript:history.back()"><?php echo $this->__('Back to overview') ?></a>
+        <?php echo $this->getChildHtml('sharing') ?>
+	</div>
+<?php endif; ?>

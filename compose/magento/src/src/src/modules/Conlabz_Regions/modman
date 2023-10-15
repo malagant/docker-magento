@@ -1,0 +1,4 @@
+code/                                app/code/local/Conlabz/Regions/
+Conlabz_Regions.xml                  app/etc/modules/Conlabz_Regions.xml
+design/frontend/layout/regions.xml   app/design/frontend/base/default/layout/regions.xml
+design/frontend/template/regions     app/design/frontend/base/default/template/regions

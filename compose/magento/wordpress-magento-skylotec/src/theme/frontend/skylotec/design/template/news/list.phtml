@@ -1,0 +1,41 @@
+<?php /* @var $this Conlabz_Skylotec_Block_News_List */ ?>
+<?php if ($this->canDisplay()): ?>
+<?php
+$skylotecHelper = $this->helper('skylotec');
+?>
+<?php echo $this->getChildHtml('filter') ?>
+<?php echo $this->getChildHtml('archive') ?>
+<div class="post-list">
+<?php /* @var $news Fishpig_Wordpress_Model_Post */ ?>
+<?php foreach ($this->getPostCollection() as $news): ?>
+    <?php $featuredImage = $featuredImage = $news->getFeaturedImage() ?>
+    <article class="post-item">
+        <?php if ($featuredImage): ?>
+        <a title="<?php echo $this->__('Read more') ?>" href="<?php echo $news->getPermalink() ?>"  class="featured-image">
+            <img src="<?php echo $featuredImage->getImageByType() ?>" alt="<?php echo $news->getPostTitle() ?>">
+        </a>
+        <?php endif ?>
+        <div class="post-item-content<?php if($featuredImage) echo ' with-image' ?>">
+            <div class="date">
+                <?php echo $this->helper('core')->formatDate($news->getPostDate('Y-m-d')) ?>
+                <?php if ($divisions = $this->getDivisions($news)): ?>
+                <span class="news-category">
+                <?php echo implode(', ', $divisions) ?>
+                </span>
+                <?php endif ?>
+            </div>
+            <header class="post-item-title">
+                <h2><span><?php echo $news->getPostTitle() ?></span></h2>
+            </header>
+            <div class="post-item-text">
+                <?php echo $this->stripTags($news->getPostExcerpt(false)) ?>
+                <a class="read-more" href="<?php echo $news->getPermalink() ?>"><?php echo $this->__('Read more') ?></a>
+            </div>
+        </div>
+    </article>
+<?php endforeach; ?>
+</div>
+<div class="news-list-pager">
+    <?php echo $this->getPagerHtml() ?>
+</div>
+<?php endif; ?>

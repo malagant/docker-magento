@@ -1,0 +1,121 @@
+<?php
+/** @var $this Conlabz_Skylotec_Block_Contact */
+
+if (!($data = Mage::getSingleton('customer/session')->getFormData(true))) {
+    $data = [
+        'name' => $this->helper('contacts')->getUserName(),
+        'email' => $this->helper('contacts')->getUserEmail()
+    ];
+}
+$data = new Varien_Object($data);
+?>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+<div class="page-title">
+    <h1><?php echo Mage::helper('contacts')->__('Contact Us') ?></h1>
+</div>
+<form action="<?php echo $this->getUrl('support/index/post'); ?>" id="contactForm" method="post">
+    <div class="fieldset">
+        <ul class="form-list">
+            <li>
+                <label for="name" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Name') ?></label>
+                <div class="input-box">
+                    <input placeholder="<?php echo Mage::helper('contacts')->__('Name') ?>" name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($data->getName()) ?>" class="input-text required-entry" type="text" />
+                </div>
+            </li>
+            <li>
+                <label for="company"><?php echo Mage::helper('contacts')->__('Company') ?></label>
+                <div class="input-box">
+                    <input placeholder="<?php echo Mage::helper('contacts')->__('Company') ?>" name="company" id="company" title="<?php echo Mage::helper('contacts')->__('Company') ?>" value="<?php echo $this->escapeHtml($data->getCompany()) ?>" class="input-text" type="text" />
+                </div>
+            </li>
+            <li>
+                <label for="street" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Street') ?></label>
+                <div class="input-box">
+                    <input placeholder="<?php echo Mage::helper('contacts')->__('Street') ?>" name="street" id="street" title="<?php echo Mage::helper('contacts')->__('Street') ?>" value="<?php echo $this->escapeHtml($data->getStreet()) ?>" class="input-text" type="text" />
+                </div>
+            </li>
+            <li>
+                <label for="zip" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Zip') ?></label>
+                <div class="input-box">
+                    <input placeholder="<?php echo Mage::helper('contacts')->__('Zip') ?>" name="zip" id="zip" title="<?php echo Mage::helper('contacts')->__('Zip') ?>" value="<?php echo $this->escapeHtml($data->getZip()) ?>" class="input-text required-entry" type="text" />
+                </div>
+            </li>
+            <li>
+                <label for="city" class="required"><?php echo Mage::helper('contacts')->__('City') ?></label>
+                <div class="input-box">
+                    <input placeholder="<?php echo Mage::helper('contacts')->__('City') ?>" name="city" id="city" title="<?php echo Mage::helper('contacts')->__('City') ?>" value="<?php echo $this->escapeHtml($data->getCity()) ?>" class="input-text required-entry" type="text" />
+                </div>
+            </li>
+            <li>
+                <label for="country" class="required"><?php echo Mage::helper('contacts')->__('Country') ?></label>
+                <div class="input-box">
+                    <?php echo $this->getCountrySelectHtml() ?>
+                </div>
+            </li>
+            <li>
+                <label for="email" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Email') ?></label>
+                <div class="input-box">
+                    <input placeholder="<?php echo Mage::helper('contacts')->__('Email') ?>" name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->escapeHtml($data->getEmail()) ?>" class="input-text required-entry validate-email" type="text" />
+                </div>
+            </li>
+            <li>
+                <label for="telephone"><?php echo Mage::helper('contacts')->__('Telephone') ?></label>
+                <div class="input-box">
+                    <input placeholder="<?php echo Mage::helper('contacts')->__('Telephone') ?>" name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="<?php echo $this->escapeHtml($data->getTelephone()) ?>" class="input-text" type="text" />
+                </div>
+            </li>
+            <li class="wide">
+                <label for="comment" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Comment') ?></label>
+                <div class="input-box">
+                    <textarea placeholder="<?php echo Mage::helper('contacts')->__('Comment') ?>" name="comment" id="comment" title="<?php echo Mage::helper('contacts')->__('Comment') ?>" class="required-entry input-text" cols="5" rows="3"><?php echo $this->escapeHtml($data->getComment()) ?></textarea>
+                </div>
+            </li>
+            <li class="wide">
+                <?php echo $this->getChildHtml('recaptcha') ?>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <input type="text" name="text" id="text" value="" style="display:none !important;" />
+        <button type="submit" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+    var contactForm = new VarienForm('contactForm', true);
+    (function($) {
+        $('#country').val(Mage.Cookies.get('country_code') ?? '<?php echo $this->escapeHtml($data->getCountry()); ?>');
+    })(jQuery);
+</script>
+<?php if ($this->success()): ?>
+<!-- Google Code for Kontaktanfrage_neu Conversion Page -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1071419068;
+    var google_conversion_language = "de";
+    var google_conversion_format = "2";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "WFOkCJy6wAcQvJ3y_gM";
+    var google_conversion_value = 1.00;
+    var google_conversion_currency = "EUR";
+    var google_remarketing_only = false;
+    /* ]]> */
+</script>
+<script type="text/javascript"
+        src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt=""
+             src="//www.googleadservices.com/pagead/conversion/1071419068/?value=1.00&amp;currency_code=EUR&amp;label=WFOkCJy6wAcQvJ3y_gM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+<script type="text/javascript">
+    ga('send', {
+        eventCategory: 'kontaktformular',
+        eventAction: 'absenden',
+        eventLabel: 'gesendet'
+    });
+</script>
+
+<?php endif ?>

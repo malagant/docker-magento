@@ -1,0 +1,9 @@
+<?php
+$page = $this->getPage();
+?>
+<div class="skylotec-home">
+    <div class="skylotec-home-text">
+        <?php echo $page->getPostContent() ?>
+    </div>
+    <a href="<?php echo Mage::getUrl('') ?><?php echo $this->__('company/about-us.html') ?>" class="btn"><?php echo $this->__('About us') ?></a>
+</div>

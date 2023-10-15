@@ -1,0 +1,188 @@
+/* line 3, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.columns {
+  -moz-columns: 20em 5;
+  -webkit-columns: 20em 5;
+  columns: 20em 5;
+}
+
+/* line 4, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-count {
+  -moz-column-count: 5;
+  -webkit-column-count: 5;
+  column-count: 5;
+}
+
+/* line 5, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-gap {
+  -moz-column-gap: 10px;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+}
+
+/* line 6, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-width {
+  -moz-column-width: 90px;
+  -webkit-column-width: 90px;
+  column-width: 90px;
+}
+
+/* line 7, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-span {
+  -moz-column-span: all;
+  -webkit-column-span: all;
+  column-span: all;
+}
+
+/* line 8, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule-width {
+  -moz-rule-width: 1px;
+  -webkit-rule-width: 1px;
+  rule-width: 1px;
+}
+
+/* line 9, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule-style {
+  -moz-rule-style: dotted;
+  -webkit-rule-style: dotted;
+  rule-style: dotted;
+}
+
+/* line 10, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule-color {
+  -moz-rule-color: blue;
+  -webkit-rule-color: blue;
+  rule-color: blue;
+}
+
+/* line 11, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule {
+  -moz-column-rule: 1px solid blue;
+  -webkit-column-rule: 1px solid blue;
+  column-rule: 1px solid blue;
+}
+
+/* line 12, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule-spaced {
+  -moz-column-rule: 1px solid blue;
+  -webkit-column-rule: 1px solid blue;
+  column-rule: 1px solid blue;
+}
+
+/* line 13, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-before {
+  -moz-page-break-before: always;
+  -webkit-column-break-before: always;
+  break-before: always;
+}
+
+/* line 14, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-after {
+  -moz-page-break-after: always;
+  -webkit-column-break-after: always;
+  break-after: always;
+}
+
+/* line 15, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-inside {
+  -moz-page-break-inside: auto;
+  -webkit-column-break-inside: auto;
+  break-inside: auto;
+}
+
+/* line 16, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-count {
+  -moz-column-count: 5;
+  -webkit-column-count: 5;
+  column-count: 5;
+}
+
+/* line 17, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-gap {
+  -moz-column-gap: 10px;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+}
+
+/* line 18, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-width {
+  -moz-column-width: 90px;
+  -webkit-column-width: 90px;
+  column-width: 90px;
+}
+
+/* line 19, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule-width {
+  -moz-rule-width: 1px;
+  -webkit-rule-width: 1px;
+  rule-width: 1px;
+}
+
+/* line 20, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule-style {
+  -moz-rule-style: dotted;
+  -webkit-rule-style: dotted;
+  rule-style: dotted;
+}
+
+/* line 21, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule-color {
+  -moz-rule-color: blue;
+  -webkit-rule-color: blue;
+  rule-color: blue;
+}
+
+/* line 22, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule {
+  -moz-column-rule: 1px solid blue;
+  -webkit-column-rule: 1px solid blue;
+  column-rule: 1px solid blue;
+}
+
+/* line 23, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-rule-spaced {
+  -moz-column-rule: 1px solid blue;
+  -webkit-column-rule: 1px solid blue;
+  column-rule: 1px solid blue;
+}
+
+/* line 24, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-before {
+  -moz-page-break-before: always;
+  -webkit-column-break-before: always;
+  break-before: always;
+}
+
+/* line 25, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-after {
+  -moz-page-break-after: always;
+  -webkit-column-break-after: always;
+  break-after: always;
+}
+
+/* line 26, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-inside {
+  -moz-page-break-inside: auto;
+  -webkit-column-break-inside: auto;
+  break-inside: auto;
+}
+
+/* line 27, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-before-shortcut {
+  -moz-page-break-before: always;
+  -webkit-column-break-before: always;
+  break-before: always;
+}
+
+/* line 28, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-after-shortcut {
+  -moz-page-break-after: always;
+  -webkit-column-break-after: always;
+  break-after: always;
+}
+
+/* line 29, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/columns.scss */
+.column-break-inside-shortcut {
+  -moz-page-break-inside: auto;
+  -webkit-column-break-inside: auto;
+  break-inside: auto;
+}

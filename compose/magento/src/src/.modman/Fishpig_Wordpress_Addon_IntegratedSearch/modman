@@ -1,0 +1,6 @@
+app/code/community/Fishpig/Wordpress/Addon/IntegratedSearch app/code/community/Fishpig/Wordpress/Addon/IntegratedSearch
+app/design/frontend/base/default/layout/wordpress/integrated-search.xml app/design/frontend/base/default/layout/wordpress/integrated-search.xml
+app/design/frontend/base/default/template/wordpress-addons/integrated-search app/design/frontend/base/default/template/wordpress-addons/integrated-search
+app/etc/modules/Fishpig_Wordpress_Addon_IntegratedSearch.xml app/etc/modules/Fishpig_Wordpress_Addon_IntegratedSearch.xml
+js/fishpig/wordpress/integrated-search.js js/fishpig/wordpress/integrated-search.js
+skin/frontend/base/default/wordpress-addons/integrated-search.css skin/frontend/base/default/wordpress-addons/integrated-search.css

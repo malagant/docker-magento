@@ -1,0 +1,21 @@
+<?php /* @var $this Conlabz_Regions_Block_Javascript */ ?>
+<script>
+    (function($) {
+        var currentRegion  = '<?php echo $this->getCurrentRegion() ?>';
+        var path           = window.location.pathname;
+        var assignedRegion = Mage.Cookies.get('assigned_region');
+        if (path == '/' && assignedRegion != currentRegion) {
+            $.getJSON('<?php echo $this->getUrl('regions/country/country') ?>', function(resp) {
+                if (!resp.countryCode) {
+                    $('.link-regions').trigger('click');
+                } else if (currentRegion != resp.regionCode)  {
+                    Mage.Cookies.set('assigned_region', resp.regionCode);
+                    window.location.href = resp.location;
+                }
+            });
+        }
+        if (typeof currentCountry === 'string') {
+            $('#call-back-form select').val(currentCountry.toUpperCase());
+        }
+    })(jQuery);
+</script>

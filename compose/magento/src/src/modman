@@ -1,0 +1,49 @@
+# Modules
+@import modules/Conlabz_Download
+@import modules/Conlabz_Eshop
+@import modules/Conlabz_GenticDesign
+@import modules/Conlabz_Homebase
+@import modules/Conlabz_PdfPrints
+@import modules/Conlabz_Regions
+@import modules/Conlabz_Skylotec
+@import modules/Conlabz_SocialMedia
+@import modules/Conlabz_Support
+@import modules/Conlabz_Wordpress
+
+# Lib
+@import lib
+
+# Code pool overrides
+@import overrides
+
+# Themes
+@import theme/adminhtml/custom
+@import theme/frontend/skylotec
+@import theme/frontend/gentic
+
+# Individual files
+etc/local.xml                   app/etc/local.xml
+errors/default/css/styles.css   errors/default/css/styles.css
+errors/default/images/SKYLOTEC_Wartungsmodus.jpg   errors/default/images/SKYLOTEC_Wartungsmodus.jpg
+errors/default/page.phtml       errors/default/page.phtml
+shell/*                         shell/
+
+.htaccess
+index.php
+autocomplete.php
+google24e2a0c690cf2d01.html
+google3062dc24a57b80fa.html
+google71227723f64ac62b.html
+sitemap_skylotec.xml
+var/log/.htaccess
+
+js/jquery.cookie.js
+js/jquery.formatCurrency-1.4.0.min.js
+js/jquery-1.10.2.min.js
+js/jquery-ui-1.9.1.min.js
+js/jquery-ui-1.11.4.min.js
+js/modernizr.js
+js/phoneformat.js
+js/conlabz/jquery.configurable.js
+js/prototype/prototype.js
+js/varien/configurable.js

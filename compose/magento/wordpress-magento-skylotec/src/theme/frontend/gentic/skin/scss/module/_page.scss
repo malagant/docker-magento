@@ -1,0 +1,77 @@
+.page-content {
+    @include mq-vals((
+        width, (
+            90%,
+            (100% / 6) * 4,
+            (100% / 6) * 4,
+            (100% / 6) * 4
+        )
+    ));
+    margin: 0 auto;
+    position: relative;
+    padding-top: 5px;
+    .page-title {
+        position: relative;
+        z-index: 1;
+    }
+    h1 {
+        @extend .h1;
+        width: 75%;
+    }
+    h2 {
+        text-transform: uppercase;
+    }
+}
+.page-view.startseite {
+    .page-entry {
+        p {
+            margin: 0;
+        }
+    }
+}
+.page-view {
+    .entry {
+        background-size: cover;
+    }
+}
+
+.page-arrow {
+    $arrow-height: 149px;    
+    position: fixed;
+    top: 45%;
+    width: 54px;
+    height: $arrow-height;
+    margin-top: -($arrow-height / 2);
+    color: #000;
+    z-index: 100;
+    background: center center no-repeat;
+    @media #{$mq-xs} {
+        display: none;
+    }
+    span {
+        display: none;
+        position: absolute;
+        height: 24px;
+        top: 50%;
+        margin-top: -12px;
+        white-space: nowrap;
+    }
+    &:hover span {
+        display: block;
+    }
+    &.arrow-direction-left {
+        left: 5%;
+        background-image: url('../images/arrow-left.png');
+        span {
+            left: 80px;
+        }
+    }
+    &.arrow-direction-right {
+        right: 5%;
+        background-image: url('../images/arrow-right.png');
+        span {
+            right: 80px;
+            text-align: right;
+        }
+    }
+}

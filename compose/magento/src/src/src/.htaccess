@@ -1,0 +1,412 @@
+#<mittwald 503 for bots>
+###########503-for-Bots##########################
+#################################################
+
+#SetEnvIfNoCase User-Agent "Googlebot" bots
+#SetEnvIfNoCase User-Agent "Googlebot-Image" bots
+#SetEnvIfNoCase User-Agent "Googlebot-Mobile" bots
+#SetEnvIfNoCase User-Agent "Java" bots
+#SetEnvIfNoCase User-Agent "UptimeRobot" bots
+#SetEnvIfNoCase User-Agent "bingbot" bots
+#SetEnvIfNoCase User-Agent "msnbot" bots
+#SetEnvIfNoCase User-Agent "msnbot-media" bots
+SetEnvIfNoCase User-Agent "AACrawler" bots
+SetEnvIfNoCase User-Agent "AcoonBot" bots
+SetEnvIfNoCase User-Agent "AhrefsBot" bots
+SetEnvIfNoCase User-Agent "BLEXBot" bots
+SetEnvIfNoCase User-Agent "BLP_bbot" bots
+SetEnvIfNoCase User-Agent "BUbiNG" bots
+SetEnvIfNoCase User-Agent "Baiduspider" bots
+SetEnvIfNoCase User-Agent "Baiduspider-image" bots
+SetEnvIfNoCase User-Agent "CCBot" bots
+SetEnvIfNoCase User-Agent "CaBot" bots
+SetEnvIfNoCase User-Agent "CompSpyBot" bots
+SetEnvIfNoCase User-Agent "Daum" bots
+SetEnvIfNoCase User-Agent "DoCoMo" bots
+SetEnvIfNoCase User-Agent "DotBot" bots
+SetEnvIfNoCase User-Agent "Exabot" bots
+SetEnvIfNoCase User-Agent "Ezooms" bots
+SetEnvIfNoCase User-Agent "Faraday" bots
+SetEnvIfNoCase User-Agent "FeedBurner" bots
+SetEnvIfNoCase User-Agent "Freshbot" bots
+SetEnvIfNoCase User-Agent "GrapeshotCrawler" bots
+SetEnvIfNoCase User-Agent "HuaweiSymantecSpider" bots
+SetEnvIfNoCase User-Agent "Infohelfer" bots
+SetEnvIfNoCase User-Agent "JobboerseBot" bots
+SetEnvIfNoCase User-Agent "Jooblebot" bots
+SetEnvIfNoCase User-Agent "Landau-Media-Spider" bots
+SetEnvIfNoCase User-Agent "MJ12bot" bots
+SetEnvIfNoCase User-Agent "Mail.RU_Bot" bots
+SetEnvIfNoCase User-Agent "MegaIndex" bots
+SetEnvIfNoCase User-Agent "MegaIndex.ru" bots
+SetEnvIfNoCase User-Agent "MetaJobBot" bots
+SetEnvIfNoCase User-Agent "MetricsBot" bots
+SetEnvIfNoCase User-Agent "MojeekBot" bots
+SetEnvIfNoCase User-Agent "Nutch-1.10" bots
+SetEnvIfNoCase User-Agent "OnPageBot" bots
+SetEnvIfNoCase User-Agent "OpenWebSpider" bots
+SetEnvIfNoCase User-Agent "PRTGCloudBot" bots
+SetEnvIfNoCase User-Agent "PetalBot" bots
+SetEnvIfNoCase User-Agent "PiplBot" bots
+SetEnvIfNoCase User-Agent "Pixray-Seeker" bots
+SetEnvIfNoCase User-Agent "Qwantify" bots
+SetEnvIfNoCase User-Agent "Ralocobot" bots
+SetEnvIfNoCase User-Agent "SEOkicks" bots
+SetEnvIfNoCase User-Agent "SEOkicks-Robot" bots
+SetEnvIfNoCase User-Agent "Screaming" bots
+SetEnvIfNoCase User-Agent "Seekport" bots
+SetEnvIfNoCase User-Agent "SemrushBot" bots
+SetEnvIfNoCase User-Agent "SeznamBot" bots
+SetEnvIfNoCase User-Agent "Site24x7" bots
+SetEnvIfNoCase User-Agent "Slurp" bots
+SetEnvIfNoCase User-Agent "Sosospider" bots
+SetEnvIfNoCase User-Agent "Speedy" bots
+SetEnvIfNoCase User-Agent "Spider" bots
+SetEnvIfNoCase User-Agent "Spiderlytics" bots
+SetEnvIfNoCase User-Agent "Superfeedr" bots
+SetEnvIfNoCase User-Agent "Toweya.com" bots
+SetEnvIfNoCase User-Agent "TurnitinBot" bots
+SetEnvIfNoCase User-Agent "TwengaBot" bots
+SetEnvIfNoCase User-Agent "Twiceler" bots
+SetEnvIfNoCase User-Agent "Twitterbot" bots
+SetEnvIfNoCase User-Agent "UnisterBot" bots
+SetEnvIfNoCase User-Agent "WebCapture" bots
+SetEnvIfNoCase User-Agent "XoviBot" bots
+SetEnvIfNoCase User-Agent "Yandex" bots
+SetEnvIfNoCase User-Agent "ZumBot" bots
+SetEnvIfNoCase User-Agent "admantx" bots
+SetEnvIfNoCase User-Agent "adscanner" bots
+SetEnvIfNoCase User-Agent "aggregator:Spinn3r" bots
+SetEnvIfNoCase User-Agent "crawler" bots
+SetEnvIfNoCase User-Agent "crawler@alexa.com" bots
+SetEnvIfNoCase User-Agent "domaincrawler.com" bots
+SetEnvIfNoCase User-Agent "echobot" bots
+SetEnvIfNoCase User-Agent "heritrix" bots
+SetEnvIfNoCase User-Agent "htdig" bots
+SetEnvIfNoCase User-Agent "ia_archiver" bots
+SetEnvIfNoCase User-Agent "imaBot" bots
+SetEnvIfNoCase User-Agent "infometrics-bot" bots
+SetEnvIfNoCase User-Agent "jobs.de-Robot" bots
+SetEnvIfNoCase User-Agent "linkdex.com" bots
+SetEnvIfNoCase User-Agent "magpie-crawler" bots
+SetEnvIfNoCase User-Agent "meanpathbot" bots
+SetEnvIfNoCase User-Agent "omgili" bots
+SetEnvIfNoCase User-Agent "pricebot" bots
+SetEnvIfNoCase User-Agent "proximic" bots
+SetEnvIfNoCase User-Agent "psbot" bots
+SetEnvIfNoCase User-Agent "rogerbot" bots
+SetEnvIfNoCase User-Agent "sentibot" bots
+SetEnvIfNoCase User-Agent "seoscanners" bots
+SetEnvIfNoCase User-Agent "smtbot" bots
+SetEnvIfNoCase User-Agent "sogou" bots
+SetEnvIfNoCase User-Agent "spbot" bots
+SetEnvIfNoCase User-Agent "spider" bots
+SetEnvIfNoCase User-Agent "ssearch_bot" bots
+SetEnvIfNoCase User-Agent "tb-webde" bots
+SetEnvIfNoCase User-Agent "textlink_status_crawler" bots
+SetEnvIfNoCase User-Agent "tracemyfile" bots
+SetEnvIfNoCase User-Agent "trendictionbot" bots
+SetEnvIfNoCase User-Agent "vebidoobot-Robot" bots
+#### Retry 12h
+Header always set Retry-After "43200" env=bots
+RewriteEngine on
+RewriteCond %{ENV:bots} 1
+RewriteRule .* - [R=503,L]
+################################################
+################################################
+#</mittwald 503 for bots>
+
+############################################
+## uncomment these lines for CGI mode
+## make sure to specify the correct cgi php binary file name
+## it might be /cgi-bin/php-cgi
+
+#    Action php5-cgi /cgi-bin/php5-cgi
+#    AddHandler php5-cgi .php
+
+############################################
+## GoDaddy specific options
+
+#   Options -MultiViews
+
+## you might also need to add this line to php.ini
+##     cgi.fix_pathinfo = 1
+## if it still doesn't work, rename php.ini to php5.ini
+
+############################################
+## this line is specific for 1and1 hosting
+
+    #AddType x-mapp-php5 .php
+    #AddHandler x-mapp-php5 .php
+
+############################################
+## default index file
+
+    DirectoryIndex index.php
+
+<IfModule mod_php5.c>
+
+############################################
+## adjust memory limit
+
+#    php_value memory_limit 64M
+    php_value memory_limit 256M
+    php_value max_execution_time 18000
+
+############################################
+## disable magic quotes for php request vars
+
+    php_flag magic_quotes_gpc off
+
+############################################
+## disable automatic session start
+## before autoload was initialized
+
+    php_flag session.auto_start off
+
+############################################
+## enable resulting html compression
+
+    #php_flag zlib.output_compression on
+
+###########################################
+# disable user agent verification to not break multiple image upload
+
+    php_flag suhosin.session.cryptua off
+
+###########################################
+# turn off compatibility with PHP4 when dealing with objects
+
+    php_flag zend.ze1_compatibility_mode Off
+
+</IfModule>
+
+<IfModule mod_security.c>
+###########################################
+# disable POST processing to not break multiple image upload
+
+    SecFilterEngine Off
+    SecFilterScanPOST Off
+</IfModule>
+
+<IfModule mod_deflate.c>
+
+############################################
+## enable apache served files compression
+## http://developer.yahoo.com/performance/rules.html#gzip
+
+    # Insert filter on all content
+    ###SetOutputFilter DEFLATE
+    # Insert filter on selected content types only
+    #AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+
+    # Netscape 4.x has some problems...
+    #BrowserMatch ^Mozilla/4 gzip-only-text/html
+
+    # Netscape 4.06-4.08 have some more problems
+    #BrowserMatch ^Mozilla/4\.0[678] no-gzip
+
+    # MSIE masquerades as Netscape, but it is fine
+    #BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+    # Don't compress images
+    #SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+
+    # Make sure proxies don't deliver the wrong content
+    #Header append Vary User-Agent env=!dont-vary
+
+</IfModule>
+
+<IfModule mod_ssl.c>
+
+############################################
+## make HTTPS env vars available for CGI mode
+
+    SSLOptions StdEnvVars
+
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header add Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+############################################
+## enable rewrites
+
+    Options +FollowSymLinks
+    RewriteEngine on
+
+    RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+    RewriteCond %{HTTPS}s ^on(s)|
+    RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # WP 503
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteRule .* /errors/503.php [R=302,L]
+
+############################################
+## you can put here your magento root folder
+## path relative to web root
+
+    #RewriteBase /magento/
+
+############################################
+## uncomment next line to enable light API calls processing
+
+#    RewriteRule ^api/([a-z][0-9a-z_]+)/?$ api.php?type=$1 [QSA,L]
+
+############################################
+## rewrite API2 calls to api.php (by now it is REST only)
+
+    RewriteRule ^api/rest api.php?type=rest [QSA,L]
+
+############################################
+## workaround for HTTP authorization
+## in CGI environment
+
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+############################################
+## TRACE and TRACK HTTP methods disabled to prevent XSS attacks
+
+    RewriteCond %{REQUEST_METHOD} ^TRAC[EK]
+    RewriteRule .* - [L,R=405]
+
+<IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+
+        ############################################
+        # X-Content-Type-Options: nosniff disable content-type sniffing on some browsers.
+        Header set X-Content-Type-Options: nosniff
+
+        ############################################
+        # This header forces to enables the Cross-site scripting (XSS) filter in browsers (if disabled)
+        BrowserMatch \bMSIE\s8 ie8
+        Header set X-XSS-Protection: "1; mode=block" env=!ie8
+
+    </IfModule>
+</IfModule>
+
+############################################
+## redirect for mobile user agents
+
+    #RewriteCond %{REQUEST_URI} !^/mobiledirectoryhere/.*$
+    #RewriteCond %{HTTP_USER_AGENT} "android|blackberry|ipad|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+    #RewriteRule ^(.*)$ /mobiledirectoryhere/ [L,R=302]
+
+    RewriteRule ^downloads /eu_de/industrie/downloads [R=303,L]
+
+    RewriteRule ^eu_de/permanente-absturzsicherung/produkte/einzelanschlagspunkte/ /eu_de/permanente-systeme/produkte/einzelanschlagspunkte/ [R=307,L]
+    RewriteRule ^eu_en/permanent-fall-protection/products/anchor-points/ /eu_en/permanent-systems/products/anchor-points/ [R=307,L]
+    RewriteRule ^eu_fr/systeme-permanente-antichute/products/points-d-ancrage/ /eu_fr/permanent-systems/produits/points-d-ancrage/ [R=307,L]
+    RewriteRule ^eu_es/sistema-permanente-anticaidas/products/puntos-de-anclaje/ /eu_es/permanent-systems/productos/puntos-de-anclaje/ [R=307,L]
+    RewriteRule ^eu_it/sistemi-anti-caduta-permanenti/prodotti/punti-di-ancoraggio/ /eu_it/permanent-systems/prodotti/punti-di-ancoraggio/ [R=307,L]
+    RewriteRule ^nam_fr/systeme-permanente-antichute/products/points-d-ancrage/ /nam_fr/permanent-systems/produits/points-d-ancrage/ [R=307,L]
+    RewriteRule ^sam_en/permanent-fall-protection/products/anchor-points/ /sam_en/permanent-systems/products/anchor-points/ [R=307,L]
+    RewriteRule ^nam_en/permanent-fall-protection/products/anchor-points/ /nam_en/permanent-systems/products/anchor-points/ [R=307,L]
+    RewriteRule ^sam_es/sistema-permanente-anticaidas/products/puntos-de-anclaje/ /sam_es/permanent-systems/productos/puntos-de-anclaje/ [R=307,L]
+    RewriteRule ^aus_en/permanent-fall-protection/products/anchor-points/ /aus_en/permanent-systems/products/anchor-points/ [R=307,L]
+    RewriteRule ^uk_en/permanent-fall-protection/products/anchor-points/ /uk_en/permanent-systems/products/anchor-points/ [R=307,L]
+    RewriteRule ^ch_de/permanent-fall-protection/products/einzelanschlagspunkte/ /ch_de/permanent-systems/produkte/einzelanschlagspunkte/ [R=307,L]
+    RewriteRule ^ch_fr/systeme-permanente-antichute/products/points-d-ancrage/ /ch_fr/permanent-systems/produits/points-d-ancrage/ [R=307,L]
+    RewriteRule ^ch_it/sistemi-anti-caduta-permanenti/products/punti-di-ancoraggio/ /ch_it/permanent-systems/prodotti/punti-di-ancoraggio/ [R=307,L]
+    RewriteRule ^nam_es/sistema-permanente-anticaidas/products/puntos-de-anclaje/ /nam_es/permanent-systems/productos/puntos-de-anclaje/ [R=307,L]
+
+############################################
+## always send 404 on missing files in these folders
+
+    RewriteCond %{REQUEST_URI} !^/(media|skin|js)/
+
+############################################
+## never rewrite for existing files, directories and links
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+
+############################################
+## rewrite everything else to index.php
+
+    RewriteRule .* index.php [L]
+
+</IfModule>
+
+
+############################################
+## Prevent character encoding issues from server overrides
+## If you still have problems, use the second line instead
+
+    AddDefaultCharset Off
+    #AddDefaultCharset UTF-8
+
+<IfModule mod_expires.c>
+
+############################################
+## Add default Expires header
+## http://developer.yahoo.com/performance/rules.html#expires
+
+    ExpiresDefault "access plus 1 year"
+
+</IfModule>
+
+############################################
+## By default allow all access
+
+    Order allow,deny
+    Allow from all
+
+###########################################
+## Deny access to release notes to prevent disclosure of the installed Magento version
+
+    <Files RELEASE_NOTES.txt>
+        order allow,deny
+        deny from all
+    </Files>
+
+############################################
+## If running in cluster environment, uncomment this
+## http://developer.yahoo.com/performance/rules.html#etags
+
+    #FileETag none
+
+###########################################
+## Deny access to cron.php
+    <Files cron.php>
+
+############################################
+## uncomment next lines to enable cron access with base HTTP authorization
+## http://httpd.apache.org/docs/2.2/howto/auth.html
+##
+## Warning: .htpasswd file should be placed somewhere not accessible from the web.
+## This is so that folks cannot download the password file.
+## For example, if your documents are served out of /usr/local/apache/htdocs
+## you might want to put the password file(s) in /usr/local/apache/.
+
+        #AuthName "Cron auth"
+        #AuthUserFile ../.htpasswd
+        #AuthType basic
+        #Require valid-user
+
+############################################
+
+        Order allow,deny
+        Deny from all
+
+    </Files>
+
+# BEGIN WordPress
+# Die Anweisungen (Zeilen) zwischen „BEGIN WordPress“ und „END WordPress“ sind
+# dynamisch generiert und sollten nur über WordPress-Filter geändert werden.
+# Alle Änderungen an den Anweisungen zwischen diesen Markierungen werden überschrieben.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

@@ -1,0 +1,65 @@
+/* line 4, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/filters.scss */
+.blur {
+  /* Capability css-filters is not prefixed with -moz because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is prefixed with -webkit because 50.0928% of users need it which is more than the threshold of 0.1%. */
+  /* Creating new -webkit context. */
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+/* line 7, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/filters.scss */
+.brightness {
+  /* Capability css-filters is not prefixed with -moz because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is prefixed with -webkit because 50.0928% of users need it which is more than the threshold of 0.1%. */
+  /* Creating new -webkit context. */
+  -webkit-filter: brightness(0.2);
+  filter: brightness(0.2);
+}
+
+/* line 14, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/filters.scss */
+.hue-rotate {
+  /* Capability css-filters is not prefixed with -moz because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is prefixed with -webkit because 50.0928% of users need it which is more than the threshold of 0.1%. */
+  /* Creating new -webkit context. */
+  -webkit-filter: hue-rotate(20deg);
+  filter: hue-rotate(20deg);
+}
+
+/* line 17, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/filters.scss */
+.contrast {
+  /* Capability css-filters is not prefixed with -moz because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is prefixed with -webkit because 50.0928% of users need it which is more than the threshold of 0.1%. */
+  /* Creating new -webkit context. */
+  -webkit-filter: contrast(150%);
+  filter: contrast(150%);
+}
+
+/* line 20, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/filters.scss */
+.grayscale {
+  /* Capability css-filters is not prefixed with -moz because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is prefixed with -webkit because 50.0928% of users need it which is more than the threshold of 0.1%. */
+  /* Creating new -webkit context. */
+  -webkit-filter: grayscale(150%);
+  filter: grayscale(150%);
+}
+
+/* line 23, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/filters.scss */
+.sepia {
+  /* Capability css-filters is not prefixed with -moz because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
+  /* Capability css-filters is prefixed with -webkit because 50.0928% of users need it which is more than the threshold of 0.1%. */
+  /* Creating new -webkit context. */
+  -webkit-filter: sepia(150%);
+  filter: sepia(150%);
+}

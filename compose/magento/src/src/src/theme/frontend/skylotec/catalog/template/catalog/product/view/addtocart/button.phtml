@@ -1,0 +1,10 @@
+<?php
+/* @var $this Conlabz_Skylotec_Block_Catalog_Product_View_Buy */
+$_product = $this->getProduct();
+$buttonTitle = $this->getButtonTitle() ?: 'Add to Cart';
+?>
+<?php if ($_product->isSalable()): ?>
+    <button type="button" title="<?php echo $this->__($buttonTitle) ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
+        <?php echo $this->__($buttonTitle) ?>
+    </button>
+<?php endif ?>

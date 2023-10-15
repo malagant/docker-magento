@@ -1,0 +1,8 @@
+<?php
+$icons = (array) $this->getIcons();
+?>
+<?php if ($icons): ?>
+<?php foreach ($icons as $icon): ?>
+    <span class="icon-skylotec" style="background-image: url(<?php echo Mage::getBaseUrl('media').'catalog/category/icons/'. $icon->getIcon() ?>)" title="<?php echo $icon->getValue() ?>"></span>
+<?php endforeach; ?>
+<?php endif; ?>

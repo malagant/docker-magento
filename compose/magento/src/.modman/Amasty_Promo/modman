@@ -1,0 +1,16 @@
+app/code/local/Amasty/Base/
+app/code/local/Amasty/Promo/
+app/design/adminhtml/default/default/layout/amasty/ambase/
+app/design/adminhtml/default/default/layout/amasty/ampromo/
+app/design/adminhtml/default/default/template/amasty/ambase/
+app/design/adminhtml/default/default/template/amasty/ampromo/
+app/design/frontend/base/default/layout/amasty/ampromo/
+app/design/frontend/base/default/template/amasty/ampromo/
+app/etc/modules/Amasty_Base.xml
+app/etc/modules/Amasty_Promo.xml
+js/amasty/ambase/
+js/amasty/ampromo/
+skin/adminhtml/default/default/css/amasty/ambase/
+skin/adminhtml/default/default/images/ambase/
+skin/frontend/base/default/css/amasty/ampromo/
+skin/frontend/base/default/images/amasty/ampromo/

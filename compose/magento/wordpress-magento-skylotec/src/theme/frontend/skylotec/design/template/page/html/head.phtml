@@ -1,0 +1,25 @@
+<?php
+/* @var $this Mage_Page_Block_Html_Head */
+$additional = $this->getChildHtml('additional');
+$cookiebot = $this->getChildHtml('cookiebot');
+$this->unsetChild('additional')->unsetChild('cookiebot');
+?>
+<?php echo $cookiebot ?>
+<meta charset="utf-8">
+<title><?php echo $this->getTitle() ?></title>
+<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/a37853de-a74c-4850-a15c-02570eec170b.css"/>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<script>var bindTemp = Function.prototype.bind;</script>
+<script>var wat = Array.from;</script>
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml('', true, true) ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+<?php echo $additional ?>
+<script>Array.from = wat;</script>
+<script>Function.prototype.bind = bindTemp;</script>

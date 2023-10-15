@@ -1,0 +1,72 @@
+<?php $_product = $this->getProduct(); ?>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style="font-family:Helvetica">
+<style>
+    @page {
+        margin-bottom: 4em;
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+    html { margin: 0px; }
+    #watermark { position: fixed; bottom: 0px; left: -10px; height: 850px; margin-left: 0px; }
+    #content { margin-top: 200px; margin-left: 70px; margin-right: 70px; }
+    #footerinfo { margin-top:900px; margin-left:600px; position:absolute; top: 0; font-size: 11px; color: #d6d7d8; }
+    #signature { position: fixed; top: 700px; left: 300px; }
+    #stamp { position: fixed; top: 940px; left: 340px; }
+    body { font-size: 12px; }
+    h2 { font-size: 17px; }
+</style>
+<div id="watermark"><img src="<?php echo $this->getSkinUrl("images/pdfprint/print-bg.png")?>" height="100%"></div>
+<div id="signature"></div>
+<div id="stamp"><img src="<?php echo $this->getSkinUrl("images/pdfprint/stamp.png")?>"></div>
+<div id="footerinfo">
+    <?php echo Mage::getStoreConfig("general/imprint/company_first")?><br />
+    <?php echo Mage::getStoreConfig("general/imprint/street")?><br />
+    <?php echo Mage::getStoreConfig("general/imprint/zip")?> <?php echo Mage::getStoreConfig("general/imprint/city")?><br />
+    <?php echo $this->__("Fon")?> <?php echo Mage::getStoreConfig("general/imprint/telephone")?><br />
+    <?php echo $this->__("Fax")?> <?php echo Mage::getStoreConfig("general/imprint/fax")?><br />
+    <?php echo $this->__("Mail")?> <?php echo Mage::getStoreConfig("general/imprint/email")?><br />
+    <?php echo $this->__("Web")?> <?php echo Mage::getStoreConfig("general/imprint/web")?><br />
+    <br /><br />
+    <?php echo $this->__("CEO")?>: <br />
+    <?php echo Mage::getStoreConfig("general/imprint/ceo")?><br />
+    <?php echo $this->__("Register Number")?> <?php echo Mage::getStoreConfig("general/imprint/register_number")?><br />
+    <?php echo $this->__("VAT ID")?> <?php echo Mage::getStoreConfig("general/imprint/vat_id")?><br />
+</div>
+<div id="content" style="text-align:center">
+    <h2><?php echo $this->__("EG Konformitätserklärung")?><br /><?php echo $this->__("EC Declaration of Conformity")?></h2><br /><br />
+    <?php echo $this->__("Der Hersteller oder sein in der Gemeinschaft niedergelassener Bevollmächtigter erklärt hiermit, dass die nachstehend beschriebene neue PSA:")?><br />
+    <?php echo $this->__("The manufacturer or his authorized representative established in the Community declares that the new PPE described hereafter:")?><br />
+    <br /><br />
+    <b><?php echo $this->__("'%s' (%s) nach %s", $_product->getName(), $_product->getSku(), $this->getNorm())?></b><br />
+    <b><?php echo $this->__("'%s' (%s) according %s", $_product->getName(), $_product->getSku(), $this->getNorm())?></b><br />
+    <br /><br />
+    <?php echo $this->__("- Übereinstimmt mit den Bestimmungen der Richtlinie 89/686/EWG und")?><br />
+    <?php echo $this->__("- identisch ist mit der PSA, die Gegenstand der EG-Baumusterprüfbescheinigung Nr. %s war, ausgestellt vom:", $_product->getBmpNummer())?><br />
+    <?php echo $this->__("- is in conformity with the provisions of Council Directive 89/686/EEC and")?><br />
+    <?php echo $this->__("- is identical to the PPE which is subject of EC-type certificate No. %s issued by:", $_product->getBmpNummer())?><br />
+    <br /><br />
+    <b><?php echo Mage::helper('pdfprints')->getCertificateInstance($this->getBmpZertifizierungsstelle());?></b>
+    <br /><br />
+    <?php echo $this->__("Skylotec GmbH unterliegt dem Verfahren nach Artikel 11 Buchstabe B der Richtlinie 89/686/EWG unter Kontrolle der gemeldeten Stelle:")?><br />
+    <?php echo $this->__("Skylotec GmbH is subject to the procedure set out in Article 11 point B of Directive 89/686/EEC under the supervision of the notified body:")?><br />
+    <br /><br />
+    <b><?php echo $this->__("TÜV SÜD Product Service GmbH, Daimlerstraße 11, 85748 Garching, Germany (CE0123)")?></b>
+    <br />
+    <?php if ($this->getInternatNorm()):?>
+        <h2><?php echo $this->__("Suppliers Declaration of Conformity")?></h2>
+        <br />
+        <?php echo $this->__("SKYLOTEC GmbH hereby declares that the new PPE complies with the product standards described hereafter:")?>
+        <br /><br />
+        <b><?php echo $this->__("'%s' (%s) according %s", $_product->getName(), $_product->getSku(), $this->getInternatNorm())?></b>
+        <br /><br />
+    <?php endif; ?>
+    <?php echo $this->__("Neuwied, %s", $this->getBmpDatum())?><br />
+    <img src="<?php echo $this->getSkinUrl("images/pdfprint/signature_2.png")?>"><br />
+    <?php echo $this->__("Ort, Datum, Unterschrift / Place, date, signature")?>
+</div>
+</body>
+</html>    

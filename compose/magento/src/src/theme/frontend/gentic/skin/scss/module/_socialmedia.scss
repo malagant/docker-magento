@@ -1,0 +1,35 @@
+.socialmedia {
+    @extend .no-list-style;
+    margin: 20px 0;
+    li {
+        display: inline-block;
+        margin: 0 20px 20px 0;
+        a {
+            display: block;
+        }       
+    }
+}
+.social-item {
+    a {
+        background: #000;
+        color: #fff;
+        text-decoration: none;        
+        padding: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 32px;
+        text-align: center;
+    }
+}
+.social-facebook {
+    @include icon($icon-facebook, 0, before, true);
+}
+.social-pinterest {
+    @include icon($icon-pinterest, 0, before, true);
+}
+.social-instagram {
+    @include icon($icon-instagram, 0, before, true);
+}
+.social-twitter {
+    @include icon($icon-twitter, 0, before, true);
+}

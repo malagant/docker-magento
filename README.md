@@ -1,14 +1,3 @@
-<h1 align="center">markoshust/docker-magento</h1> 
-
-<div align="center">
-  <p>Mark Shust's Docker Configuration for Magento</p>
-  <img src="https://img.shields.io/badge/magento-1.X%20|%202.X-brightgreen.svg?logo=magento&longCache=true&style=flat-square" alt="Supported Magento Versions" />
-  <a href="https://hub.docker.com/r/markoshust/magento-nginx/" target="_blank"><img src="https://img.shields.io/docker/pulls/markoshust/magento-nginx.svg?label=nginx%20docker%20pulls" alt="Docker Hub Pulls - Nginx" /></a>
-  <a href="https://hub.docker.com/r/markoshust/magento-php/" target="_blank"><img src="https://img.shields.io/docker/pulls/markoshust/magento-php.svg?label=php%20docker%20pulls" alt="Docker Hub Pulls - PHP" /></a>
-  <a href="https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity" target="_blank"><img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square" alt="Maintained - Yes" /></a>
-  <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
-</div>
-
 ## Table of contents
 
 - [Docker Hub](#docker-hub)
@@ -23,48 +12,48 @@
 
 View Dockerfiles:
 
-- [markoshust/magento-nginx (Docker Hub)](https://hub.docker.com/r/markoshust/magento-nginx/)
+- [malagant/magento-nginx (Docker Hub)](https://hub.docker.com/r/malagant/magento-nginx/)
   - 1.13
-      - [`latest`, `1.13`, `1.13-6`](https://github.com/markoshust/docker-magento/tree/master/images/nginx/1.13)
-      - [`1.13-5`](https://github.com/markoshust/docker-magento/tree/18.1.1/images/nginx/1.13)
-      - [`1.13-4`](https://github.com/markoshust/docker-magento/tree/18.0.1/images/nginx/1.13)
-      - [`1.13-3`](https://github.com/markoshust/docker-magento/tree/15.0.1/images/nginx/1.13)
-      - [`1.13-2`](https://github.com/markoshust/docker-magento/tree/12.0.0/images/nginx/1.13)
-      - [`1.13-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/nginx/1.13)
-      - [`1.13-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/nginx/1.13)
-- [markoshust/magento-php (Docker Hub)](https://hub.docker.com/r/markoshust/magento-php/)
+      - [`latest`, `1.13`, `1.13-6`](https://github.com/malagant/docker-magento/tree/master/images/nginx/1.13)
+      - [`1.13-5`](https://github.com/malagant/docker-magento/tree/18.1.1/images/nginx/1.13)
+      - [`1.13-4`](https://github.com/malagant/docker-magento/tree/18.0.1/images/nginx/1.13)
+      - [`1.13-3`](https://github.com/malagant/docker-magento/tree/15.0.1/images/nginx/1.13)
+      - [`1.13-2`](https://github.com/malagant/docker-magento/tree/12.0.0/images/nginx/1.13)
+      - [`1.13-1`](https://github.com/malagant/docker-magento/tree/11.1.5/images/nginx/1.13)
+      - [`1.13-0`](https://github.com/malagant/docker-magento/tree/11.0.0/images/nginx/1.13)
+- [malagant/magento-php (Docker Hub)](https://hub.docker.com/r/malagant/magento-php/)
   - 7.2
-      - [`latest`, `7.2-fpm`, `7.2-fpm-0`](https://github.com/markoshust/docker-magento/tree/master/images/php/7.2)
+      - [`latest`, `7.2-fpm`, `7.2-fpm-0`](https://github.com/malagant/docker-magento/tree/master/images/php/7.2)
   - 7.1
-      - [`7.1-fpm`, `7.1-fpm-9`](https://github.com/markoshust/docker-magento/tree/master/images/php/7.1)
-      - [`7.1-fpm-8`](https://github.com/markoshust/docker-magento/tree/17.0.1/images/php/7.1)
-      - [`7.1-fpm-7`](https://github.com/markoshust/docker-magento/tree/16.2.0/images/php/7.1)
-      - [`7.1-fpm-6`](https://github.com/markoshust/docker-magento/tree/16.0.0/images/php/7.1)
-      - [`7.1-fpm-5`](https://github.com/markoshust/docker-magento/tree/15.0.1/images/php/7.1)
-      - [`7.1-fpm-4`](https://github.com/markoshust/docker-magento/tree/15.0.0/images/php/7.1)
-      - [`7.1-fpm-3`](https://github.com/markoshust/docker-magento/tree/14.0.1/images/php/7.1)
-      - [`7.1-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/7.1)
-      - [`7.1-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/7.1)
-      - [`7.1-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/7.1)
+      - [`7.1-fpm`, `7.1-fpm-9`](https://github.com/malagant/docker-magento/tree/master/images/php/7.1)
+      - [`7.1-fpm-8`](https://github.com/malagant/docker-magento/tree/17.0.1/images/php/7.1)
+      - [`7.1-fpm-7`](https://github.com/malagant/docker-magento/tree/16.2.0/images/php/7.1)
+      - [`7.1-fpm-6`](https://github.com/malagant/docker-magento/tree/16.0.0/images/php/7.1)
+      - [`7.1-fpm-5`](https://github.com/malagant/docker-magento/tree/15.0.1/images/php/7.1)
+      - [`7.1-fpm-4`](https://github.com/malagant/docker-magento/tree/15.0.0/images/php/7.1)
+      - [`7.1-fpm-3`](https://github.com/malagant/docker-magento/tree/14.0.1/images/php/7.1)
+      - [`7.1-fpm-2`](https://github.com/malagant/docker-magento/tree/13.0.0/images/php/7.1)
+      - [`7.1-fpm-1`](https://github.com/malagant/docker-magento/tree/11.1.5/images/php/7.1)
+      - [`7.1-fpm-0`](https://github.com/malagant/docker-magento/tree/11.0.0/images/php/7.1)
   - 7.0
-      - [`7.0-fpm`, `7.0-fpm-9`](https://github.com/markoshust/docker-magento/tree/master/images/php/7.0)
-      - [`7.0-fpm-8`](https://github.com/markoshust/docker-magento/tree/17.0.1/images/php/7.0)
-      - [`7.0-fpm-7`](https://github.com/markoshust/docker-magento/tree/16.2.0/images/php/7.0)
-      - [`7.0-fpm-6`](https://github.com/markoshust/docker-magento/tree/16.0.0/images/php/7.0)
-      - [`7.0-fpm-5`](https://github.com/markoshust/docker-magento/tree/15.0.1/images/php/7.0)
-      - [`7.0-fpm-4`](https://github.com/markoshust/docker-magento/tree/15.0.0/images/php/7.0)
-      - [`7.0-fpm-3`](https://github.com/markoshust/docker-magento/tree/14.0.1/images/php/7.0)
-      - [`7.0-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/7.0)
-      - [`7.0-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/7.0)
-      - [`7.0-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/7.0)
+      - [`7.0-fpm`, `7.0-fpm-9`](https://github.com/malagant/docker-magento/tree/master/images/php/7.0)
+      - [`7.0-fpm-8`](https://github.com/malagant/docker-magento/tree/17.0.1/images/php/7.0)
+      - [`7.0-fpm-7`](https://github.com/malagant/docker-magento/tree/16.2.0/images/php/7.0)
+      - [`7.0-fpm-6`](https://github.com/malagant/docker-magento/tree/16.0.0/images/php/7.0)
+      - [`7.0-fpm-5`](https://github.com/malagant/docker-magento/tree/15.0.1/images/php/7.0)
+      - [`7.0-fpm-4`](https://github.com/malagant/docker-magento/tree/15.0.0/images/php/7.0)
+      - [`7.0-fpm-3`](https://github.com/malagant/docker-magento/tree/14.0.1/images/php/7.0)
+      - [`7.0-fpm-2`](https://github.com/malagant/docker-magento/tree/13.0.0/images/php/7.0)
+      - [`7.0-fpm-1`](https://github.com/malagant/docker-magento/tree/11.1.5/images/php/7.0)
+      - [`7.0-fpm-0`](https://github.com/malagant/docker-magento/tree/11.0.0/images/php/7.0)
   - 5.6
-      - [`5.6-fpm`, `5.6-fpm-6`](https://github.com/markoshust/docker-magento/tree/master/images/php/5.6)
-      - [`5.6-fpm-5`](https://github.com/markoshust/docker-magento/tree/15.0.1/images/php/5.6)
-      - [`5.6-fpm-4`](https://github.com/markoshust/docker-magento/tree/15.0.0/images/php/5.6)
-      - [`5.6-fpm-3`](https://github.com/markoshust/docker-magento/tree/14.0.1/images/php/5.6)
-      - [`5.6-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/5.6)
-      - [`5.6-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/5.6)
-      - [`5.6-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/5.6)
+      - [`5.6-fpm`, `5.6-fpm-6`](https://github.com/malagant/docker-magento/tree/master/images/php/5.6)
+      - [`5.6-fpm-5`](https://github.com/malagant/docker-magento/tree/15.0.1/images/php/5.6)
+      - [`5.6-fpm-4`](https://github.com/malagant/docker-magento/tree/15.0.0/images/php/5.6)
+      - [`5.6-fpm-3`](https://github.com/malagant/docker-magento/tree/14.0.1/images/php/5.6)
+      - [`5.6-fpm-2`](https://github.com/malagant/docker-magento/tree/13.0.0/images/php/5.6)
+      - [`5.6-fpm-1`](https://github.com/malagant/docker-magento/tree/11.1.5/images/php/5.6)
+      - [`5.6-fpm-0`](https://github.com/malagant/docker-magento/tree/11.0.0/images/php/5.6)
 
 ## Usage
 
@@ -75,7 +64,7 @@ Folders:
 - `images`: Docker images for nginx and php
 - `compose`: sample setups with Docker Compose
 
-Nginx assumes you are running Magento 2, however you can easily run it with Magento 1 using [the provided configuration file](https://github.com/markoshust/docker-magento/blob/master/images/nginx/1.13/conf/default.magento1.conf). Here is an [example of this setup with Docker Compose](https://github.com/markoshust/docker-magento/tree/master/compose/magento-1).
+Nginx assumes you are running Magento 2, however you can easily run it with Magento 1 using [the provided configuration file](https://github.com/malagant/docker-magento/blob/master/images/nginx/1.13/conf/default.magento1.conf). Here is an [example of this setup with Docker Compose](https://github.com/malagant/docker-magento/tree/master/compose/magento-1).
 
 The PHP images are fairly agnostic to which version of Magento you are running. The PHP 5 images do assume you are running Magento 1, and the PHP 7 images do assume you are running Magento 2, however the main difference is cronjob setup, and they can be easily modified for inverse usage.
 
@@ -94,7 +83,7 @@ This configuration has been tested on Mac, Linux and Windows.
 Run this automated one-liner from the directory you want to install your project to:
 
 ```
-curl -s https://raw.githubusercontent.com/markoshust/docker-magento/master/lib/onelinesetup|bash -s -- magento2.test 2.3.0
+curl -s https://raw.githubusercontent.com/malagant/docker-magento/master/lib/onelinesetup|bash -s -- magento2.test 2.3.0
 ```
 
 The `magento2.test` above defines the hostname to use, and the `2.3.0` defines the Magento version to install. Note that since we need a write to `/etc/hosts` for DNS resolution, you will be prompted for your system password during setup.
@@ -107,7 +96,7 @@ Same result as the one-liner above. Just replace `magento2.test` references with
 
 ```
 # Quick setup for a new instance of Magento 2:
-curl -s https://raw.githubusercontent.com/markoshust/docker-magento/master/lib/template|bash -s -- magento-2
+curl -s https://raw.githubusercontent.com/malagant/docker-magento/master/lib/template|bash -s -- magento-2
 
 bin/download 2.3.0
 # or if you'd rather install with Composer, run:
@@ -137,7 +126,7 @@ Just replace `magento2.test` references with the hostname that you wish to use.
 
 ```
 # Quick setup for an existing instance of Magento 2
-curl -s https://raw.githubusercontent.com/markoshust/docker-magento/master/lib/template|bash -s -- magento-2
+curl -s https://raw.githubusercontent.com/malagant/docker-magento/master/lib/template|bash -s -- magento-2
 
 # Replace the contents of /src with the source code of your existing Magento instance
 
@@ -153,7 +142,7 @@ open http://magento2.test
 ## Setup a New Magento 2 Project
 
 1. Create the project template by going to the place you want the new project (ex. cd ~/Sites/magento2), then run
-	- `curl -s https://raw.githubusercontent.com/markoshust/docker-magento/master/lib/template|bash -s -- magento-2`
+	- `curl -s https://raw.githubusercontent.com/malagant/docker-magento/master/lib/template|bash -s -- magento-2`
 
 2. Extract the contents of your current Magento site to the `src` folder, or download a fresh copy of the Magento source code for starting a new project with:
     - `bin/download 2.3.0`
@@ -164,7 +153,7 @@ open http://magento2.test
 4. Start your Docker containers with the provided helper script:
     - `bin/start`
 
-5. For new projects: run Magento's setup install process with the below helper script. Feel free to edit this file to your liking; at the very least you will probably need to update the `base-url` value to the domain you setup in step 3. Also, be sure to setup [Composer Authentication](https://github.com/markoshust/docker-magento#composer-authentication) before initiating the setup script.
+5. For new projects: run Magento's setup install process with the below helper script. Feel free to edit this file to your liking; at the very least you will probably need to update the `base-url` value to the domain you setup in step 3. Also, be sure to setup [Composer Authentication](https://github.com/malagant/docker-magento#composer-authentication) before initiating the setup script.
     - `bin/setup magento2.test`
 
 6. You may now access your site! Check out whatever domain you setup from within a web browser.
@@ -175,7 +164,7 @@ open http://magento2.test
 The following scripts are meant to run with Powershell. Note that the execution policy for scripts needs to be set accordingly [Execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-6).
 
 1. Create the project template by going to the place you want the new project (ex. cd ~/Sites/magento2), then run
-	- `curl -s https://raw.githubusercontent.com/markoshust/docker-magento/master/lib/template|bash -s -- magento-2-windows`
+	- `curl -s https://raw.githubusercontent.com/malagant/docker-magento/master/lib/template|bash -s -- magento-2-windows`
 
 2. Extract the contents of your current Magento site to the `src` folder, or download a fresh copy of the Magento source code for starting a new project with the following line. Note that the default untar command is quite slow. If you want to speed that up install [7-Zip](http://www.7-zip.org/) and add it to your PATH. The script will automatically use 7-Zip if it is available:
     - `bin/download 2.3.0`
@@ -187,7 +176,7 @@ The following scripts are meant to run with Powershell. Note that the execution 
 5. Start your Docker containers with the provided helper script:
     - `bin/start`
 
-6. For new projects: run Magento's setup install process with the below helper script. Feel free to edit this file to your liking; at the very least you will probably need to update the `base-url` value to the domain you setup in step 4. Also, be sure to setup [Composer Authentication](https://github.com/markoshust/docker-magento#composer-authentication) before initiating the setup script.
+6. For new projects: run Magento's setup install process with the below helper script. Feel free to edit this file to your liking; at the very least you will probably need to update the `base-url` value to the domain you setup in step 4. Also, be sure to setup [Composer Authentication](https://github.com/malagant/docker-magento#composer-authentication) before initiating the setup script.
     - `bin/setup magento2.test`
 
 7. You may now access your site! Check out whatever domain you setup from within a web browser.
@@ -235,7 +224,7 @@ Then update the username and password values with your Magento public and privat
 
 Install and enable the PHP Debug extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug).
 
-Otherwise, this project now automatically sets up Xdebug support with VS Code. If you wish to set this up manually, please see the [`.vscode/launch.json`](https://github.com/markoshust/docker-magento/blame/master/compose/magento-2/.vscode/launch.json) file.
+Otherwise, this project now automatically sets up Xdebug support with VS Code. If you wish to set this up manually, please see the [`.vscode/launch.json`](https://github.com/malagant/docker-magento/blame/master/compose/magento-2/.vscode/launch.json) file.
 
 ### Xdebug & PHPStorm
 
@@ -246,8 +235,8 @@ Next, enable Xdebug in the PHP-FPM container by running: `bin/xdebug enable`, th
 Then, open `PHPStorm > Preferences > Languages & Frameworks > PHP` and configure:
 
 - `CLI Interpreter`:
-  - Create a new interpreter and specify `From Docker`, and name it `markoshust/magento-php:7-2-fpm`.
-  - Choose `Docker`, then select the `markoshust/magento-php:7-2-fpm` image name, and set the `PHP Executable` to `php`.
+  - Create a new interpreter and specify `From Docker`, and name it `malagant/magento-php:7-2-fpm`.
+  - Choose `Docker`, then select the `malagant/magento-php:7-2-fpm` image name, and set the `PHP Executable` to `php`.
 
 - `Path mappings`:
   - Don't do anything here as the next `Docker container` step will automatically setup a path mapping from `/var/www/html` to `./src`.

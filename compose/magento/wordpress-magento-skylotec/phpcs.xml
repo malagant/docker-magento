@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ruleset name="conlabz Magento" namespace="Conlabz\Magento\CS\Standard">
+    <description>conlabz Magento coding standard</description>
+    <file>./src/modules</file>
+    <exclude-pattern>*/(Test|controllers|shell|lib)/*</exclude-pattern>
+    <exclude-pattern>*/*_setup/*</exclude-pattern>
+    <exclude-pattern>*\.(inc|css|js)$</exclude-pattern>
+    <arg name="colors" />
+    <ini name="memory_limit" value="2048M" />
+    <rule ref="PSR2">
+        <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+        <exclude name="PSR2.Methods.MethodDeclaration" />
+        <exclude name="PSR2.Classes.PropertyDeclaration" />
+        <exclude name="Squiz.Classes.ValidClassName" />
+        <exclude name="Generic.Files.LineLength"/>
+    </rule>
+</ruleset>

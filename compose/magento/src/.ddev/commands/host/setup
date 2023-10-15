@@ -1,0 +1,22 @@
+#!/bin/bash
+
+## Description: Setup
+## Usage: setup
+## Example: "ddev setup"
+
+if [[ ! -d htdocs/wp ]]
+then
+    git clone ssh://git@gitlab.conlabz.net:7998/skylotec/WP_Skylotec.git htdocs/wp
+fi
+
+if [[ ! -d nama ]]
+then
+    git clone ssh://git@gitlab.conlabz.net:7998/skylotec/NaMa_Skylotec.git nama
+fi
+
+ddev import-db --target-db=magento --src=files/db/magento/01-magento.sql.gz
+ddev import-db --no-drop --target-db=magento --src=files/db/magento/11-magento_dev.sql
+ddev import-db --target-db=nama --src=files/db/nama/01-nama.sql
+ddev import-db --target-db=wordpress --src=files/db/wordpress/01-wp_skylotec.sql
+ddev import-db --no-drop --target-db=wordpress --src=files/db/wordpress/11-wp_skylotec_dev.sql
+ddev build

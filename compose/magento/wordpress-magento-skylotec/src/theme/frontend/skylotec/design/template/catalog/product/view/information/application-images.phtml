@@ -1,0 +1,17 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Catalog_Product_View_Images */ ?>
+<?php $this->setLabels(array('s')) ?>
+<div class="application-images">
+<?php foreach ($this->getAllImages() as $_image): ?>
+    <div class="application-image product-preview-image">
+    <?php if ($_image->getIsVideo()): ?>
+        <a href="<?php echo $this->getVideoUrl($_image) ?>" class="video" data-fancybox-type="iframe">
+            <img src="<?php echo $this->getVideoThumbnail($_image) ?>" alt="<?php echo $_image->getVideoId() ?>">
+        </a>
+    <?php else: ?>
+        <a href="<?php echo $this->getZoomImageUrl($_image) ?>" data-rel="application-image">
+            <img class="img-gallery-small" src="<?php echo $this->getResizeUrl($_image) ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
+        </a>
+    <?php endif; ?>
+    </div>
+<?php endforeach; ?>
+</div>

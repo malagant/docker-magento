@@ -1,0 +1,28 @@
+/* line 6, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/color.scss */
+.handles-null {
+  content: "there should be no property below this one";
+}
+
+/* line 11, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/color.scss */
+.contrasts-light {
+  background-color: #eeeeee;
+  color: black;
+}
+
+/* line 15, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/color.scss */
+.contrasts-dark {
+  background-color: #222222;
+  color: white;
+}
+
+/* line 19, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/color.scss */
+.contrasts-light-with-contrast-color-override {
+  background-color: #eeeeee;
+  color: red;
+}
+
+/* line 23, ../../../../../../../../../../../../vendor/bundle/ruby/2.5.0/gems/compass-1.0.3/test/fixtures/stylesheets/compass/sass/color.scss */
+.contrasts-dark-with-contrast-color-override {
+  background-color: #222222;
+  color: yellow;
+}

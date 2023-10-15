@@ -1,0 +1,158 @@
+@mixin mq-vals($values, $default: $mq-default-index) {
+    $length: length($values);
+    @for $i from 1 through $length {
+        $prop-index: $i * 2 - 1; 
+        $val-index:  $i * 2;
+        @if ($val-index <= $length) {
+            $property:  nth($values, $prop-index);
+            $vals:      nth($values, $val-index);
+            $value:     nth($vals, $default);
+            #{$property}: $value;
+        }
+    }
+    @if ($responsive) {
+        $i: 1;
+        @each $query in $media-queries {
+            @if ($i != $default) {
+                @media #{$query} {
+                    @for $j from 1 through length($values) {
+                        $prop-index: $j * 2 - 1; 
+                        $val-index:  $j * 2;
+                        @if ($val-index <= $length) {
+                            $property:      nth($values, $prop-index);
+                            $vals:          nth($values, $val-index);
+                            $value:         nth($vals, $i);                            
+                            $default-value: nth($vals, $default); 
+                            @if ($value != $default-value) {
+                                #{$property}: $value;
+                            }
+                        }
+                    }
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+}
+
+@mixin bp($args...) {
+    @if ($responsive == true) {
+        @include breakpoint($args) {
+            @content;
+        }
+    }
+}
+
+@mixin container() {
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    @include mq-vals((
+        width, (
+            $container-xs,
+            $container-sm,
+            $container-md,
+            $container-lg
+        )
+    ));
+}
+
+@mixin row {
+    display: block;
+    clear: both;    
+    @include mq-vals((
+        margin-left, (
+            -$gap-padding-xs,
+            -$gap-padding-sm,
+            -$gap-padding-md,
+            -$gap-padding-lg
+        ), 
+        margin-right, (
+            -$gap-padding-xs,
+            -$gap-padding-sm,
+            -$gap-padding-md,
+            -$gap-padding-lg
+        )
+    ));
+}
+
+@mixin col(
+    $xs: null,
+    $sm: null,
+    $md: null,
+    $lg: null,
+    $offset: false
+) {
+    @if ($xs == null) {
+        $xs: $cols-xs;
+        $sm: $cols-sm;
+        $md: $cols-md;
+        $lg: $cols-lg;
+    } @else {
+        @if ($sm == null) {
+            $sm: $xs;
+        }
+        @if ($md == null) {
+            $md: $sm
+        }
+        @if ($lg == null) {
+            $lg: $md
+        }
+    }
+   
+    @if ($offset != false) {
+        @include mq-vals((
+            margin-left, (
+                offset-width($xs),
+                offset-width($sm),
+                offset-width($md),
+                offset-width($lg)
+            )
+        ));
+    } @else {
+        @extend .col;
+        @include mq-vals((
+            width, (
+                col-width($xs),
+                col-width($sm),
+                col-width($md),
+                col-width($lg)
+            )
+        ));
+    }
+}
+
+@mixin col-base() {
+    @include box-sizing(border-box);
+    position: relative;
+    float: left;
+    min-height: 1px;
+    @include mq-vals((
+        padding, (
+            0 $gap-padding-xs,
+            0 $gap-padding-sm,
+            0 $gap-padding-md,
+            0 $gap-padding-lg
+        )
+    ));
+}
+
+@mixin offset(
+    $xs: null,
+    $sm: null,
+    $md: null,
+    $lg: null
+) {    
+    @include col($xs, $sm, $md, $lg, true);
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }
+}

@@ -1,0 +1,55 @@
+<layout version="0.1.0">
+    
+	<default>
+        
+		<reference name="head">
+			<action method="addJs"><script>conlabz/jquery.varnishreloader.js</script></action>
+		</reference>
+
+		<reference name="before_body_end">
+			<block type="con_varnishreloader/javascript" template="conlabz/varnishreloader/javascript.phtml"></block>
+		</reference>                
+       
+        <!--<reference name="top.links">
+            <action method="setPlaceholderOptions">
+                <params>
+                    <type>core/template</type>
+                    <template>page/dummies/top-links.phtml</template>
+                    <id>top_links</id>
+                </params>
+            </action>
+        </reference>
+           
+        <reference name="catalog.compare.sidebar">
+            <action method="setPlaceholderOptions">
+                <params>
+                    <id>sidebar_compare</id>
+                </params>
+            </action>
+        </reference>
+                
+        <reference name="cart_sidebar">
+            <action method="setPlaceholderOptions">
+                <params>
+                    <id>cart_sidebar</id>
+                </params>
+            </action>
+        </reference>         -->
+
+        <reference name="cart.header">
+            <action method="setPlaceholderOptions">
+                <params>
+                    <id>cart_header</id>
+                    <type>core/template</type>
+                    <template>checkout/cart/header-dummy.phtml</template>
+                </params>
+            </action>
+        </reference>
+
+	</default>
+    
+    <con_varnishreloader_call_ajax>
+        <remove name="head" />
+    </con_varnishreloader_call_ajax>
+        
+</layout>

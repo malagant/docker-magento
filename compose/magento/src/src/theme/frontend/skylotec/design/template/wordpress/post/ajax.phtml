@@ -1,0 +1,11 @@
+<?php
+/* @var $post Fishpig_Wordpress_Model_Post */
+$post = $this->getPost();
+?>
+<div class="post-ajax">
+    <h1 class="page-title"><?php echo $post->getPostTitle() ?></h1>
+    <?php echo $post->getPostContent() ?>
+    <a href="<?php echo $post->getPermalink() ?>" class="btn">
+        <?php echo $this->__('Go to post') ?>  
+    </a>
+</div>

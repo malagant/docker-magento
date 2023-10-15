@@ -1,0 +1,38 @@
+.post-gallery {
+    clear: both;
+    .main-image {
+        text-align: center;
+    }
+    .gallery-thumbnails {
+        position: relative;
+        text-align: center;
+        margin: 10px 0;
+        @media (max-width: $screen-xs-max) {
+            display: none;
+        }
+    }
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        top: 50%;
+        margin-top: -24px;
+    }
+    .owl-prev {
+        left: 10px;
+    }
+    .owl-next {
+        right: 10px;
+    }
+    .thumbnail {
+        display: inline-block;
+        width: 80px;
+    }
+}
+.post-view {
+    .gallery {
+        @extend .clearfix;
+    }
+}
+.clearer {
+    @extend .clearfix;
+}

@@ -1,0 +1,242 @@
+.categories-home {
+    position: relative;
+    ul {
+        @extend .no-list-style;
+        @extend .row;
+    }
+    .btn {
+        position: absolute;
+        margin: 0;
+        left: 5%;
+        bottom: 20px;
+        height: 4.5rem;
+        background-color: $color-black-subtitle;
+        width: 90%;
+        display: table;
+        @include box-sizing(border-box);
+        font-size: 1rem;
+        font-family: $font-bold;
+        font-weight: normal;
+        z-index: 2;
+        @media #{$mq-md} {
+            font-size: .8rem;
+        }
+        @media #{$mq-xs} {
+            font-size: 1.4rem;
+            height: 2.5rem;
+        }
+        div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+    li {
+        @include col(2, 3, 6);
+        margin-bottom: 20px;
+        z-index: 10;
+        a {
+            position: relative;
+            display: block;
+            @include fade-layer();
+        }
+        &:hover {
+            .btn {
+                background-color: $color-orange;
+            }
+            & a:before {
+                @include opacity(0.3);
+            }
+        }
+    }
+    img {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+}
+.skylotec-home {
+    background: url('../images/skylotec_dark_bg.jpg') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 20px;
+    p {
+        background: rgba(0, 0, 0, 0.8);
+        height: 100%;
+        color: $color-orange;
+        margin: 0;
+        line-height: 1;
+        @include mq-vals((
+            padding, (
+                1rem 1rem 6rem,
+                50px 50px 100px,
+                50px 50px 100px,
+                100px 150px 125px
+            ),
+            font-size, (
+                1.5rem,
+                2.5rem,
+                3rem,
+                2.5rem
+            )
+        ));        
+    }
+    .btn {
+        width:  210px;
+        height: 47px;
+        line-height: 47px;
+        font-size: 1.4rem;
+        padding: 0 15px;
+        position: absolute;
+        left: 50%;
+        margin-left: -125px;
+        bottom: 40px;
+        font-family: $font-bold;
+        font-weight: normal;
+    }
+}
+.divisions-home {
+    h3 {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 40px 0;
+        font-size: 1.5rem;
+    }
+    ul {
+        @extend .no-list-style;
+        @extend .row;
+        margin: 0 0 40px;
+    }
+    li {
+        @include col(1, 2);
+        .item {
+            background: lighten($color-black-light, 2%);
+            @extend .clearfix;
+            padding: 0;
+        }
+
+        padding: 0;
+    }
+    .sub-categories {
+        @extend .clearfix;
+    }
+    .sub-category {
+        @include col(4);
+        font-size: 6rem;
+        text-align: center;
+        color: $color-orange;
+    }
+    .sub-category-name {
+        display: none;
+    }
+    h4 {
+        margin-top: 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        a {
+            display: block;
+            color: $color-orange;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .new-products {
+        clear: both;
+        @extend .clearfix;
+        h4 {
+            clear: both;
+            margin: 40px 15px;
+            color: $color-gray-light;
+            font-size: 1.4rem;
+        }
+        ul {
+            margin: 0;
+            padding: 0 20px;
+        }
+        li {
+            @include col(3);
+            padding: 0 10px;
+        }
+        .product-image {
+            padding: 10px;
+            background: $color-black;
+        }
+        .product-name {
+            display: block;
+            border: 0;
+            padding: 0;
+            text-align: left;
+            background-color: transparent;
+        }
+    }
+}
+.home-teasers {
+    @extend .row;
+    @extend .no-list-style;
+    .home-teaser {
+        @include col(1, 2);
+        margin-bottom: 20px;
+        > a {
+            background: no-repeat center center;
+            background-size: cover;
+            display: block;
+            @include mq-vals((
+                height, (
+                        210px,
+                        270px,
+                        350px,
+                        430px
+                )
+            ));
+            @include fade-layer();
+            &:hover:before {
+                @include opacity(0.3);
+            }
+            .title, .subtitle {
+                @include col(2);
+                margin: 0;
+                float: none;
+                display: table-cell;
+                vertical-align: middle;
+                padding: 10px 20px;
+                height: 7rem;
+                font-size: 1.4rem;
+                @media #{$mq-xs} {
+                    font-size: 1rem;
+                    line-height: 1.3;
+                    padding: 5px 10px;
+                    height: 5rem;
+                }
+            }
+            .title {
+                text-transform: uppercase;
+                font-family: $font-accent;
+                background-color: $color-orange;
+            }
+            .subtitle {
+                background-color: $color-black-subtitle;
+            }
+            &:hover {
+                .subtitle,
+                .title {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+.home-teaser-title-box {
+    bottom: 1.8rem;
+    width: 90%;
+    left: 5%;
+    display: table;
+    position: absolute;
+    z-index: 2;
+    p {
+        margin: 0;
+    }
+    @media #{$mq-sm} {
+        height: 9rem;
+    }
+}

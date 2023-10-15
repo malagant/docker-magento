@@ -1,0 +1,39 @@
+<?php
+$catalogSearchHelper =  $this->helper('catalogsearch');
+?>
+<form id="search_mini_form" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
+    <label for="search" class="quick-item"><span><?php echo $this->__('Find') ?></span></label>
+    <div class="form-search">
+        <div class="form-row">
+            <div class="search-field">
+                <input id="search" type="text" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" class="input-text" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" />
+            </div>
+            <button type="submit" title="<?php echo $this->__('Search') ?>" class="button">
+                <?php echo $this->__('Search') ?>
+            </button>
+        </div>
+        <script>
+            jQuery(function($) {
+                var autocomplete = new Bloodhound({
+                    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
+                    prefetch: '/autocomplete.php?prefetch=1&s=<?php echo Mage::app()->getStore()->getId() ?>',
+                    remote: {
+                        rateLimitWait: 100,
+                        rateLimitBy: 'debounce',
+                        url: '/autocomplete.php?q=%QUERY&s=<?php echo Mage::app()->getStore()->getId() ?>'
+                    }
+                });
+
+                autocomplete.initialize();
+
+                $('#search').typeahead(null, {
+                    name: 'autocomplete',
+                    displayKey: 'name',
+                    highlight: true,
+                    source: autocomplete.ttAdapter()
+                });
+            });
+        </script>
+    </div>
+</form>

@@ -1,0 +1,44 @@
+<?php /* @var $this Conlabz_Skylotec_Block_Page_Html_Footer_News */ ?>
+<?php $helper = Mage::helper('core') ?>
+<?php $skylotecHelper = Mage::helper('skylotec') ?>
+<div class="footer-block latest-news">
+    <?php foreach ($this->getLatestNews() as $news): ?>
+    <article class="news-item">
+        <header>
+            <div class="date"><?php echo $helper->formatDate($news->getPostDateGmt()) ?></div>
+            <a href="<?php echo $news->getUrl() ?>"><?php echo $this->escapeHtml($news->getPostTitle()) ?></a>          
+        </header>
+        <p>
+            <?php echo $skylotecHelper->clipText($news->getPostContent(), 115) ?>
+            <a href="<?php echo $news->getUrl() ?>" class="read-more"><?php echo $this->__('show more') ?></a>
+        </p>        
+    </article>
+    <?php endforeach; ?>
+    <a href="<?php echo $this->getUrl() . $this->__('skylotec/reports') ?>" class="button">
+        <?php echo $this->__('All news') ?>
+    </a>
+</div>
+<div class="footer-block footer-newsletter">
+    <?php echo $this->getChildHtml('newsletter') ?>
+    <?php if ($this->successNewsletterSubscription()): ?>
+    <!-- Google Code for Newsletteranmeldung Conversion Page -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+		var google_conversion_id = 1071419068;
+		var google_conversion_language = "de";
+		var google_conversion_format = "2";
+		var google_conversion_color = "ffffff";
+		var google_conversion_label = "ienOCJS7wAcQvJ3y_gM"; var google_conversion_value = 1.00; var google_conversion_currency = "EUR"; var google_remarketing_only = false;
+        /* ]]> */
+    </script>
+    <script type="text/javascript"
+            src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt=""
+                 src="//www.googleadservices.com/pagead/conversion/1071419068/?value=1.00&amp;currency_code=EUR&amp;label=ienOCJS7wAcQvJ3y_gM&amp;guid=ON&amp;script=0"/>
+        </div>
+    </noscript>
+    <?php endif; ?>
+</div>

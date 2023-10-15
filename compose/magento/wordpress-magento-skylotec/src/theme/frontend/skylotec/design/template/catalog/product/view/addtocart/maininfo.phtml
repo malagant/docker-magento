@@ -1,0 +1,31 @@
+<?php /** @var $this Conlabz_Skylotec_Block_Catalog_Product_View_Buy */  ?>
+<?php
+$_product = $this->getProduct();
+/* @var $_helper Mage_Catalog_Helper_Output */
+$_helper = $this->helper('catalog/output');
+$_isSalable = $_product->isSalable();
+?>
+<table class="data-table">
+    <?php foreach ($this->getAttributes() as $attribute): ?>
+    <tr>
+        <th><?php echo $attribute['label'] ?></th>
+        <td><?php echo $_helper->productAttribute($_product, $attribute['value'], $attribute['code']) ?>
+    </tr>
+    <?php endforeach; ?>
+    <?php if ($_isSalable): ?>
+    <tr class="price">
+        <th><?php echo $this->__('Price') ?></th>
+        <td><?php echo $this->getPriceHtml($_product) ?></td>
+    </tr>
+    <tr class="delivery-time">
+        <th><?php echo $this->__('Delivery Time') ?></th>
+        <td id="delivery-time" data-qty="<?php echo $this->getQty() ?>"><?php echo $this->__('Dependent on availability') ?></td>
+    </tr>
+    <tr class="add-to-cart">
+        <th><?php echo $this->__('Qty') ?></th>
+        <td>
+            <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" class="qty">
+        </td>
+    </tr>
+    <?php endif ?>
+</table>

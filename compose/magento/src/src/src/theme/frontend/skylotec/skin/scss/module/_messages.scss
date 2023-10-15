@@ -1,0 +1,34 @@
+.note-msg {
+    line-height: 1.3;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    background-color: $color-warning;
+    color: $color-black;
+    @include icon($icon-info, 10px, before);
+}
+.messages {
+    @extend .no-list-style;
+    ul {
+        @extend .no-list-style;
+        li {
+            @extend .note-msg;
+            color: #fff;
+        }
+    }
+}
+.content > .messages {
+    margin-bottom: 1.5rem;
+}
+.success-msg ul li {
+    background-color: $color-success;
+    @include icon($icon-check, 10px, before);
+}
+.error-msg ul li {
+    background-color: $color-error;
+    @include icon($icon-times, 10px, before);
+}
+.warning-msg ul li {
+    color: $color-black;
+    background-color: $color-warning;
+    @include icon($icon-exclamation, 10px, before);
+}

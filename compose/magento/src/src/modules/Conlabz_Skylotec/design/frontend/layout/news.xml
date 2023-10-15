@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+
+    <category_wordpress_list_post>
+        <reference name="teaser">
+            <block type="skylotec/catalog_category_view_teaser" name="category.teaser" />
+        </reference>
+        <reference name="content">
+            <block type="skylotec/news_list" name="news.list" template="news/list.phtml">
+                <block type="skylotec/news_archive" name="news.archive.headline" as="archive" template="news/archive/headline.phtml" />
+                <block type="core/template" name="news.list.filter" as="filter" template="news/filter.phtml">
+                    <!--<block type="skylotec/news_filter_category" name="news.filter.category" as="category" />-->
+                    <block type="skylotec/news_filter_division" name="news.filter.division" as="division">
+                        <action method="setLabel"><label>Category</label></action>
+                        <action method="addToParentGroup"><group>filter</group></action>
+                    </block>
+                </block>
+                <block type="page/html_pager" name="news.pager" as="pager" template="page/html/pager.phtml">
+                    <action method="setShowPerPage">
+                        <flag>0</flag>
+                    </action>
+                    <action method="setShowAmounts">
+                        <flag>0</flag>
+                    </action>
+                    <action method="setLimit">
+                        <limit>20</limit>
+                    </action>
+                </block>
+            </block>
+            <block type="skylotec/news_archive" name="news.archive" template="wordpress/sidebar/widget/archives.phtml">
+                <action method="setTitle">
+                    <title>News archive</title>
+                </action>
+            </block>
+        </reference>
+        <reference name="right">
+            <action method="unsetChildren" />
+        </reference>
+    </category_wordpress_list_post>
+
+    <wordpress_post_view>
+        <reference name="root">
+            <action method="setTemplate">
+                <tpl>page/1column.phtml</tpl>
+            </action>
+        </reference>
+    </wordpress_post_view>
+    
+</layout>

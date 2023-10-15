@@ -1,0 +1,12 @@
+#AuthGroupFile /dev/null
+#AuthName "Private Area"
+#AuthType Basic
+#AuthUserFile .htpasswd
+#require valid-user
+
+
+<Files "asset-error.log">
+Allow from all
+Satisfy Any
+
+</Files>

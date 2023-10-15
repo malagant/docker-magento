@@ -1,0 +1,11 @@
+<?php /* @var $this Mage_Catalog_Block_Product_View */ ?>
+<?php $_product = $this->getProduct(); ?>
+<img id="image-main"
+     data-zoom-image="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(1600) ?>"
+     src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(400) ?>"
+     alt="<?php echo $this->escapeHtml($_product->getName()) ?>"
+     title="<?php echo $this->escapeHtml($_product->getName()) ?>"
+>
+<a class="btn-view image" data-fancybox-type="image" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(1600) ?>">
+    <span><?php echo $this->__('View image') ?></span>
+</a>

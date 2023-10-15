@@ -1,0 +1,7 @@
+<?php $sku = $this->getProduct()->getSku() ?>
+<?php $categoryTitle = null ?>
+
+<div class="product-downloads" id="downloads">
+    <app-skydownload class="bootstrap" mode="product" article="<?php echo htmlspecialchars($sku); ?>" language="<?php echo htmlspecialchars(substr(Mage::app()->getLocale()->getLocaleCode(), 0, 2)); ?>">
+    </app-skydownload>
+</div>

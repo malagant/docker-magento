@@ -1,0 +1,22 @@
+<?php /** @var Conlabz_Skylotec_Block_News_Filter_Category $this */ ?>
+<?php
+$_items = $this->getItems();
+$_activeItem = $this->getActiveItem();
+?>
+<div class="filter-button<?php if ($_activeItem) echo ' active' ?>">
+    <span class="filter-name">
+        <?php echo $this->__($this->getLabel()) ?>
+        <?php if ($_activeItem): ?>:
+            <?php echo $this->__($_activeItem->getName()) ?>
+        <?php endif ?>
+    </span>
+    <ol class="m-filter-item-list">
+        <?php foreach ($_items as $_item): ?>
+            <li>
+                <a class="<?php if ($this->isActive($_item)) echo 'selected-filter-item'; ?>" href="<?php echo $this->getItemUrl($_item) ?>">
+                    <?php echo $this->__($_item->getName()) ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ol>
+</div>

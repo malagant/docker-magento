@@ -1,0 +1,32 @@
+// fonts
+$font-stack: Helvetica, Arial, sans-serif;
+$font: 'Square721W01-Condensed', $font-stack;
+$font-roman: 'Square_721 W01 Roman', $font-stack;
+$font-bold: 'Square721W01-BoldConden', $font-stack;
+$font-accent: 'PF Centro Slab W01 Medium', $font-stack;
+$font-accent-bold: 'PF Centro Slab W01 Bold', $font-stack;
+
+// colors
+$color-bg-main: #020202;
+$color-fg-main: #fff;
+
+$color-black: #020202;
+$color-black-light: #1c1c1c;
+$color-black-subtitle: #2a2a2a;
+$color-gray: rgb(87, 87, 86);
+$color-gray-light: rgb(168, 168, 167);
+$color-gray-dark: $color-gray;
+$color-orange: rgb(238, 114, 3);
+
+$color-success: #60a542;
+$color-error: #c31223;
+$color-warning: #ecbe29;
+
+// grid
+$gap-width-lg: 24px;
+$gap-width-md: 20px;
+$gap-width-sm: 16px;
+
+$proximity-xs: 49px;
+
+$menu-translate: 85%;

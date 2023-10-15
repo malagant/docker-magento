@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <web>
+            <groups>
+                <cookie>
+                    <fields>
+                        <cookie_bot translate="label">
+                            <label>Enable Cookiebot</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cookie_bot>
+                    </fields>
+                </cookie>
+            </groups>
+        </web>
+        <design>
+            <groups>
+                <footer>
+                    <fields>
+                        <skylotec_footer_link translate="label">
+                            <label>Skylotec Footer Link</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </skylotec_footer_link>
+                        <skylotec_footer_whatsapp translate="label comment">
+                            <label>Skylotec WhatsApp Link</label>
+                            <comment>Leave empty for hide the link, e.g. if it's not available in the certain language.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </skylotec_footer_whatsapp>
+                    </fields>
+                </footer>
+            </groups>
+        </design>
+    	<catalog>
+			<groups>
+				<frontend translate="label">
+					<fields>
+						<hide_attributes translate="label">
+							<label>Hide attributes</label>
+							<frontend_type>multiselect</frontend_type>
+                            <source_model>skylotec/system_config_source_attributes</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </hide_attributes>
+                        <video_privacy>
+                            <label>Youtube "Erweiterten Datenschutzmodus"</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </video_privacy>
+					</fields>
+				</frontend>
+			</groups>	
+		</catalog>
+        <checkout>
+            <groups>
+                <cart>
+                    <fields>
+                        <initial_products_in_cart translate="label">
+                            <label>Initial products in cart</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </initial_products_in_cart>
+                    </fields>
+                </cart>
+            </groups>
+        </checkout>
+        <general>
+            <groups>
+                <imprint>
+                    <fields>
+                        <mobile>
+                            <label>Mobil</label>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </mobile>
+                    </fields>
+                </imprint>
+            </groups>
+        </general>
+    </sections>
+</config>

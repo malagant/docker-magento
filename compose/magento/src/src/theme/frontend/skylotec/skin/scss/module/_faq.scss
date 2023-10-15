@@ -1,0 +1,31 @@
+.faq-article {
+    border-top: 1px solid $color-black;
+    &:first-child {
+        border-top: none;
+    }
+}
+.faq-question {
+    margin: 0;
+    padding: 0 3rem 0 1rem;
+    background-color: $color-gray;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    @include icon($icon-angle-down, 0, after);
+    &.open {
+        @include icon($icon-angle-up, 0, after);
+    }
+    &:after {
+        position: absolute;
+        right: 1rem;
+        font-size: 2.5rem;
+        top: 50%;
+        margin-top: -1.25rem;
+    }
+    &:hover {
+        background-color: $color-gray-light;
+    }
+}
+.faq-answer {
+    padding: 0.5rem 3rem;
+}

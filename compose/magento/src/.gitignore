@@ -1,0 +1,17 @@
+/media/
+/nbproject/
+/skin/frontend/skylotec/default/css/skylotec.css
+.idea/
+/skin/frontend/gentic/default/scss/.sass-cache/
+/skin/frontend/gentic/default/css/styles.css
+/skin/frontend/skylotec/default/scss/.sass-cache/
+/vendor/
+/htdocs
+/src/theme/frontend/skylotec/skin/node_modules/
+!src/theme/frontend/skylotec/skin/scss/vendor/_normalize.scss
+/bin/
+/skylofiles
+/wp
+/PATCH*
+/skin/frontend/skylotec/default/scss/vendor/.bundle/
+htdocs/var/

@@ -1,0 +1,22 @@
+<?php /** @var Conlabz_Regions_Block_Regions $this */ ?>
+<?php
+$_mapping = $this->getMapping();
+?>
+<div id="regions" style="display: none;">
+    <ul class="regions">
+    <?php foreach ($_mapping as $regionId => $region): ?>
+        <li class="region region-<?php echo $regionId ?>">
+            <h2><?php echo $this->escapeHtml($region['name']) ?></h2>
+            <ul class="region-languages">
+                <?php foreach ($region['languages'] as $storeCode => $language): ?>
+                <li class="region-language">
+                    <a href="<?php echo $this->getRegionUrl($storeCode) ?>" data-region="<?php echo $regionId ?>">
+                        <?php echo $this->escapeHtml($language) ?>
+                    </a>
+                </li>
+                <?php endforeach ?>
+            </ul>
+        </li>
+    <?php endforeach ?>
+    </ul>
+</div>

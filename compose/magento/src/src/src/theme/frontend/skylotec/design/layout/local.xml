@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+
+    <homepage>
+        <reference name="teaser">
+            <block type="skylotec/slider" name="home.slider" as="slider" />
+        </reference>
+        <reference name="content">
+            <block type="skylotec/page_home_divisions" name="home.middle" template="page/home/middle.phtml" />
+            <block type="core/template" name="home.text" template="page/home/text.phtml">
+                <action method="setBlockId">
+                    <id>start</id>
+                </action>
+            </block>
+            <block type="skylotec/page_home_teaser" name="home.teaser" template="page/home/teaser.phtml" />
+        </reference>
+    </homepage>
+
+    <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate"><tpl>page/1column.phtml</tpl></action>
+        </reference>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.highlight.js</name>
+            </action>
+        </reference>
+    </catalogsearch_result_index>
+
+    <skylotec_component_view>
+        <block type="catalog/product_view" output="toHtml" name="root">
+            <action method="setTemplate">
+                <tpl>conlabz/set-components/view.phtml</tpl>
+            </action>
+            <block type="skylotec/catalog_product_view_attributes" name="attributes" template="catalog/product/view/attributes.phtml" />
+        </block>
+    </skylotec_component_view>
+
+    <catalog_category_default>
+        <reference name="teaser">
+            <block type="skylotec/catalog_category_view_teaser" name="category.teaser" />
+        </reference>
+        <reference name="content">
+            <block type="skylotec/catalog_category_view_childcategories" name="child.categories" />
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <remove name="catalog.leftnav" />
+        <reference name="teaser">
+            <block type="skylotec/catalog_category_view_teaser" name="category.teaser" />
+        </reference>
+        <reference name="category.products">
+            <!--<block type="skylotec/news_list_category" name="category.news" as="news" />-->
+            <!--<block type="skylotec/skylopedia_page" name="category.skylopedia" as="skylopedia" />-->
+            <block type="skylotec/tabs_category" name="category.tabs" as="tabs">
+                <!--<action method="addTab">
+                    <tab_data>
+                        <label><![CDATA[Tips & Tricks]]></label>
+                        <href>#skylopedia</href>
+                        <is_active>0</is_active>
+                        <sort_order>3</sort_order>
+                    </tab_data>
+                    <block_name>category.skylopedia</block_name>
+                </action>-->
+                <!--<action method="addTab">
+                    <tab_data>
+                        <label>News</label>
+                        <href>#news</href>
+                        <is_active>0</is_active>
+                        <sort_order>5</sort_order>
+                    </tab_data>
+                    <block_name>category.news</block_name>
+                </action>-->
+            </block>
+            <block type="mana_filters/view" name="mana.catalog.leftnav" as="filter" template="catalog/layer/view.phtml"/>
+        </reference>
+    </catalog_category_layered>
+
+    <catalog_product_view>
+        <remove name="product_tag_list" />
+        <update handle="page_one_column" />
+        <reference name="product.info">
+            <block type="skylotec/tabs_product" name="product.tabs" as="tabs" />
+            <block type="catalog/product_view" name="product.info.image" as="main-image" template="catalog/product/view/image.phtml"/>
+            <block type="catalog/product_view" name="product.info.sharing" as="sharing" template="catalog/product/view/sharing.phtml"/>
+            <block type="skylotec/catalog_product_view_buy" name="product.info.addtocart" as="addtocart" template="catalog/product/view/addtocart.phtml">
+                <block type="skylotec/catalog_product_view_buy" name="product.info.addtocart.main" as="maininfo" template="catalog/product/view/addtocart/maininfo.phtml" />
+                <block type="core/template_facade" name="product.info.container1" as="container2">
+                    <action method="setDataByKey"><key>alias_in_layout</key><value>container2</value></action>
+                    <action method="setDataByKeyFromRegistry"><key>options_container</key><key_in_registry>product</key_in_registry></action>
+                    <action method="append"><block>product.info.options.wrapper</block></action>
+                </block>
+                <block type="skylotec/catalog_product_view_buy" name="product.info.addtocart.button" as="button" template="catalog/product/view/addtocart/button.phtml" />
+            </block>
+            <block type="core/text_list" name="product.properties" as="information">
+                <action method="addToParentGroup"><group>tabs</group></action>
+                <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/information/description.phtml" />
+                <block type="skylotec/catalog_product_view_images" name="product.application.images" as="application-images" template="catalog/product/view/information/application-images.phtml" />
+            </block>
+            <block type="core/text_list" name="product.details" as="product-details">
+                <action method="addToParentGroup"><group>tabs</group></action>
+                <block type="skylotec/catalog_product_view_attributes" name="product.attributes" as="additional" template="catalog/product/view/details/attributes.phtml" />
+                <block type="skylotec/catalog_product_view_images" name="product.detail.images" as="detail-images" template="catalog/product/view/details/detail-images.phtml" />
+            </block>
+        </reference>
+        <reference name="product.info.container2">
+            <action method="unsetChild">
+                <alias>product.info.options.wrapper.bottom</alias>
+            </action>
+        </reference>
+    </catalog_product_view>
+
+    <checkout_cart_index>
+        <reference name="checkout.cart">
+            <block type="cms/block" name="checkout.cart.notice">
+                <action method="setBlockId">
+                    <block_id>cart_notice</block_id>
+                </action>
+            </block>
+        </reference>
+    </checkout_cart_index>
+
+    <checkout_cart_configure>
+        <remove name="checkout.cart.item.configure.block" />
+        <reference name="product.info.addtocart">
+            <action method="setButtonTitle"><title>Update Cart</title></action>
+        </reference>
+    </checkout_cart_configure>
+
+    <PRODUCT_TYPE_configurable>
+        <reference name="product.info.options.configurable">
+            <block type="catalog/product_view_type_configurable" as="children" name="product.info.options.configurable.children" template="catalog/product/view/type/options/configurable/children.phtml" />
+        </reference>
+    </PRODUCT_TYPE_configurable>
+
+    <default_wordpress_embed>
+        <reference name="head">
+            <action method="removeItem">
+                <type>js</type>
+                <name>jquery-1.10.2.min.js</name>
+            </action>
+        </reference>
+    </default_wordpress_embed>
+
+    <category_wordpress_list_athlete>
+        <reference name="content">
+            <block type="skylotec/athlete_list" name="athlete.list" />
+        </reference>
+    </category_wordpress_list_athlete>
+
+    <wordpress_post_view>
+        <reference name="teaser">
+            <block type="skylotec/news_teaser" name="teaser.news" template="page/html/teaser.phtml" />
+        </reference>
+    </wordpress_post_view>
+
+    <wordpress_post_view_ATHLETE>
+        <reference name="root">
+            <action method="setTemplate">
+                <tpl>page/1column.phtml</tpl>
+            </action>
+        </reference>
+        <remove name="teaser.news" />
+    </wordpress_post_view_ATHLETE>
+
+    <default>
+        <reference name="catalog.topnav">
+            <action method="setCacheLifetime"><ttl>0</ttl></action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="regions/regions" name="regions.switcher" template="regions/switcher.phtml" />
+            <block type="core/template" name="inline.scripts" template="page/html/scripts.phtml" />
+        </reference>
+        <reference name="product_list_toolbar_pager">
+            <action method="setShowAmounts">
+                <flag>1</flag>
+            </action>
+        </reference>
+    </default>
+
+</layout>
