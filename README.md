@@ -15,49 +15,13 @@ View Dockerfiles:
 - [malagant/magento-nginx (Docker Hub)](https://hub.docker.com/r/malagant/magento-nginx/)
   - 1.13
       - [`latest`, `1.13`, `1.13-6`](https://github.com/malagant/docker-magento/tree/master/images/nginx/1.13)
-      - [`1.13-5`](https://github.com/malagant/docker-magento/tree/18.1.1/images/nginx/1.13)
-      - [`1.13-4`](https://github.com/malagant/docker-magento/tree/18.0.1/images/nginx/1.13)
-      - [`1.13-3`](https://github.com/malagant/docker-magento/tree/15.0.1/images/nginx/1.13)
-      - [`1.13-2`](https://github.com/malagant/docker-magento/tree/12.0.0/images/nginx/1.13)
-      - [`1.13-1`](https://github.com/malagant/docker-magento/tree/11.1.5/images/nginx/1.13)
-      - [`1.13-0`](https://github.com/malagant/docker-magento/tree/11.0.0/images/nginx/1.13)
 - [malagant/magento-php (Docker Hub)](https://hub.docker.com/r/malagant/magento-php/)
   - 7.2
       - [`latest`, `7.2-fpm`, `7.2-fpm-0`](https://github.com/malagant/docker-magento/tree/master/images/php/7.2)
-  - 7.1
-      - [`7.1-fpm`, `7.1-fpm-9`](https://github.com/malagant/docker-magento/tree/master/images/php/7.1)
-      - [`7.1-fpm-8`](https://github.com/malagant/docker-magento/tree/17.0.1/images/php/7.1)
-      - [`7.1-fpm-7`](https://github.com/malagant/docker-magento/tree/16.2.0/images/php/7.1)
-      - [`7.1-fpm-6`](https://github.com/malagant/docker-magento/tree/16.0.0/images/php/7.1)
-      - [`7.1-fpm-5`](https://github.com/malagant/docker-magento/tree/15.0.1/images/php/7.1)
-      - [`7.1-fpm-4`](https://github.com/malagant/docker-magento/tree/15.0.0/images/php/7.1)
-      - [`7.1-fpm-3`](https://github.com/malagant/docker-magento/tree/14.0.1/images/php/7.1)
-      - [`7.1-fpm-2`](https://github.com/malagant/docker-magento/tree/13.0.0/images/php/7.1)
-      - [`7.1-fpm-1`](https://github.com/malagant/docker-magento/tree/11.1.5/images/php/7.1)
-      - [`7.1-fpm-0`](https://github.com/malagant/docker-magento/tree/11.0.0/images/php/7.1)
-  - 7.0
-      - [`7.0-fpm`, `7.0-fpm-9`](https://github.com/malagant/docker-magento/tree/master/images/php/7.0)
-      - [`7.0-fpm-8`](https://github.com/malagant/docker-magento/tree/17.0.1/images/php/7.0)
-      - [`7.0-fpm-7`](https://github.com/malagant/docker-magento/tree/16.2.0/images/php/7.0)
-      - [`7.0-fpm-6`](https://github.com/malagant/docker-magento/tree/16.0.0/images/php/7.0)
-      - [`7.0-fpm-5`](https://github.com/malagant/docker-magento/tree/15.0.1/images/php/7.0)
-      - [`7.0-fpm-4`](https://github.com/malagant/docker-magento/tree/15.0.0/images/php/7.0)
-      - [`7.0-fpm-3`](https://github.com/malagant/docker-magento/tree/14.0.1/images/php/7.0)
-      - [`7.0-fpm-2`](https://github.com/malagant/docker-magento/tree/13.0.0/images/php/7.0)
-      - [`7.0-fpm-1`](https://github.com/malagant/docker-magento/tree/11.1.5/images/php/7.0)
-      - [`7.0-fpm-0`](https://github.com/malagant/docker-magento/tree/11.0.0/images/php/7.0)
-  - 5.6
-      - [`5.6-fpm`, `5.6-fpm-6`](https://github.com/malagant/docker-magento/tree/master/images/php/5.6)
-      - [`5.6-fpm-5`](https://github.com/malagant/docker-magento/tree/15.0.1/images/php/5.6)
-      - [`5.6-fpm-4`](https://github.com/malagant/docker-magento/tree/15.0.0/images/php/5.6)
-      - [`5.6-fpm-3`](https://github.com/malagant/docker-magento/tree/14.0.1/images/php/5.6)
-      - [`5.6-fpm-2`](https://github.com/malagant/docker-magento/tree/13.0.0/images/php/5.6)
-      - [`5.6-fpm-1`](https://github.com/malagant/docker-magento/tree/11.1.5/images/php/5.6)
-      - [`5.6-fpm-0`](https://github.com/malagant/docker-magento/tree/11.0.0/images/php/5.6)
 
 ## Usage
 
-This configuration is intended to be used as a Docker-based development environment for both Magento 1 and Magento 2.
+This configuration is intended to be used as a Docker-based development environment for Magento 1.
 
 Folders:
 
